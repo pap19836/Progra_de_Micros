@@ -35,7 +35,6 @@ CONFIG WRT = OFF        // Flash Program Memory Self Write Enable bits (Write pr
 PSECT udata_bank0 ; common memory
     c1: DS 1
     c2: DS 1
-    c1_value: DS 1
 
     
 PSECT resVect, class=CODE, abs, delta=2
