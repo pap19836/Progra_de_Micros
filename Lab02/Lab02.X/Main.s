@@ -63,7 +63,7 @@ main:
     movlw   0x7F
     movwf   OPTION_REG
     
-    movlw   0x1F
+    movlw   0x1F    //Turn un internal PORTB pull-ups
     movwf   WPUB
     
     banksel PORTA
