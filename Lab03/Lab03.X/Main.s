@@ -123,19 +123,19 @@ table:
 main:
     all_digital
     
-    input_b
-    clrf    TRISC
+    input_b		    //Puerto b es input, puertos c,d y e son output
+    clrf    TRISC	
     clrf    TRISD
     clrf    TRISE
     
     movlw   0b11110000	    //PSA to TMR0 and timer as temp
     andwf   OPTION_REG
     
-    banksel TMR0
+    banksel TMR0	    //Iniciar en 0
     movlw   0x00
     movwf   TMR0
     
-    movlw   0x00
+    movlw   0x00	    //Iniciar en 0
     movwf   count_seven
     
     clear_ports
@@ -157,35 +157,34 @@ loop:
     goto loop
 ;Sub-Rutinas
 main_counter:
-    movlw   125
+    movlw   125		    //inicializar delay grande
     movwf   count_delay
     call    delay
-    incf    counter
+    incf    counter	    //Incrementar counter
     movf    counter,0
-    andlw   0x0F
+    andlw   0x0F	    //And con 00001111 para que solo se usen 4bits
     banksel PORTC
     movwf   PORTC  
     return
     
 delay:
-    reset_timer0
-    btfss   INTCON, 2
-    goto    $-1
-    decfsz  count_delay
+    reset_timer0	    
+    btfss   INTCON, 2	    //Bandera de timer0 overflow
+    goto    $-1		    //repetir hasta que se encienda la bandera
+    decfsz  count_delay	    //Decrementar el timer
     goto    delay
     return
 
 seven_up:
-    btfss   PORTB, 0
+    btfss   PORTB, 0	    //Antirebote
     goto    $-1
-    bcf	    STATUS, 2
-    bcf	    PORTE,  0
-    incf    count_seven
+    bcf	    STATUS, 2	    //Limpiar zero flag
+    incf    count_seven	    //Incrementar contador 7segmentos
     movf    count_seven, 0
     andlw   0x0F
     movwf   count_seven
     call    table
-    movwf   PORTD
+    movwf   PORTD	    //Mostrar valor de tabla en PortD
     return
     
     
@@ -193,7 +192,6 @@ seven_down:
     btfss   PORTB, 1
     goto    $-1
     bcf	    STATUS, 2
-    bcf	    PORTE,  0
     decf    count_seven
     movf    count_seven, 0
     andlw   0x0F
@@ -204,8 +202,8 @@ seven_down:
 
 alarm:
 
-    bsf	    PORTE,  0
-    movlw   0x00
+    bsf	    PORTE,  0	    //Encender bit en E de alarma
+    movlw   0x00	    //Reiniciar contador de 4 bits
     movwf   counter
     return
         
