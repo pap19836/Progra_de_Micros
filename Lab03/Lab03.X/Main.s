@@ -7,7 +7,7 @@
 ; Hardware: Leds en puerto C para contador de 4 bits, display de 7 segmentos y push-buttons
 ;
 ; Creado 16 feb, 2021
-; Última Actualización: 16 feb, 2021
+; Última Actualización: 20 feb, 2021
 
 PROCESSOR 16F887
 #include <xc.inc>

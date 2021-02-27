@@ -6,7 +6,7 @@
  </FRAME>
  <MODULE name="VSMDEBUG">
   <PWI>
-   <POPUP w="800" x="131" flags="00000002" y="55" h="200" pid="0" iid="-1">
+   <POPUP w="800" x="48" flags="00008003" y="160" h="200" pid="0" iid="-1">
     <PROPERTIES>
      <ITEM name="Message Column Width">661</ITEM>
      <ITEM name="ShowGrid">No</ITEM>
@@ -32,10 +32,10 @@
      <ITEM name="nItems">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="434" x="88" flags="00000008" y="200" h="216" pid="3" iid="1">
+   <POPUP w="52" x="88" flags="00000008" y="200" h="13" pid="3" iid="17">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="8" x="108" flags="0000000a" y="220" h="32" pid="4" iid="1">
+   <POPUP w="8" x="108" flags="0000000a" y="220" h="32" pid="4" iid="17">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -45,7 +45,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="8" x="128" flags="0000000a" y="240" h="32" pid="5" iid="1">
+   <POPUP w="8" x="128" flags="0000000a" y="240" h="32" pid="5" iid="17">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -55,7 +55,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="16" x="148" flags="0000000a" y="260" h="32" pid="6" iid="1">
+   <POPUP w="16" x="148" flags="0000000a" y="260" h="32" pid="6" iid="17">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -65,10 +65,10 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="130" x="168" flags="00000008" y="280" h="151" pid="7" iid="1">
+   <POPUP w="14" x="168" flags="00000008" y="280" h="8" pid="7" iid="17">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="8" x="188" flags="00000002" y="300" h="8" pid="8" iid="1">
+   <POPUP w="8" x="188" flags="00000002" y="300" h="8" pid="8" iid="17">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
