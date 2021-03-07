@@ -2601,6 +2601,7 @@ main:
     movwf dec_left
     movwf centena
     movwf cent_left
+    movwf counter
 
     reset_timer0
     call interrupt_config
@@ -2762,8 +2763,9 @@ divide:
     movwf unidad
     movwf units_left
     movf counter, 0
-hundred:
     movwf cent_left
+
+hundred:
     movlw 100
     subwf cent_left, f
     btfsc STATUS, 0
