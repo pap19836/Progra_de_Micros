@@ -1,0 +1,269 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$build/default/production/Debounce.o
+resVect CODE 0 0 0 1 2
+intVect CODE 0 4 4 27 2
+udata_shr COMMON 1 70 70 7 1
+loopPrincipal CODE 0 2B 2B 5A 2
+config CONFIG 4 2007 2007 2 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 20-6F 1
+RAM A0-EF 1
+RAM 110-16F 1
+RAM 190-1EF 1
+BANK0 20-6F 1
+BANK1 A0-EF 1
+BANK2 110-16F 1
+BANK3 190-1EF 1
+CONST 1-3 2
+CONST 85-1FFF 2
+ENTRY 1-3 2
+ENTRY 85-1FFF 2
+IDLOC 2000-2003 2
+CODE 1-3 2
+CODE 85-1FFF 2
+SFR0 2-7 1
+SFR2 10A-10F 1
+SFR3 180-18F 1
+COMMON 77-7F 1
+EEDATA 2100-21FF 2
+STRCODE 1-3 2
+STRCODE 85-1FFF 2
+STRING 1-3 2
+STRING 85-1FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$build/default/production/Debounce.o
+2B loopPrincipal CODE >105:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+2C loopPrincipal CODE >106:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+2D loopPrincipal CODE >107:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+2E loopPrincipal CODE >108:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+2F loopPrincipal CODE >109:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+30 loopPrincipal CODE >111:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+31 loopPrincipal CODE >112:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+32 loopPrincipal CODE >114:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+34 loopPrincipal CODE >115:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+35 loopPrincipal CODE >116:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+36 loopPrincipal CODE >118:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+37 loopPrincipal CODE >119:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+38 loopPrincipal CODE >121:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+3A loopPrincipal CODE >121:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+3B loopPrincipal CODE >121:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+3C loopPrincipal CODE >121:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+3D loopPrincipal CODE >121:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+3F loopPrincipal CODE >121:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+40 loopPrincipal CODE >121:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+41 loopPrincipal CODE >121:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+42 loopPrincipal CODE >121:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+43 loopPrincipal CODE >124:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+44 loopPrincipal CODE >125:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+45 loopPrincipal CODE >126:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+46 loopPrincipal CODE >127:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+47 loopPrincipal CODE >134:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+49 loopPrincipal CODE >135:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+4A loopPrincipal CODE >136:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+4B loopPrincipal CODE >138:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+4D loopPrincipal CODE >139:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+4E loopPrincipal CODE >140:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+4F loopPrincipal CODE >141:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+50 loopPrincipal CODE >143:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+51 loopPrincipal CODE >144:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+52 loopPrincipal CODE >145:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+53 loopPrincipal CODE >146:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+54 loopPrincipal CODE >147:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+55 loopPrincipal CODE >149:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+57 loopPrincipal CODE >150:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+58 loopPrincipal CODE >151:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+59 loopPrincipal CODE >152:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+5A loopPrincipal CODE >153:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+5B loopPrincipal CODE >154:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+5C loopPrincipal CODE >155:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+5D loopPrincipal CODE >159:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+5E loopPrincipal CODE >160:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+5F loopPrincipal CODE >161:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+60 loopPrincipal CODE >163:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+62 loopPrincipal CODE >164:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+63 loopPrincipal CODE >165:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+64 loopPrincipal CODE >167:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+65 loopPrincipal CODE >168:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+66 loopPrincipal CODE >170:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+67 loopPrincipal CODE >173:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+68 loopPrincipal CODE >174:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+69 loopPrincipal CODE >175:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+6A loopPrincipal CODE >176:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+6B loopPrincipal CODE >179:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+6C loopPrincipal CODE >180:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+6D loopPrincipal CODE >181:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+6E loopPrincipal CODE >182:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+70 loopPrincipal CODE >183:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+71 loopPrincipal CODE >184:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+72 loopPrincipal CODE >185:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+73 loopPrincipal CODE >186:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+74 loopPrincipal CODE >189:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+75 loopPrincipal CODE >190:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+76 loopPrincipal CODE >191:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+77 loopPrincipal CODE >192:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+78 loopPrincipal CODE >193:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+79 loopPrincipal CODE >194:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+7A loopPrincipal CODE >195:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+7C loopPrincipal CODE >196:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+7D loopPrincipal CODE >197:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+7E loopPrincipal CODE >198:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+7F loopPrincipal CODE >201:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+80 loopPrincipal CODE >202:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+81 loopPrincipal CODE >203:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+82 loopPrincipal CODE >205:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+83 loopPrincipal CODE >206:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+84 loopPrincipal CODE >207:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+4 intVect CODE >67:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+5 intVect CODE >68:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+7 intVect CODE >69:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+8 intVect CODE >70:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+9 intVect CODE >73:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+A intVect CODE >74:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+B intVect CODE >75:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+C intVect CODE >76:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+D intVect CODE >78:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+E intVect CODE >80:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+10 intVect CODE >80:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+11 intVect CODE >80:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+12 intVect CODE >80:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+13 intVect CODE >80:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+15 intVect CODE >80:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+16 intVect CODE >80:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+17 intVect CODE >80:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+18 intVect CODE >80:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+19 intVect CODE >81:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+1A intVect CODE >82:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+1B intVect CODE >85:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+1D intVect CODE >86:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+1E intVect CODE >87:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+1F intVect CODE >88:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+20 intVect CODE >89:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+21 intVect CODE >90:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+22 intVect CODE >91:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+23 intVect CODE >92:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+24 intVect CODE >95:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+26 intVect CODE >96:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+27 intVect CODE >97:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+28 intVect CODE >98:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+29 intVect CODE >99:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+2A intVect CODE >100:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+0 resVect CODE >61:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__Hspace_0 85 0 ABS 0 - -
+__Hspace_1 77 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__Hspace_4 4010 0 ABS 0 - -
+__Hudata_bank0 56 0 ABS 0 udata_bank0 -
+__Hudata_bank1 56 0 ABS 0 udata_bank1 -
+__Hudata_bank2 56 0 ABS 0 udata_bank2 -
+__Hudata_bank3 56 0 ABS 0 udata_bank3 -
+__HloopPrincipal 56 0 ABS 0 loopPrincipal -
+status_temp 71 0 COMMON 1 udata_shr build/default/production/Debounce.o
+banderas 72 0 COMMON 1 udata_shr build/default/production/Debounce.o
+w_temp 70 0 COMMON 1 udata_shr build/default/production/Debounce.o
+__LresVect 0 0 CODE 0 resVect -
+__Hedata 56 0 ABS 0 edata -
+__Hudata 56 0 ABS 0 udata -
+__Hconfig 4012 0 CONFIG 4 config -
+__Ledata 56 0 ABS 0 edata -
+__Ludata 56 0 ABS 0 udata -
+__Hcode 56 0 ABS 0 code -
+__Hdata 56 0 ABS 0 data -
+__Lcode 56 0 ABS 0 code -
+__Ldata 56 0 ABS 0 data -
+__S0 85 0 ABS 0 - -
+__S1 77 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+manual_counter 76 0 COMMON 1 udata_shr build/default/production/Debounce.o
+__HresVect 2 0 CODE 0 resVect -
+__Lconfig 0 0 CONFIG 4 config -
+auto_counter 75 0 COMMON 1 udata_shr build/default/production/Debounce.o
+__LintVect 8 0 CODE 0 intVect -
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__Lspace_4 0 0 ABS 0 - -
+count_delay 74 0 COMMON 1 udata_shr build/default/production/Debounce.o
+__Ludata_bank0 56 0 ABS 0 udata_bank0 -
+__Ludata_bank1 56 0 ABS 0 udata_bank1 -
+__Ludata_bank2 56 0 ABS 0 udata_bank2 -
+__Ludata_bank3 56 0 ABS 0 udata_bank3 -
+__Hudata_shr 56 0 ABS 0 udata_shr -
+__LloopPrincipal 56 0 ABS 0 loopPrincipal -
+__Ludata_shr 56 0 ABS 0 udata_shr -
+__HintVect 56 0 CODE 0 intVect -
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+resVect 0 0 0 1 2
+intVect 0 4 8 81 2
+udata_shr 1 70 70 7 1
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES

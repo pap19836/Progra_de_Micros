@@ -15,7 +15,13 @@ $build/default/production/main.o
 resVect CODE 0 0 0 1 2
 intVect CODE 0 4 4 1F 2
 udata_shr COMMON 1 70 70 C 1
-loopPrincipal CODE 0 23 23 BA 2
+loopPrincipal CODE 0 4A 4A BA 2
+config CONFIG 4 2007 2007 2 2
+$build/default/production/Antirrebote.o
+resVect CODE 0 1 1 1 2
+intVect CODE 0 23 23 27 2
+udata_shr COMMON 1 94 94 7 1
+loopPrincipal CODE 0 104 104 5A 2
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -31,20 +37,20 @@ BANK0 20-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
-CONST 1-3 2
-CONST DD-1FFF 2
-ENTRY 1-3 2
-ENTRY DD-1FFF 2
+CONST 2-3 2
+CONST 15E-1FFF 2
+ENTRY 2-3 2
+ENTRY 15E-1FFF 2
 IDLOC 2000-2003 2
-CODE 1-3 2
-CODE DD-1FFF 2
-SFR0 2-7 1
+CODE 2-3 2
+CODE 15E-1FFF 2
+SFR0 4-7 1
 COMMON 7C-7F 1
 EEDATA 2100-21FF 2
-STRCODE 1-3 2
-STRCODE DD-1FFF 2
-STRING 1-3 2
-STRING DD-1FFF 2
+STRCODE 2-3 2
+STRCODE 15E-1FFF 2
+STRING 2-3 2
+STRING 15E-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -59,185 +65,185 @@ STRING DD-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $build/default/production/main.o
-23 loopPrincipal CODE >123:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-24 loopPrincipal CODE >124:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-25 loopPrincipal CODE >125:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-26 loopPrincipal CODE >126:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-27 loopPrincipal CODE >127:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-28 loopPrincipal CODE >128:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-29 loopPrincipal CODE >129:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-2A loopPrincipal CODE >130:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-2B loopPrincipal CODE >131:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-2C loopPrincipal CODE >132:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-2D loopPrincipal CODE >133:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-2E loopPrincipal CODE >134:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-2F loopPrincipal CODE >135:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-30 loopPrincipal CODE >136:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-31 loopPrincipal CODE >137:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-32 loopPrincipal CODE >138:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-33 loopPrincipal CODE >139:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-34 loopPrincipal CODE >141:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-35 loopPrincipal CODE >143:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-37 loopPrincipal CODE >144:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-38 loopPrincipal CODE >146:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-39 loopPrincipal CODE >147:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-3A loopPrincipal CODE >148:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-3B loopPrincipal CODE >149:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-3C loopPrincipal CODE >150:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-3D loopPrincipal CODE >151:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-3E loopPrincipal CODE >152:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-3F loopPrincipal CODE >153:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-40 loopPrincipal CODE >154:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-41 loopPrincipal CODE >155:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-42 loopPrincipal CODE >157:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-44 loopPrincipal CODE >157:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-45 loopPrincipal CODE >157:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-46 loopPrincipal CODE >157:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-47 loopPrincipal CODE >157:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-49 loopPrincipal CODE >157:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-4A loopPrincipal CODE >157:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-4B loopPrincipal CODE >158:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-4C loopPrincipal CODE >163:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-4E loopPrincipal CODE >164:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-4F loopPrincipal CODE >165:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-50 loopPrincipal CODE >166:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-51 loopPrincipal CODE >167:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-52 loopPrincipal CODE >168:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-53 loopPrincipal CODE >171:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-54 loopPrincipal CODE >172:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-55 loopPrincipal CODE >173:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-56 loopPrincipal CODE >176:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-57 loopPrincipal CODE >177:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-58 loopPrincipal CODE >180:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-59 loopPrincipal CODE >181:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-5A loopPrincipal CODE >182:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-5B loopPrincipal CODE >183:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-5C loopPrincipal CODE >184:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-5D loopPrincipal CODE >187:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-5E loopPrincipal CODE >188:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-5F loopPrincipal CODE >189:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-60 loopPrincipal CODE >192:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-61 loopPrincipal CODE >193:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-62 loopPrincipal CODE >196:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-63 loopPrincipal CODE >197:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-64 loopPrincipal CODE >199:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-65 loopPrincipal CODE >200:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-66 loopPrincipal CODE >202:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-67 loopPrincipal CODE >203:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-68 loopPrincipal CODE >204:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-69 loopPrincipal CODE >205:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-6A loopPrincipal CODE >206:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-6B loopPrincipal CODE >207:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-6C loopPrincipal CODE >208:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-6D loopPrincipal CODE >209:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-6E loopPrincipal CODE >210:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-6F loopPrincipal CODE >211:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-70 loopPrincipal CODE >213:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-71 loopPrincipal CODE >221:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-73 loopPrincipal CODE >222:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-74 loopPrincipal CODE >223:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-75 loopPrincipal CODE >225:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-77 loopPrincipal CODE >226:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-78 loopPrincipal CODE >227:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-79 loopPrincipal CODE >228:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-7A loopPrincipal CODE >229:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-7B loopPrincipal CODE >231:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-7C loopPrincipal CODE >232:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-7D loopPrincipal CODE >233:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-7E loopPrincipal CODE >234:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-7F loopPrincipal CODE >235:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-80 loopPrincipal CODE >236:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-81 loopPrincipal CODE >238:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-83 loopPrincipal CODE >239:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-84 loopPrincipal CODE >240:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-85 loopPrincipal CODE >241:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-86 loopPrincipal CODE >242:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-87 loopPrincipal CODE >243:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-88 loopPrincipal CODE >244:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-89 loopPrincipal CODE >247:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-8A loopPrincipal CODE >248:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-8B loopPrincipal CODE >249:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-8C loopPrincipal CODE >252:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-8D loopPrincipal CODE >253:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-8E loopPrincipal CODE >254:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-8F loopPrincipal CODE >256:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-90 loopPrincipal CODE >257:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-91 loopPrincipal CODE >258:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-92 loopPrincipal CODE >259:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-93 loopPrincipal CODE >260:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-94 loopPrincipal CODE >263:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-95 loopPrincipal CODE >264:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-96 loopPrincipal CODE >265:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-97 loopPrincipal CODE >266:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-98 loopPrincipal CODE >267:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-99 loopPrincipal CODE >268:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-9A loopPrincipal CODE >269:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-9B loopPrincipal CODE >272:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-9C loopPrincipal CODE >273:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-9D loopPrincipal CODE >274:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-9E loopPrincipal CODE >275:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-9F loopPrincipal CODE >276:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-A0 loopPrincipal CODE >277:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-A1 loopPrincipal CODE >278:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-A2 loopPrincipal CODE >281:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-A3 loopPrincipal CODE >282:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-A4 loopPrincipal CODE >283:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-A5 loopPrincipal CODE >284:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-A6 loopPrincipal CODE >285:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-A7 loopPrincipal CODE >286:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-A8 loopPrincipal CODE >287:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-A9 loopPrincipal CODE >290:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-AA loopPrincipal CODE >291:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-AB loopPrincipal CODE >292:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-AC loopPrincipal CODE >293:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-AD loopPrincipal CODE >294:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-AE loopPrincipal CODE >295:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-AF loopPrincipal CODE >296:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-B0 loopPrincipal CODE >299:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-B1 loopPrincipal CODE >300:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-B2 loopPrincipal CODE >301:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-B3 loopPrincipal CODE >302:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-B4 loopPrincipal CODE >303:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-B5 loopPrincipal CODE >304:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-B6 loopPrincipal CODE >305:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-B7 loopPrincipal CODE >309:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-B8 loopPrincipal CODE >310:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-B9 loopPrincipal CODE >311:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-BA loopPrincipal CODE >312:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-BB loopPrincipal CODE >313:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-BC loopPrincipal CODE >314:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-BD loopPrincipal CODE >315:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-BE loopPrincipal CODE >316:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-BF loopPrincipal CODE >317:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-C0 loopPrincipal CODE >320:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-C1 loopPrincipal CODE >321:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-C2 loopPrincipal CODE >322:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-C3 loopPrincipal CODE >323:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-C4 loopPrincipal CODE >324:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-C5 loopPrincipal CODE >325:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-C6 loopPrincipal CODE >326:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-C7 loopPrincipal CODE >327:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-C8 loopPrincipal CODE >328:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-C9 loopPrincipal CODE >329:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-CA loopPrincipal CODE >333:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-CB loopPrincipal CODE >334:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-CC loopPrincipal CODE >335:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-CD loopPrincipal CODE >336:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-CE loopPrincipal CODE >337:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-CF loopPrincipal CODE >338:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-D0 loopPrincipal CODE >339:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-D1 loopPrincipal CODE >340:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-D2 loopPrincipal CODE >341:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-D3 loopPrincipal CODE >342:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-D4 loopPrincipal CODE >344:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-D5 loopPrincipal CODE >345:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-D6 loopPrincipal CODE >346:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-D7 loopPrincipal CODE >347:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-D8 loopPrincipal CODE >348:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-D9 loopPrincipal CODE >349:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-DA loopPrincipal CODE >350:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-DB loopPrincipal CODE >351:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
-DC loopPrincipal CODE >352:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+4A loopPrincipal CODE >123:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+4B loopPrincipal CODE >124:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+4C loopPrincipal CODE >125:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+4D loopPrincipal CODE >126:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+4E loopPrincipal CODE >127:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+4F loopPrincipal CODE >128:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+50 loopPrincipal CODE >129:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+51 loopPrincipal CODE >130:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+52 loopPrincipal CODE >131:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+53 loopPrincipal CODE >132:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+54 loopPrincipal CODE >133:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+55 loopPrincipal CODE >134:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+56 loopPrincipal CODE >135:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+57 loopPrincipal CODE >136:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+58 loopPrincipal CODE >137:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+59 loopPrincipal CODE >138:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+5A loopPrincipal CODE >139:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+5B loopPrincipal CODE >141:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+5C loopPrincipal CODE >143:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+5E loopPrincipal CODE >144:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+5F loopPrincipal CODE >146:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+60 loopPrincipal CODE >147:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+61 loopPrincipal CODE >148:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+62 loopPrincipal CODE >149:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+63 loopPrincipal CODE >150:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+64 loopPrincipal CODE >151:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+65 loopPrincipal CODE >152:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+66 loopPrincipal CODE >153:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+67 loopPrincipal CODE >154:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+68 loopPrincipal CODE >155:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+69 loopPrincipal CODE >157:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+6B loopPrincipal CODE >157:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+6C loopPrincipal CODE >157:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+6D loopPrincipal CODE >157:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+6E loopPrincipal CODE >157:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+70 loopPrincipal CODE >157:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+71 loopPrincipal CODE >157:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+72 loopPrincipal CODE >158:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+73 loopPrincipal CODE >163:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+75 loopPrincipal CODE >164:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+76 loopPrincipal CODE >165:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+77 loopPrincipal CODE >166:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+78 loopPrincipal CODE >167:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+79 loopPrincipal CODE >168:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+7A loopPrincipal CODE >171:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+7B loopPrincipal CODE >172:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+7C loopPrincipal CODE >173:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+7D loopPrincipal CODE >176:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+7E loopPrincipal CODE >177:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+7F loopPrincipal CODE >180:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+80 loopPrincipal CODE >181:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+81 loopPrincipal CODE >182:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+82 loopPrincipal CODE >183:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+83 loopPrincipal CODE >184:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+84 loopPrincipal CODE >187:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+85 loopPrincipal CODE >188:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+86 loopPrincipal CODE >189:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+87 loopPrincipal CODE >192:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+88 loopPrincipal CODE >193:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+89 loopPrincipal CODE >196:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+8A loopPrincipal CODE >197:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+8B loopPrincipal CODE >199:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+8C loopPrincipal CODE >200:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+8D loopPrincipal CODE >202:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+8E loopPrincipal CODE >203:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+8F loopPrincipal CODE >204:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+90 loopPrincipal CODE >205:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+91 loopPrincipal CODE >206:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+92 loopPrincipal CODE >207:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+93 loopPrincipal CODE >208:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+94 loopPrincipal CODE >209:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+95 loopPrincipal CODE >210:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+96 loopPrincipal CODE >211:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+97 loopPrincipal CODE >213:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+98 loopPrincipal CODE >221:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+9A loopPrincipal CODE >222:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+9B loopPrincipal CODE >223:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+9C loopPrincipal CODE >225:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+9E loopPrincipal CODE >226:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+9F loopPrincipal CODE >227:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+A0 loopPrincipal CODE >228:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+A1 loopPrincipal CODE >229:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+A2 loopPrincipal CODE >231:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+A3 loopPrincipal CODE >232:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+A4 loopPrincipal CODE >233:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+A5 loopPrincipal CODE >234:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+A6 loopPrincipal CODE >235:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+A7 loopPrincipal CODE >236:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+A8 loopPrincipal CODE >238:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+AA loopPrincipal CODE >239:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+AB loopPrincipal CODE >240:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+AC loopPrincipal CODE >241:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+AD loopPrincipal CODE >242:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+AE loopPrincipal CODE >243:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+AF loopPrincipal CODE >244:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+B0 loopPrincipal CODE >247:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+B1 loopPrincipal CODE >248:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+B2 loopPrincipal CODE >249:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+B3 loopPrincipal CODE >252:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+B4 loopPrincipal CODE >253:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+B5 loopPrincipal CODE >254:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+B6 loopPrincipal CODE >256:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+B7 loopPrincipal CODE >257:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+B8 loopPrincipal CODE >258:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+B9 loopPrincipal CODE >259:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+BA loopPrincipal CODE >260:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+BB loopPrincipal CODE >263:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+BC loopPrincipal CODE >264:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+BD loopPrincipal CODE >265:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+BE loopPrincipal CODE >266:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+BF loopPrincipal CODE >267:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+C0 loopPrincipal CODE >268:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+C1 loopPrincipal CODE >269:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+C2 loopPrincipal CODE >272:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+C3 loopPrincipal CODE >273:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+C4 loopPrincipal CODE >274:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+C5 loopPrincipal CODE >275:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+C6 loopPrincipal CODE >276:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+C7 loopPrincipal CODE >277:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+C8 loopPrincipal CODE >278:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+C9 loopPrincipal CODE >281:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+CA loopPrincipal CODE >282:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+CB loopPrincipal CODE >283:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+CC loopPrincipal CODE >284:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+CD loopPrincipal CODE >285:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+CE loopPrincipal CODE >286:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+CF loopPrincipal CODE >287:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+D0 loopPrincipal CODE >290:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+D1 loopPrincipal CODE >291:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+D2 loopPrincipal CODE >292:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+D3 loopPrincipal CODE >293:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+D4 loopPrincipal CODE >294:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+D5 loopPrincipal CODE >295:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+D6 loopPrincipal CODE >296:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+D7 loopPrincipal CODE >299:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+D8 loopPrincipal CODE >300:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+D9 loopPrincipal CODE >301:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+DA loopPrincipal CODE >302:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+DB loopPrincipal CODE >303:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+DC loopPrincipal CODE >304:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+DD loopPrincipal CODE >305:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+DE loopPrincipal CODE >309:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+DF loopPrincipal CODE >310:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+E0 loopPrincipal CODE >311:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+E1 loopPrincipal CODE >312:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+E2 loopPrincipal CODE >313:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+E3 loopPrincipal CODE >314:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+E4 loopPrincipal CODE >315:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+E5 loopPrincipal CODE >316:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+E6 loopPrincipal CODE >317:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+E7 loopPrincipal CODE >320:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+E8 loopPrincipal CODE >321:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+E9 loopPrincipal CODE >322:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+EA loopPrincipal CODE >323:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+EB loopPrincipal CODE >324:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+EC loopPrincipal CODE >325:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+ED loopPrincipal CODE >326:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+EE loopPrincipal CODE >327:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+EF loopPrincipal CODE >328:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+F0 loopPrincipal CODE >329:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+F1 loopPrincipal CODE >333:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+F2 loopPrincipal CODE >334:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+F3 loopPrincipal CODE >335:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+F4 loopPrincipal CODE >336:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+F5 loopPrincipal CODE >337:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+F6 loopPrincipal CODE >338:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+F7 loopPrincipal CODE >339:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+F8 loopPrincipal CODE >340:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+F9 loopPrincipal CODE >341:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+FA loopPrincipal CODE >342:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+FB loopPrincipal CODE >344:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+FC loopPrincipal CODE >345:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+FD loopPrincipal CODE >346:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+FE loopPrincipal CODE >347:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+FF loopPrincipal CODE >348:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+100 loopPrincipal CODE >349:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+101 loopPrincipal CODE >350:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+102 loopPrincipal CODE >351:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+103 loopPrincipal CODE >352:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
 4 intVect CODE >96:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
 5 intVect CODE >97:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
 7 intVect CODE >98:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
@@ -266,6 +272,123 @@ F intVect CODE >107:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
 21 intVect CODE >117:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
 22 intVect CODE >118:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
 0 resVect CODE >91:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
+$build/default/production/Antirrebote.o
+42 intVect CODE >67:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+43 intVect CODE >68:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+45 intVect CODE >69:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+46 intVect CODE >70:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+47 intVect CODE >73:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+48 intVect CODE >74:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+49 intVect CODE >75:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+4A intVect CODE >76:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+4B intVect CODE >78:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+4C intVect CODE >80:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+4E intVect CODE >80:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+4F intVect CODE >80:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+50 intVect CODE >80:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+51 intVect CODE >80:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+53 intVect CODE >80:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+54 intVect CODE >80:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+55 intVect CODE >80:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+56 intVect CODE >80:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+57 intVect CODE >81:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+58 intVect CODE >82:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+59 intVect CODE >85:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+5B intVect CODE >86:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+5C intVect CODE >87:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+5D intVect CODE >88:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+5E intVect CODE >89:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+5F intVect CODE >90:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+60 intVect CODE >91:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+61 intVect CODE >92:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+62 intVect CODE >95:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+64 intVect CODE >96:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+65 intVect CODE >97:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+66 intVect CODE >98:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+67 intVect CODE >99:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+68 intVect CODE >100:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+2 resVect CODE >61:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+104 loopPrincipal CODE >105:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+105 loopPrincipal CODE >106:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+106 loopPrincipal CODE >107:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+107 loopPrincipal CODE >108:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+108 loopPrincipal CODE >109:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+109 loopPrincipal CODE >111:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+10A loopPrincipal CODE >112:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+10B loopPrincipal CODE >114:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+10D loopPrincipal CODE >115:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+10E loopPrincipal CODE >116:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+10F loopPrincipal CODE >118:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+110 loopPrincipal CODE >119:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+111 loopPrincipal CODE >121:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+113 loopPrincipal CODE >121:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+114 loopPrincipal CODE >121:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+115 loopPrincipal CODE >121:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+116 loopPrincipal CODE >121:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+118 loopPrincipal CODE >121:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+119 loopPrincipal CODE >121:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+11A loopPrincipal CODE >121:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+11B loopPrincipal CODE >121:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+11C loopPrincipal CODE >124:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+11D loopPrincipal CODE >125:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+11E loopPrincipal CODE >126:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+11F loopPrincipal CODE >127:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+120 loopPrincipal CODE >134:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+122 loopPrincipal CODE >135:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+123 loopPrincipal CODE >136:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+124 loopPrincipal CODE >138:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+126 loopPrincipal CODE >139:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+127 loopPrincipal CODE >140:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+128 loopPrincipal CODE >141:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+129 loopPrincipal CODE >143:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+12A loopPrincipal CODE >144:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+12B loopPrincipal CODE >145:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+12C loopPrincipal CODE >146:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+12D loopPrincipal CODE >147:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+12E loopPrincipal CODE >149:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+130 loopPrincipal CODE >150:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+131 loopPrincipal CODE >151:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+132 loopPrincipal CODE >152:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+133 loopPrincipal CODE >153:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+134 loopPrincipal CODE >154:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+135 loopPrincipal CODE >155:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+136 loopPrincipal CODE >159:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+137 loopPrincipal CODE >160:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+138 loopPrincipal CODE >161:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+139 loopPrincipal CODE >163:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+13B loopPrincipal CODE >164:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+13C loopPrincipal CODE >165:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+13D loopPrincipal CODE >167:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+13E loopPrincipal CODE >168:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+13F loopPrincipal CODE >170:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+140 loopPrincipal CODE >173:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+141 loopPrincipal CODE >174:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+142 loopPrincipal CODE >175:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+143 loopPrincipal CODE >176:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+144 loopPrincipal CODE >179:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+145 loopPrincipal CODE >180:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+146 loopPrincipal CODE >181:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+147 loopPrincipal CODE >182:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+149 loopPrincipal CODE >183:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+14A loopPrincipal CODE >184:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+14B loopPrincipal CODE >185:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+14C loopPrincipal CODE >186:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+14D loopPrincipal CODE >189:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+14E loopPrincipal CODE >190:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+14F loopPrincipal CODE >191:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+150 loopPrincipal CODE >192:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+151 loopPrincipal CODE >193:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+152 loopPrincipal CODE >194:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+153 loopPrincipal CODE >195:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+155 loopPrincipal CODE >196:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+156 loopPrincipal CODE >197:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+157 loopPrincipal CODE >198:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+158 loopPrincipal CODE >201:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+159 loopPrincipal CODE >202:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+15A loopPrincipal CODE >203:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+15B loopPrincipal CODE >205:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+15C loopPrincipal CODE >206:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
+15D loopPrincipal CODE >207:C:\Progra_de_Micros\Lab05\Lab05.X\Antirrebote.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -278,15 +401,15 @@ F intVect CODE >107:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-__Hspace_0 DD 0 ABS 0 - -
-__Hspace_1 7C 0 ABS 0 - -
+__Hspace_0 15E 0 ABS 0 - -
+__Hspace_1 9B 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
-__Hudata_bank0 46 0 ABS 0 udata_bank0 -
-__Hudata_bank1 46 0 ABS 0 udata_bank1 -
-__Hudata_bank2 46 0 ABS 0 udata_bank2 -
-__Hudata_bank3 46 0 ABS 0 udata_bank3 -
-__HloopPrincipal 46 0 ABS 0 loopPrincipal -
+__Hudata_bank0 94 0 ABS 0 udata_bank0 -
+__Hudata_bank1 94 0 ABS 0 udata_bank1 -
+__Hudata_bank2 94 0 ABS 0 udata_bank2 -
+__Hudata_bank3 94 0 ABS 0 udata_bank3 -
+__HloopPrincipal 94 0 ABS 0 loopPrincipal -
 h_hex 73 0 COMMON 1 udata_shr build/default/production/main.o
 l_hex 74 0 COMMON 1 udata_shr build/default/production/main.o
 dec_left 78 0 COMMON 1 udata_shr build/default/production/main.o
@@ -296,37 +419,40 @@ unidad 79 0 COMMON 1 udata_shr build/default/production/main.o
 w_temp 70 0 COMMON 1 udata_shr build/default/production/main.o
 __LresVect 0 0 CODE 0 resVect -
 cent_left 75 0 COMMON 1 udata_shr build/default/production/main.o
-__Hedata 46 0 ABS 0 edata -
-__Hudata 46 0 ABS 0 udata -
+__Hedata 94 0 ABS 0 edata -
+__Hudata 94 0 ABS 0 udata -
 __Hconfig 4012 0 CONFIG 4 config -
-__Ledata 46 0 ABS 0 edata -
-__Ludata 46 0 ABS 0 udata -
-__Hcode 46 0 ABS 0 code -
-__Hdata 46 0 ABS 0 data -
-__Lcode 46 0 ABS 0 code -
-__Ldata 46 0 ABS 0 data -
-__S0 DD 0 ABS 0 - -
+__Ledata 94 0 ABS 0 edata -
+__Ludata 94 0 ABS 0 udata -
+__Hcode 94 0 ABS 0 code -
+__Hdata 94 0 ABS 0 data -
+__Lcode 94 0 ABS 0 code -
+__Ldata 94 0 ABS 0 data -
+__S0 15E 0 ABS 0 - -
 __S1 7C 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-__HresVect 2 0 CODE 0 resVect -
+manual_counter 9A 0 COMMON 1 udata_shr build/default/production/Antirrebote.o
+__HresVect 4 0 CODE 0 resVect -
 __Lconfig 0 0 CONFIG 4 config -
+auto_counter 99 0 COMMON 1 udata_shr build/default/production/Antirrebote.o
 __LintVect 8 0 CODE 0 intVect -
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
 centena 76 0 COMMON 1 udata_shr build/default/production/main.o
-__Ludata_bank0 46 0 ABS 0 udata_bank0 -
-__Ludata_bank1 46 0 ABS 0 udata_bank1 -
-__Ludata_bank2 46 0 ABS 0 udata_bank2 -
-__Ludata_bank3 46 0 ABS 0 udata_bank3 -
+count_delay 98 0 COMMON 1 udata_shr build/default/production/Antirrebote.o
+__Ludata_bank0 94 0 ABS 0 udata_bank0 -
+__Ludata_bank1 94 0 ABS 0 udata_bank1 -
+__Ludata_bank2 94 0 ABS 0 udata_bank2 -
+__Ludata_bank3 94 0 ABS 0 udata_bank3 -
 counter 7B 0 COMMON 1 udata_shr build/default/production/main.o
-__Hudata_shr 46 0 ABS 0 udata_shr -
+__Hudata_shr 94 0 ABS 0 udata_shr -
 units_left 7A 0 COMMON 1 udata_shr build/default/production/main.o
-__LloopPrincipal 46 0 ABS 0 loopPrincipal -
+__LloopPrincipal 94 0 ABS 0 loopPrincipal -
 decena 77 0 COMMON 1 udata_shr build/default/production/main.o
-__Ludata_shr 46 0 ABS 0 udata_shr -
-__HintVect 46 0 CODE 0 intVect -
+__Ludata_shr 94 0 ABS 0 udata_shr -
+__HintVect 94 0 CODE 0 intVect -
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -351,8 +477,8 @@ __HintVect 46 0 CODE 0 intVect -
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-resVect 0 0 0 1 2
-intVect 0 4 8 D9 2
+resVect 0 0 0 2 2
+intVect 0 4 8 15A 2
 udata_shr 1 70 70 C 1
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

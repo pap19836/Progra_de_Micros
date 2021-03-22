@@ -35,7 +35,7 @@ GLOBAL w_temp, status_temp, banderas, counter, l_hex, h_hex, decena, centena, un
 GLOBAL cent_left, dec_left, units_left  
   PSECT udata_shr
  ;variables de interrupciones
- w_temp:
+w_temp:
     DS 1
 status_temp:
     DS 1
