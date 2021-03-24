@@ -2699,7 +2699,6 @@ blink:
     goto turn_on
     btfss banderas, on_off
     goto turn_off
-    return
 
 turn_on:
     bsf PORTE, 0

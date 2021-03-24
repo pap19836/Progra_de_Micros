@@ -15,7 +15,7 @@ $build/default/production/main.o
 resVect CODE 0 0 0 1 2
 intVect CODE 0 4 4 33 2
 udata_shr COMMON 1 70 70 8 1
-loopPrincipal CODE 0 37 37 97 2
+loopPrincipal CODE 0 37 37 96 2
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -32,19 +32,19 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 1-3 2
-CONST CE-1FFF 2
+CONST CD-1FFF 2
 ENTRY 1-3 2
-ENTRY CE-1FFF 2
+ENTRY CD-1FFF 2
 IDLOC 2000-2003 2
 CODE 1-3 2
-CODE CE-1FFF 2
+CODE CD-1FFF 2
 SFR0 2-7 1
 COMMON 78-7F 1
 EEDATA 2100-21FF 2
 STRCODE 1-3 2
-STRCODE CE-1FFF 2
+STRCODE CD-1FFF 2
 STRING 1-3 2
-STRING CE-1FFF 2
+STRING CD-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -149,15 +149,15 @@ A2 loopPrincipal CODE >249:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 A3 loopPrincipal CODE >250:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 A4 loopPrincipal CODE >251:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 A5 loopPrincipal CODE >252:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
-A6 loopPrincipal CODE >253:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
-A7 loopPrincipal CODE >255:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
+A6 loopPrincipal CODE >254:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
+A6 loopPrincipal CODE >255:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 A7 loopPrincipal CODE >256:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 A8 loopPrincipal CODE >257:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 A9 loopPrincipal CODE >258:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 AA loopPrincipal CODE >259:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 AB loopPrincipal CODE >260:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 AC loopPrincipal CODE >261:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
-AD loopPrincipal CODE >262:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
+AC loopPrincipal CODE >262:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 AD loopPrincipal CODE >263:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 AE loopPrincipal CODE >264:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 AF loopPrincipal CODE >265:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
@@ -165,33 +165,32 @@ B0 loopPrincipal CODE >266:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 B1 loopPrincipal CODE >267:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 B2 loopPrincipal CODE >268:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 B3 loopPrincipal CODE >269:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
-B4 loopPrincipal CODE >270:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
-B5 loopPrincipal CODE >272:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
+B4 loopPrincipal CODE >271:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
+B4 loopPrincipal CODE >272:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 B5 loopPrincipal CODE >273:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 B6 loopPrincipal CODE >274:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 B7 loopPrincipal CODE >275:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 B8 loopPrincipal CODE >276:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 B9 loopPrincipal CODE >277:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 BA loopPrincipal CODE >278:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
-BB loopPrincipal CODE >279:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
-BC loopPrincipal CODE >281:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
-BC loopPrincipal CODE >282:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
+BB loopPrincipal CODE >280:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
+BB loopPrincipal CODE >281:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
+BD loopPrincipal CODE >282:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 BE loopPrincipal CODE >283:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 BF loopPrincipal CODE >284:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 C0 loopPrincipal CODE >285:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 C1 loopPrincipal CODE >286:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 C2 loopPrincipal CODE >287:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 C3 loopPrincipal CODE >288:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
-C4 loopPrincipal CODE >289:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
-C5 loopPrincipal CODE >291:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
-C5 loopPrincipal CODE >292:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
+C4 loopPrincipal CODE >290:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
+C4 loopPrincipal CODE >291:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
+C6 loopPrincipal CODE >292:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 C7 loopPrincipal CODE >293:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 C8 loopPrincipal CODE >294:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 C9 loopPrincipal CODE >295:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 CA loopPrincipal CODE >296:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 CB loopPrincipal CODE >297:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 CC loopPrincipal CODE >298:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
-CD loopPrincipal CODE >299:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 4 intVect CODE >101:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 4 intVect CODE >102:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 5 intVect CODE >103:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
@@ -243,7 +242,7 @@ F intVect CODE >113:C:\Progra_de_Micros\Lab06\Lab06.X\main.s
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 high_hex 76 0 COMMON 1 udata_shr build/default/production/main.o
-__Hspace_0 CE 0 ABS 0 - -
+__Hspace_0 CD 0 ABS 0 - -
 __Hspace_1 78 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
@@ -266,7 +265,7 @@ __Hcode 6E 0 ABS 0 code -
 __Hdata 6E 0 ABS 0 data -
 __Lcode 6E 0 ABS 0 code -
 __Ldata 6E 0 ABS 0 data -
-__S0 CE 0 ABS 0 - -
+__S0 CD 0 ABS 0 - -
 __S1 78 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 low_hex 77 0 COMMON 1 udata_shr build/default/production/main.o
@@ -312,7 +311,7 @@ __HintVect 6E 0 CODE 0 intVect -
 # All other numeric quantities are in decimal.
 %SEGMENTS
 resVect 0 0 0 1 2
-intVect 0 4 8 CA 2
+intVect 0 4 8 C9 2
 udata_shr 1 70 70 8 1
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
