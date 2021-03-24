@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$build/default/production/main.o
+$build/default/debug/main.o
 resVect CODE 0 0 0 1 2
 intVect CODE 0 4 4 1F 2
 udata_shr COMMON 1 70 70 C 1
@@ -58,7 +58,7 @@ STRING DD-1FFF 2
 # are in ascending order of addresses.
 # All other numeric values are in decimal.
 %LINETAB
-$build/default/production/main.o
+$build/default/debug/main.o
 23 loopPrincipal CODE >123:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
 24 loopPrincipal CODE >124:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
 25 loopPrincipal CODE >125:C:\Progra_de_Micros\Lab05\Lab05.X\main.s
@@ -287,15 +287,15 @@ __Hudata_bank1 46 0 ABS 0 udata_bank1 -
 __Hudata_bank2 46 0 ABS 0 udata_bank2 -
 __Hudata_bank3 46 0 ABS 0 udata_bank3 -
 __HloopPrincipal 46 0 ABS 0 loopPrincipal -
-h_hex 73 0 COMMON 1 udata_shr build/default/production/main.o
-l_hex 74 0 COMMON 1 udata_shr build/default/production/main.o
-dec_left 78 0 COMMON 1 udata_shr build/default/production/main.o
-status_temp 71 0 COMMON 1 udata_shr build/default/production/main.o
-banderas 72 0 COMMON 1 udata_shr build/default/production/main.o
-unidad 79 0 COMMON 1 udata_shr build/default/production/main.o
-w_temp 70 0 COMMON 1 udata_shr build/default/production/main.o
+h_hex 73 0 COMMON 1 udata_shr build/default/debug/main.o
+l_hex 74 0 COMMON 1 udata_shr build/default/debug/main.o
+dec_left 78 0 COMMON 1 udata_shr build/default/debug/main.o
+status_temp 71 0 COMMON 1 udata_shr build/default/debug/main.o
+banderas 72 0 COMMON 1 udata_shr build/default/debug/main.o
+unidad 79 0 COMMON 1 udata_shr build/default/debug/main.o
+w_temp 70 0 COMMON 1 udata_shr build/default/debug/main.o
 __LresVect 0 0 CODE 0 resVect -
-cent_left 75 0 COMMON 1 udata_shr build/default/production/main.o
+cent_left 75 0 COMMON 1 udata_shr build/default/debug/main.o
 __Hedata 46 0 ABS 0 edata -
 __Hudata 46 0 ABS 0 udata -
 __Hconfig 4012 0 CONFIG 4 config -
@@ -315,16 +315,16 @@ __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-centena 76 0 COMMON 1 udata_shr build/default/production/main.o
+centena 76 0 COMMON 1 udata_shr build/default/debug/main.o
 __Ludata_bank0 46 0 ABS 0 udata_bank0 -
 __Ludata_bank1 46 0 ABS 0 udata_bank1 -
 __Ludata_bank2 46 0 ABS 0 udata_bank2 -
 __Ludata_bank3 46 0 ABS 0 udata_bank3 -
-counter 7B 0 COMMON 1 udata_shr build/default/production/main.o
+counter 7B 0 COMMON 1 udata_shr build/default/debug/main.o
 __Hudata_shr 46 0 ABS 0 udata_shr -
-units_left 7A 0 COMMON 1 udata_shr build/default/production/main.o
+units_left 7A 0 COMMON 1 udata_shr build/default/debug/main.o
 __LloopPrincipal 46 0 ABS 0 loopPrincipal -
-decena 77 0 COMMON 1 udata_shr build/default/production/main.o
+decena 77 0 COMMON 1 udata_shr build/default/debug/main.o
 __Ludata_shr 46 0 ABS 0 udata_shr -
 __HintVect 46 0 CODE 0 intVect -
 # %SPLITSTAB Section

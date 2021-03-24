@@ -52,7 +52,7 @@ resVect 0 1 CODE 0 0
 intVect 8 1B9 CODE 8 0
 udata_shr 70 7B COMMON 70 1
 %locals
-build/default/production/main.o
+build/default/debug/main.o
 main.s
 91 0 0 CODE 0
 96 4 0 CODE 0
