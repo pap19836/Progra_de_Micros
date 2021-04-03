@@ -2482,7 +2482,9 @@ ENDM
 ;|----------------------------------------------------------------------------|
 GLOBAL w_temp, status_temp, banderas_7seg, banderas_antirrebote, banderas_misc
 GLOBAL tiempo0, d0, u0, tiempo1, d1, u1, tiempo2, d2, u2, tiempo_max, tiempo_min
-GLOBAL decena, d_left, unidad, u_left, seconds_delay, s0, s1, s2
+GLOBAL tiempo_control, uc, dc, decena, d_left, unidad, u_left, seconds_delay
+GLOBAL s0, s1, s2, tiempo0_temp, tiempo1_temp, tiempo2_temp, mode
+GLOBAL disp_time0, disp_time1, disp_time2, banderas_semaforo
 PSECT udata_bank0
 ;variables de Interrupciones
 w_temp:
@@ -2506,6 +2508,21 @@ banderas_misc:
 s0_flag EQU 0
 s1_flag EQU 1
 s2_flag EQU 2
+on_off EQU 3
+blink0_on EQU 4
+blink1_on EQU 5
+blink2_on EQU 6
+
+
+banderas_semaforo:
+    DS 1
+green0_flag EQU 0
+yellow0_flag EQU 1
+green1_flag EQU 2
+yellow1_flag EQU 3
+green2_flag EQU 4
+yellow2_flag EQU 5
+
 
 ;variables de programa
 
@@ -2553,6 +2570,17 @@ s1:
     DS 1
 s2:
     DS 1
+
+green EQU 1
+yellow EQU 2
+red EQU 4
+
+disp_time0:
+    DS 1
+disp_time1:
+    DS 1
+disp_time2:
+    DS 1
 mode: ;variables pertinentes al cambio de tiempo
     DS 1
 tiempo0_temp:
@@ -2572,8 +2600,19 @@ reset_timer0 macro
     movlw 8
     movwf TMR0
     banksel OPTION_REG
-    movlw 0b11010010
+    movlw 0b11010011
     andwf OPTION_REG
+    endm
+
+reset_timer1 macro
+    banksel TMR1H
+    bcf PIR1, 0
+    movlw 0b01100010
+    movwf TMR1H
+    movlw 0b11000110
+    movwf TMR1L
+    movlw 0b00110001
+    movwf T1CON
     endm
 
 reset_timer2 macro
@@ -2616,6 +2655,12 @@ interrupt_select:
 sev_seg_mux:
     reset_timer0
     banksel PORTD
+    btfsc PORTE, 0
+    bsf banderas_misc, s1_flag
+    btfsc PORTE, 1
+    bsf banderas_misc, s2_flag
+    btfsc PORTE, 2
+    bsf banderas_misc, s0_flag
     btfsc PORTD, 0
     bsf banderas_7seg, uc_flag
     btfsc PORTD, 1
@@ -2631,17 +2676,11 @@ sev_seg_mux:
     btfsc PORTD, 6
     bsf banderas_7seg, u2_flag
     btfsc PORTD, 7
-    bsf banderas_misc, s0_flag
-    btfsc PORTE, 0
-    bsf banderas_misc, s1_flag
-    btfsc PORTE, 1
-    bsf banderas_misc, s2_flag
-    btfsc PORTE, 2
     bsf banderas_7seg, dc_flag
     goto interrupt_select
 
 delay:
-    reset_timer2
+    bcf PIR1, 1
     decf seconds_delay
     goto interrupt_select
 
@@ -2691,24 +2730,57 @@ main:
     call port_config
     call inicializar_variables
     reset_timer0
+    reset_timer1
     reset_timer2
     call interrupt_config
 
 loop:
     banksel PORTA
-
-    call active_mode
-
-;COUNTDOWN
-    movf seconds_delay, 0
-    btfsc STATUS, 2
-    call decrease_second
 ;DIVIDE IN TENS AND UNITS
     call divide_tiempo0
     call divide_tiempo1
     call divide_tiempo2
+
+    call active_mode
+
+    btfsc banderas_semaforo, green0_flag
+    call green0
+    movf disp_time0, 0
+    btfsc STATUS, 2
+    call yellow0
+    btfsc banderas_semaforo, green1_flag
+    call green1
+    movf disp_time1, 0
+    btfsc STATUS, 2
+    call yellow1
+    btfsc banderas_semaforo, green2_flag
+    call green2
+    movf disp_time2, 0
+    btfsc STATUS, 2
+    call yellow2
+
+    call test_blink
+    btfsc banderas_misc, blink0_on
+    call blink0
+    btfsc banderas_misc, blink1_on
+    call blink1
+    btfsc banderas_misc, blink2_on
+    call blink2
+
+
+;COUNTDOWN
+   movf seconds_delay, 0
+   btfsc STATUS, 2
+   call decrease_second
+
 ;DISPLAY
     banksel PORTD
+    btfsc banderas_misc, s0_flag
+    call disp_s0
+    btfsc banderas_misc, s1_flag
+    call disp_s1
+    btfsc banderas_misc, s2_flag
+    call disp_s2
     btfsc banderas_7seg, dc_flag
     call disp_dc
     btfsc banderas_7seg, uc_flag
@@ -2725,12 +2797,7 @@ loop:
     call disp_d2
     btfsc banderas_7seg, u2_flag
     call disp_u2
-    btfsc banderas_misc, s0_flag
-    call disp_s0
-    btfsc banderas_misc, s1_flag
-    call disp_s1
-    btfsc banderas_misc, s2_flag
-    call disp_s2
+
 
     goto loop
 
@@ -2775,12 +2842,27 @@ inicializar_variables:
     movlw 50 ;Delay for tmr2 to change the clock every second
     movwf seconds_delay
     bsf PORTD, 0 ;Starting point for mux
+    bsf PORTE, 0
     movlw 10
     movwf tiempo0
-    movlw 15
+    movwf tiempo0_temp
+    movlw 10
     movwf tiempo1
-    movlw 20
+    movwf tiempo1_temp
+    movlw 10
     movwf tiempo2
+    movwf tiempo2_temp
+    movlw 0
+    movwf banderas_misc
+    movwf mode
+    movlw green
+    movwf s0
+    movlw red
+    movwf s1
+    movlw red
+    movwf s2
+    bsf banderas_semaforo, 0
+    bsf banderas_misc, on_off
     return
 
 interrupt_config:
@@ -2895,8 +2977,198 @@ default_mode:
     btfsc banderas_antirrebote, 7
     call config_apagado
     return
-change_tiempo0:
+
+green0:
+    movlw green
+    movwf s0
+    movlw red
+    movwf s1
+    movwf s2
     movf tiempo0, 0
+    movwf disp_time1 ;muestra el tiempo que falta para cambiar
+    movwf disp_time0
+    movlw 3
+    subwf disp_time0, 1
+    movf tiempo0, 0
+    addwf tiempo1, 0
+    movwf disp_time2
+    bcf banderas_semaforo, green0_flag
+    return
+yellow0:
+    bcf banderas_misc, blink0_on
+    btfsc s0, 2 ;skip this if it was red
+    goto s0_was_red
+    btfsc banderas_semaforo, yellow0_flag
+    goto red0
+    movlw 3
+    movwf disp_time0
+    movlw yellow
+    movwf s0
+    bsf banderas_semaforo, yellow0_flag
+    return
+    red0:
+    bsf banderas_semaforo, green1_flag
+    bcf banderas_semaforo, yellow0_flag
+    s0_was_red:
+    return
+
+green1:
+    movlw green
+    movwf s1
+    movlw red
+    movwf s0
+    movwf s2
+    movf tiempo0, 0
+    movwf disp_time2 ;muestra el tiempo que falta para cambiar
+    movwf disp_time1
+    movlw 3
+    subwf disp_time1, 1
+    movf tiempo1, 0
+    addwf tiempo2, 0
+    movwf disp_time0
+    bcf banderas_semaforo, green1_flag
+    return
+yellow1:
+    bcf banderas_misc, blink1_on
+    btfsc banderas_semaforo, yellow1_flag
+    goto red1
+    movlw 3
+    movwf disp_time1
+    movlw yellow
+    movwf s1
+    bsf banderas_semaforo, yellow1_flag
+    return
+    red1:
+    bsf banderas_semaforo, green2_flag
+    bcf banderas_semaforo, yellow1_flag
+    return
+
+green2:
+    movlw green
+    movwf s2
+    movlw red
+    movwf s1
+    movwf s0
+    movf tiempo2, 0
+    movwf disp_time0 ;muestra el tiempo que falta para cambiar
+    movwf disp_time2
+    movlw 3
+    subwf disp_time2, 1
+    movf tiempo2, 0
+    addwf tiempo0, 0
+    movwf disp_time1
+    bcf banderas_semaforo, green2_flag
+    return
+yellow2:
+    bcf banderas_misc, blink2_on
+    btfsc banderas_semaforo, yellow2_flag
+    goto red2
+    movlw 3
+    movwf disp_time2
+    movlw yellow
+    movwf s2
+    bsf banderas_semaforo, yellow2_flag
+    return
+    red2:
+    bsf banderas_semaforo, green0_flag
+    bcf banderas_semaforo, yellow2_flag
+    return
+
+test_blink:
+    btfsc s0, 0
+    goto test_blink0
+    btfsc s1, 0
+    goto test_blink1
+    btfsc s2, 0
+    goto test_blink2
+    return
+    test_blink0:
+    movlw 3
+    subwf disp_time0, 0
+    btfsc STATUS, 2
+    bsf banderas_misc, blink0_on
+    return
+    test_blink1:
+    movlw 3
+    subwf disp_time1, 0
+    btfsc STATUS, 2
+    bsf banderas_misc, blink1_on
+    return
+    test_blink2:
+    movlw 3
+    subwf disp_time2, 0
+    btfsc STATUS, 2
+    bsf banderas_misc, blink2_on
+    return
+
+blink0:
+    btfsc PIR1, 0
+    call blink0_active
+    return
+blink0_active:
+    reset_timer1
+    btfsc banderas_misc, on_off
+    goto on0
+    btfss banderas_misc, on_off
+    goto off0
+    on0:
+    bsf s0, 0 ;green light
+    call divide_tiempo0
+    bcf banderas_misc, on_off
+    return
+    off0:
+    bcf s0, 0
+    movlw 16
+    movwf d0
+    movwf u0
+    bsf banderas_misc, on_off
+    return
+blink1:
+    btfsc PIR1, 0
+    call blink1_active
+    return
+blink1_active:
+    reset_timer1
+    btfsc banderas_misc, on_off
+    goto on1
+    btfss banderas_misc, on_off
+    goto off1
+    on1:
+    bsf s1, 0 ;green light
+    call divide_tiempo1
+    bcf banderas_misc, on_off
+    return
+    off1:
+    bcf s1, 0
+    movlw 16
+    movwf d1
+    movwf u1
+    bsf banderas_misc, on_off
+    return
+blink2:
+    btfsc PIR1, 0
+    call blink2_active
+    return
+blink2_active:
+    reset_timer1
+    btfsc banderas_misc, on_off
+    goto on2
+    btfss banderas_misc, on_off
+    goto off2
+    on2:
+    bsf s2, 0 ;green light
+    call divide_tiempo2
+    bcf banderas_misc, on_off
+    return
+    off2:
+    bcf s2, 0
+    movlw 16
+    movwf d2
+    movwf u2
+    bsf banderas_misc, on_off
+    return
+change_tiempo0:
+    movf tiempo0_temp, 0
     movwf tiempo_control
     call divide_tiempo_control
     btfsc banderas_antirrebote, 7
@@ -2905,7 +3177,7 @@ change_tiempo0:
     movwf tiempo0_temp
     return
 change_tiempo1:
-    movf tiempo1, 0
+    movf tiempo1_temp, 0
     movwf tiempo_control
     call divide_tiempo_control
     btfsc banderas_antirrebote, 7
@@ -2914,7 +3186,7 @@ change_tiempo1:
     movwf tiempo1_temp
     return
 change_tiempo2:
-    movf tiempo2, 0
+    movf tiempo2_temp, 0
     movwf tiempo_control
     call divide_tiempo_control
     btfsc banderas_antirrebote, 7
@@ -2926,10 +3198,11 @@ confirm_changes:
     btfsc banderas_antirrebote, 7
     call confirmation
     return
+;COUNTDOWN DE LOS SEMÁFOROS
 decrease_second:
-    decf tiempo0
-    decf tiempo1
-    decf tiempo2
+    decf disp_time0
+    decf disp_time1
+    decf disp_time2
     movlw 50
     movwf seconds_delay
     return
@@ -2958,10 +3231,15 @@ divide:
     addwf u_left, f
     return
 divide_tiempo0:
+    movf s0, 1
+    btfss STATUS, 2 ;Esta sección antes de divide_tiempo0 es para que
+    goto divide_tiempo0_on ;no cambie el valor cuando esté apagado por
+    return ;el blinking
+    divide_tiempo0_on:
     movlw 0
     movwf decena
     movwf unidad
-    movf tiempo0, 0
+    movf disp_time0, 0
     call divide
     movf decena, 0
     movwf d0
@@ -2969,10 +3247,15 @@ divide_tiempo0:
     movwf u0
     return
 divide_tiempo1:
+    movf s1, 0
+    btfss STATUS, 2
+    goto divide_tiempo1_on
+    return
+    divide_tiempo1_on:
     movlw 0
     movwf decena
     movwf unidad
-    movf tiempo1, 0
+    movf disp_time1, 0
     call divide
     movf decena, 0
     movwf d1
@@ -2980,10 +3263,15 @@ divide_tiempo1:
     movwf u1
     return
 divide_tiempo2:
+    movf s2, 0
+    btfss STATUS, 2
+    goto divide_tiempo2_on
+    return
+    divide_tiempo2_on:
     movlw 0
     movwf decena
     movwf unidad
-    movf tiempo2, 0
+    movf disp_time2, 0
     call divide
     movf decena, 0
     movwf d2
@@ -3005,7 +3293,7 @@ divide_tiempo_control:
 
 ;DISPLAYS DE CADA TIEMPO/SEMAFORO
 disp_dc:
-    bcf PORTE, s2_flag
+    bcf PORTD, u2_flag
     bsf PORTD, dc_flag
     movf dc, 0
     call table
@@ -3069,7 +3357,7 @@ disp_u2:
     bcf banderas_7seg, u2_flag
     return
 disp_s0:
-    bcf PORTD, u2_flag
+    bcf PORTE, s2_flag
     bsf PORTE, s0_flag
     movf s0, 0
     movwf PORTB

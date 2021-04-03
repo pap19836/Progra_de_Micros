@@ -61,122 +61,122 @@ STRING 85-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $build/default/production/Debounce.o
-2B loopPrincipal CODE >105:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-2C loopPrincipal CODE >106:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-2D loopPrincipal CODE >107:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-2E loopPrincipal CODE >108:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-2F loopPrincipal CODE >109:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-30 loopPrincipal CODE >111:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-31 loopPrincipal CODE >112:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-32 loopPrincipal CODE >114:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-34 loopPrincipal CODE >115:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-35 loopPrincipal CODE >116:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-36 loopPrincipal CODE >118:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-37 loopPrincipal CODE >119:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-38 loopPrincipal CODE >121:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-3A loopPrincipal CODE >121:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-3B loopPrincipal CODE >121:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-3C loopPrincipal CODE >121:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-3D loopPrincipal CODE >121:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-3F loopPrincipal CODE >121:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-40 loopPrincipal CODE >121:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-41 loopPrincipal CODE >121:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-42 loopPrincipal CODE >121:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-43 loopPrincipal CODE >124:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-44 loopPrincipal CODE >125:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-45 loopPrincipal CODE >126:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-46 loopPrincipal CODE >127:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-47 loopPrincipal CODE >134:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-49 loopPrincipal CODE >135:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-4A loopPrincipal CODE >136:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-4B loopPrincipal CODE >138:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-4D loopPrincipal CODE >139:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-4E loopPrincipal CODE >140:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-4F loopPrincipal CODE >141:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-50 loopPrincipal CODE >143:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-51 loopPrincipal CODE >144:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-52 loopPrincipal CODE >145:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-53 loopPrincipal CODE >146:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-54 loopPrincipal CODE >147:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-55 loopPrincipal CODE >149:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-57 loopPrincipal CODE >150:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-58 loopPrincipal CODE >151:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-59 loopPrincipal CODE >152:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-5A loopPrincipal CODE >153:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-5B loopPrincipal CODE >154:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-5C loopPrincipal CODE >155:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-5D loopPrincipal CODE >159:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-5E loopPrincipal CODE >160:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-5F loopPrincipal CODE >161:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-60 loopPrincipal CODE >163:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-62 loopPrincipal CODE >164:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-63 loopPrincipal CODE >165:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-64 loopPrincipal CODE >167:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-65 loopPrincipal CODE >168:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-66 loopPrincipal CODE >170:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-67 loopPrincipal CODE >173:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-68 loopPrincipal CODE >174:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-69 loopPrincipal CODE >175:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-6A loopPrincipal CODE >176:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-6B loopPrincipal CODE >179:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-6C loopPrincipal CODE >180:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-6D loopPrincipal CODE >181:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-6E loopPrincipal CODE >182:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-70 loopPrincipal CODE >183:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-71 loopPrincipal CODE >184:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-72 loopPrincipal CODE >185:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-73 loopPrincipal CODE >186:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-74 loopPrincipal CODE >189:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-75 loopPrincipal CODE >190:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-76 loopPrincipal CODE >191:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-77 loopPrincipal CODE >192:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-78 loopPrincipal CODE >193:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-79 loopPrincipal CODE >194:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-7A loopPrincipal CODE >195:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-7C loopPrincipal CODE >196:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-7D loopPrincipal CODE >197:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-7E loopPrincipal CODE >198:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-7F loopPrincipal CODE >201:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-80 loopPrincipal CODE >202:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-81 loopPrincipal CODE >203:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-82 loopPrincipal CODE >205:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-83 loopPrincipal CODE >206:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-84 loopPrincipal CODE >207:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-4 intVect CODE >67:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-5 intVect CODE >68:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-7 intVect CODE >69:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-8 intVect CODE >70:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-9 intVect CODE >73:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-A intVect CODE >74:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-B intVect CODE >75:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-C intVect CODE >76:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-D intVect CODE >78:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-E intVect CODE >80:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-10 intVect CODE >80:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-11 intVect CODE >80:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-12 intVect CODE >80:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-13 intVect CODE >80:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-15 intVect CODE >80:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-16 intVect CODE >80:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-17 intVect CODE >80:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-18 intVect CODE >80:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-19 intVect CODE >81:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-1A intVect CODE >82:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-1B intVect CODE >85:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-1D intVect CODE >86:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-1E intVect CODE >87:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-1F intVect CODE >88:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-20 intVect CODE >89:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-21 intVect CODE >90:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-22 intVect CODE >91:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-23 intVect CODE >92:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-24 intVect CODE >95:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-26 intVect CODE >96:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-27 intVect CODE >97:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-28 intVect CODE >98:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-29 intVect CODE >99:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-2A intVect CODE >100:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
-0 resVect CODE >61:C:\Progra_de_Micros\Partes de proyecto 1\Antirebote\Antirebote.X\Debounce.s
+2B loopPrincipal CODE >105:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+2C loopPrincipal CODE >106:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+2D loopPrincipal CODE >107:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+2E loopPrincipal CODE >108:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+2F loopPrincipal CODE >109:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+30 loopPrincipal CODE >111:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+31 loopPrincipal CODE >112:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+32 loopPrincipal CODE >114:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+34 loopPrincipal CODE >115:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+35 loopPrincipal CODE >116:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+36 loopPrincipal CODE >118:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+37 loopPrincipal CODE >119:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+38 loopPrincipal CODE >121:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+3A loopPrincipal CODE >121:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+3B loopPrincipal CODE >121:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+3C loopPrincipal CODE >121:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+3D loopPrincipal CODE >121:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+3F loopPrincipal CODE >121:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+40 loopPrincipal CODE >121:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+41 loopPrincipal CODE >121:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+42 loopPrincipal CODE >121:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+43 loopPrincipal CODE >124:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+44 loopPrincipal CODE >125:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+45 loopPrincipal CODE >126:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+46 loopPrincipal CODE >127:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+47 loopPrincipal CODE >134:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+49 loopPrincipal CODE >135:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+4A loopPrincipal CODE >136:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+4B loopPrincipal CODE >138:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+4D loopPrincipal CODE >139:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+4E loopPrincipal CODE >140:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+4F loopPrincipal CODE >141:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+50 loopPrincipal CODE >143:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+51 loopPrincipal CODE >144:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+52 loopPrincipal CODE >145:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+53 loopPrincipal CODE >146:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+54 loopPrincipal CODE >147:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+55 loopPrincipal CODE >149:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+57 loopPrincipal CODE >150:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+58 loopPrincipal CODE >151:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+59 loopPrincipal CODE >152:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+5A loopPrincipal CODE >153:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+5B loopPrincipal CODE >154:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+5C loopPrincipal CODE >155:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+5D loopPrincipal CODE >159:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+5E loopPrincipal CODE >160:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+5F loopPrincipal CODE >161:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+60 loopPrincipal CODE >163:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+62 loopPrincipal CODE >164:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+63 loopPrincipal CODE >165:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+64 loopPrincipal CODE >167:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+65 loopPrincipal CODE >168:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+66 loopPrincipal CODE >170:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+67 loopPrincipal CODE >173:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+68 loopPrincipal CODE >174:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+69 loopPrincipal CODE >175:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+6A loopPrincipal CODE >176:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+6B loopPrincipal CODE >179:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+6C loopPrincipal CODE >180:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+6D loopPrincipal CODE >181:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+6E loopPrincipal CODE >182:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+70 loopPrincipal CODE >183:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+71 loopPrincipal CODE >184:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+72 loopPrincipal CODE >185:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+73 loopPrincipal CODE >186:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+74 loopPrincipal CODE >189:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+75 loopPrincipal CODE >190:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+76 loopPrincipal CODE >191:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+77 loopPrincipal CODE >192:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+78 loopPrincipal CODE >193:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+79 loopPrincipal CODE >194:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+7A loopPrincipal CODE >195:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+7C loopPrincipal CODE >196:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+7D loopPrincipal CODE >197:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+7E loopPrincipal CODE >198:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+7F loopPrincipal CODE >201:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+80 loopPrincipal CODE >202:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+81 loopPrincipal CODE >203:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+82 loopPrincipal CODE >205:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+83 loopPrincipal CODE >206:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+84 loopPrincipal CODE >207:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+4 intVect CODE >67:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+5 intVect CODE >68:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+7 intVect CODE >69:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+8 intVect CODE >70:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+9 intVect CODE >73:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+A intVect CODE >74:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+B intVect CODE >75:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+C intVect CODE >76:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+D intVect CODE >78:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+E intVect CODE >80:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+10 intVect CODE >80:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+11 intVect CODE >80:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+12 intVect CODE >80:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+13 intVect CODE >80:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+15 intVect CODE >80:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+16 intVect CODE >80:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+17 intVect CODE >80:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+18 intVect CODE >80:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+19 intVect CODE >81:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+1A intVect CODE >82:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+1B intVect CODE >85:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+1D intVect CODE >86:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+1E intVect CODE >87:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+1F intVect CODE >88:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+20 intVect CODE >89:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+21 intVect CODE >90:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+22 intVect CODE >91:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+23 intVect CODE >92:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+24 intVect CODE >95:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+26 intVect CODE >96:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+27 intVect CODE >97:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+28 intVect CODE >98:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+29 intVect CODE >99:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+2A intVect CODE >100:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
+0 resVect CODE >61:C:\Progra_de_Micros\Partes_de_proyecto_1\Antirebote\Antirebote.X\Debounce.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
