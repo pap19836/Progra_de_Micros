@@ -13,9 +13,9 @@
 %PSECTS
 $build/default/production/Counter_10_to_20.o
 resVect CODE 0 0 0 1 2
-intVect CODE 0 4 4 18 2
-udata_shr COMMON 1 70 70 7 1
-loopPrincipal CODE 0 1C 1C 47 2
+intVect CODE 0 4 4 2C 2
+udata_bank0 BANK0 1 20 20 14 1
+loopPrincipal CODE 0 30 30 112 2
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -23,30 +23,28 @@ config CONFIG 4 2007 2007 2 2
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 20-6F 1
+RAM 34-6F 1
 RAM A0-EF 1
 RAM 110-16F 1
 RAM 190-1EF 1
-BANK0 20-6F 1
+BANK0 34-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 1-3 2
-CONST 63-1FFF 2
+CONST 142-1FFF 2
 ENTRY 1-3 2
-ENTRY 63-1FFF 2
+ENTRY 142-1FFF 2
 IDLOC 2000-2003 2
 CODE 1-3 2
-CODE 63-1FFF 2
+CODE 142-1FFF 2
 SFR0 2-7 1
-SFR2 100-10F 1
-SFR3 180-18F 1
-COMMON 77-7F 1
+COMMON 70-7F 1
 EEDATA 2100-21FF 2
 STRCODE 1-3 2
-STRCODE 63-1FFF 2
+STRCODE 142-1FFF 2
 STRING 1-3 2
-STRING 63-1FFF 2
+STRING 142-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -61,94 +59,312 @@ STRING 63-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $build/default/production/Counter_10_to_20.o
-1C loopPrincipal CODE >97:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-1D loopPrincipal CODE >98:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-1E loopPrincipal CODE >99:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-1F loopPrincipal CODE >100:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-20 loopPrincipal CODE >101:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-21 loopPrincipal CODE >102:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-22 loopPrincipal CODE >103:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-23 loopPrincipal CODE >104:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-24 loopPrincipal CODE >108:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-25 loopPrincipal CODE >109:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-26 loopPrincipal CODE >110:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-27 loopPrincipal CODE >117:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-29 loopPrincipal CODE >118:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-2A loopPrincipal CODE >119:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-2B loopPrincipal CODE >121:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-2D loopPrincipal CODE >122:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-2E loopPrincipal CODE >123:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-2F loopPrincipal CODE >125:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-30 loopPrincipal CODE >126:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-31 loopPrincipal CODE >127:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-32 loopPrincipal CODE >128:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-33 loopPrincipal CODE >129:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-34 loopPrincipal CODE >131:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-36 loopPrincipal CODE >132:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-37 loopPrincipal CODE >133:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-38 loopPrincipal CODE >134:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-39 loopPrincipal CODE >135:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-3A loopPrincipal CODE >136:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-3B loopPrincipal CODE >137:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-3C loopPrincipal CODE >141:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-3D loopPrincipal CODE >142:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-3E loopPrincipal CODE >144:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-40 loopPrincipal CODE >145:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-41 loopPrincipal CODE >146:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-42 loopPrincipal CODE >148:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-43 loopPrincipal CODE >150:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-44 loopPrincipal CODE >153:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-45 loopPrincipal CODE >154:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-46 loopPrincipal CODE >155:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-47 loopPrincipal CODE >156:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-48 loopPrincipal CODE >157:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-49 loopPrincipal CODE >158:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-4A loopPrincipal CODE >159:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-4C loopPrincipal CODE >160:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-4D loopPrincipal CODE >161:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-4E loopPrincipal CODE >162:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-4F loopPrincipal CODE >165:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-50 loopPrincipal CODE >166:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-51 loopPrincipal CODE >167:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-52 loopPrincipal CODE >168:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-53 loopPrincipal CODE >169:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-54 loopPrincipal CODE >170:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-55 loopPrincipal CODE >171:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-56 loopPrincipal CODE >173:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-57 loopPrincipal CODE >174:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-58 loopPrincipal CODE >175:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-59 loopPrincipal CODE >178:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-5A loopPrincipal CODE >179:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-5B loopPrincipal CODE >180:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-5C loopPrincipal CODE >181:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-5D loopPrincipal CODE >182:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-5E loopPrincipal CODE >183:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-5F loopPrincipal CODE >184:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-60 loopPrincipal CODE >186:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-61 loopPrincipal CODE >187:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-62 loopPrincipal CODE >188:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-4 intVect CODE >66:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-5 intVect CODE >67:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-7 intVect CODE >68:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-8 intVect CODE >69:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-9 intVect CODE >72:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-A intVect CODE >73:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-B intVect CODE >74:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-C intVect CODE >77:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-E intVect CODE >78:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-F intVect CODE >79:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-10 intVect CODE >80:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-11 intVect CODE >81:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-12 intVect CODE >82:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-13 intVect CODE >83:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-14 intVect CODE >84:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-15 intVect CODE >87:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-17 intVect CODE >88:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-18 intVect CODE >89:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-19 intVect CODE >90:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-1A intVect CODE >91:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-1B intVect CODE >92:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
-0 resVect CODE >60:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+30 loopPrincipal CODE >135:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+31 loopPrincipal CODE >136:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+32 loopPrincipal CODE >137:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+33 loopPrincipal CODE >138:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+34 loopPrincipal CODE >139:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+35 loopPrincipal CODE >140:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+36 loopPrincipal CODE >141:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+37 loopPrincipal CODE >142:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+38 loopPrincipal CODE >143:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+39 loopPrincipal CODE >144:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+3A loopPrincipal CODE >145:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+3B loopPrincipal CODE >146:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+3C loopPrincipal CODE >147:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+3D loopPrincipal CODE >148:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+3E loopPrincipal CODE >149:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+3F loopPrincipal CODE >150:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+40 loopPrincipal CODE >151:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+41 loopPrincipal CODE >152:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+42 loopPrincipal CODE >155:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+43 loopPrincipal CODE >156:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+44 loopPrincipal CODE >157:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+45 loopPrincipal CODE >162:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+46 loopPrincipal CODE >164:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+47 loopPrincipal CODE >165:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+48 loopPrincipal CODE >166:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+49 loopPrincipal CODE >167:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+4A loopPrincipal CODE >168:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+4B loopPrincipal CODE >175:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+4D loopPrincipal CODE >176:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+4E loopPrincipal CODE >177:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+4F loopPrincipal CODE >179:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+51 loopPrincipal CODE >180:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+52 loopPrincipal CODE >181:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+53 loopPrincipal CODE >182:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+54 loopPrincipal CODE >183:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+55 loopPrincipal CODE >185:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+56 loopPrincipal CODE >186:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+57 loopPrincipal CODE >187:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+58 loopPrincipal CODE >188:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+59 loopPrincipal CODE >189:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+5A loopPrincipal CODE >191:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+5C loopPrincipal CODE >192:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+5D loopPrincipal CODE >193:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+5E loopPrincipal CODE >194:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+5F loopPrincipal CODE >195:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+60 loopPrincipal CODE >196:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+61 loopPrincipal CODE >197:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+62 loopPrincipal CODE >201:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+63 loopPrincipal CODE >202:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+64 loopPrincipal CODE >203:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+65 loopPrincipal CODE >205:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+67 loopPrincipal CODE >206:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+68 loopPrincipal CODE >207:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+69 loopPrincipal CODE >208:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+6A loopPrincipal CODE >210:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+6B loopPrincipal CODE >212:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+6C loopPrincipal CODE >215:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+6E loopPrincipal CODE >215:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+6F loopPrincipal CODE >215:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+70 loopPrincipal CODE >215:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+71 loopPrincipal CODE >215:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+73 loopPrincipal CODE >215:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+74 loopPrincipal CODE >215:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+75 loopPrincipal CODE >216:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+77 loopPrincipal CODE >217:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+78 loopPrincipal CODE >218:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+79 loopPrincipal CODE >219:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+7A loopPrincipal CODE >220:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+7B loopPrincipal CODE >221:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+7C loopPrincipal CODE >222:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+7D loopPrincipal CODE >223:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+7E loopPrincipal CODE >224:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+7F loopPrincipal CODE >225:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+80 loopPrincipal CODE >226:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+81 loopPrincipal CODE >227:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+82 loopPrincipal CODE >228:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+83 loopPrincipal CODE >229:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+84 loopPrincipal CODE >230:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+85 loopPrincipal CODE >231:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+86 loopPrincipal CODE >232:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+87 loopPrincipal CODE >233:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+88 loopPrincipal CODE >234:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+89 loopPrincipal CODE >235:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+8A loopPrincipal CODE >238:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+8B loopPrincipal CODE >239:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+8C loopPrincipal CODE >240:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+8D loopPrincipal CODE >241:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+8E loopPrincipal CODE >242:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+8F loopPrincipal CODE >243:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+90 loopPrincipal CODE >244:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+91 loopPrincipal CODE >245:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+92 loopPrincipal CODE >246:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+93 loopPrincipal CODE >247:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+94 loopPrincipal CODE >248:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+95 loopPrincipal CODE >249:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+96 loopPrincipal CODE >250:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+97 loopPrincipal CODE >251:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+98 loopPrincipal CODE >252:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+99 loopPrincipal CODE >253:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+9A loopPrincipal CODE >254:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+9B loopPrincipal CODE >255:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+9C loopPrincipal CODE >256:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+9D loopPrincipal CODE >257:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+9E loopPrincipal CODE >258:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+9F loopPrincipal CODE >261:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+A0 loopPrincipal CODE >262:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+A1 loopPrincipal CODE >263:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+A2 loopPrincipal CODE >264:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+A3 loopPrincipal CODE >265:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+A4 loopPrincipal CODE >266:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+A5 loopPrincipal CODE >268:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+A6 loopPrincipal CODE >269:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+A7 loopPrincipal CODE >270:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+A8 loopPrincipal CODE >271:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+A9 loopPrincipal CODE >272:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+AA loopPrincipal CODE >273:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+AB loopPrincipal CODE >275:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+AC loopPrincipal CODE >276:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+AD loopPrincipal CODE >277:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+AE loopPrincipal CODE >278:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+AF loopPrincipal CODE >279:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+B0 loopPrincipal CODE >280:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+B1 loopPrincipal CODE >281:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+B2 loopPrincipal CODE >283:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+B3 loopPrincipal CODE >284:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+B4 loopPrincipal CODE >285:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+B5 loopPrincipal CODE >286:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+B6 loopPrincipal CODE >288:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+B7 loopPrincipal CODE >289:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+B8 loopPrincipal CODE >290:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+B9 loopPrincipal CODE >291:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+BA loopPrincipal CODE >292:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+BB loopPrincipal CODE >293:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+BC loopPrincipal CODE >294:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+BD loopPrincipal CODE >295:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+BE loopPrincipal CODE >296:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+BF loopPrincipal CODE >297:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+C0 loopPrincipal CODE >298:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+C1 loopPrincipal CODE >300:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+C2 loopPrincipal CODE >301:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+C3 loopPrincipal CODE >302:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+C4 loopPrincipal CODE >303:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+C5 loopPrincipal CODE >304:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+C6 loopPrincipal CODE >305:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+C7 loopPrincipal CODE >306:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+C8 loopPrincipal CODE >307:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+C9 loopPrincipal CODE >308:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+CA loopPrincipal CODE >309:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+CB loopPrincipal CODE >310:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+CC loopPrincipal CODE >312:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+CD loopPrincipal CODE >313:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+CE loopPrincipal CODE >314:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+CF loopPrincipal CODE >315:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+D0 loopPrincipal CODE >316:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+D1 loopPrincipal CODE >317:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+D2 loopPrincipal CODE >318:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+D3 loopPrincipal CODE >319:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+D4 loopPrincipal CODE >320:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+D5 loopPrincipal CODE >321:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+D6 loopPrincipal CODE >322:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+D7 loopPrincipal CODE >324:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+D8 loopPrincipal CODE >325:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+D9 loopPrincipal CODE >326:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+DA loopPrincipal CODE >327:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+DB loopPrincipal CODE >328:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+DC loopPrincipal CODE >329:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+DD loopPrincipal CODE >330:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+DE loopPrincipal CODE >331:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+DF loopPrincipal CODE >334:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+E0 loopPrincipal CODE >335:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+E1 loopPrincipal CODE >336:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+E2 loopPrincipal CODE >337:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+E3 loopPrincipal CODE >338:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+E4 loopPrincipal CODE >339:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+E5 loopPrincipal CODE >340:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+E6 loopPrincipal CODE >342:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+E7 loopPrincipal CODE >343:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+E8 loopPrincipal CODE >344:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+E9 loopPrincipal CODE >347:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+EA loopPrincipal CODE >348:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+EB loopPrincipal CODE >349:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+EC loopPrincipal CODE >350:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+ED loopPrincipal CODE >351:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+EE loopPrincipal CODE >352:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+EF loopPrincipal CODE >353:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+F0 loopPrincipal CODE >355:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+F1 loopPrincipal CODE >356:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+F2 loopPrincipal CODE >357:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+F3 loopPrincipal CODE >360:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+F4 loopPrincipal CODE >361:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+F5 loopPrincipal CODE >362:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+F6 loopPrincipal CODE >363:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+F7 loopPrincipal CODE >364:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+F8 loopPrincipal CODE >366:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+F9 loopPrincipal CODE >367:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+FA loopPrincipal CODE >368:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+FB loopPrincipal CODE >369:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+FC loopPrincipal CODE >370:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+FD loopPrincipal CODE >371:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+FE loopPrincipal CODE >372:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+FF loopPrincipal CODE >373:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+100 loopPrincipal CODE >376:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+101 loopPrincipal CODE >377:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+102 loopPrincipal CODE >378:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+103 loopPrincipal CODE >379:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+104 loopPrincipal CODE >380:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+105 loopPrincipal CODE >381:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+106 loopPrincipal CODE >382:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+107 loopPrincipal CODE >383:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+108 loopPrincipal CODE >384:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+109 loopPrincipal CODE >385:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+10A loopPrincipal CODE >387:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+10B loopPrincipal CODE >388:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+10C loopPrincipal CODE >389:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+10D loopPrincipal CODE >390:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+10E loopPrincipal CODE >391:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+10F loopPrincipal CODE >392:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+110 loopPrincipal CODE >393:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+111 loopPrincipal CODE >394:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+112 loopPrincipal CODE >395:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+113 loopPrincipal CODE >396:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+114 loopPrincipal CODE >400:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+115 loopPrincipal CODE >402:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+116 loopPrincipal CODE >403:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+117 loopPrincipal CODE >404:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+118 loopPrincipal CODE >405:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+119 loopPrincipal CODE >406:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+11A loopPrincipal CODE >407:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+11B loopPrincipal CODE >408:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+11C loopPrincipal CODE >409:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+11D loopPrincipal CODE >410:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+11E loopPrincipal CODE >411:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+11F loopPrincipal CODE >413:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+120 loopPrincipal CODE >414:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+121 loopPrincipal CODE >415:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+122 loopPrincipal CODE >416:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+123 loopPrincipal CODE >417:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+124 loopPrincipal CODE >418:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+125 loopPrincipal CODE >419:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+126 loopPrincipal CODE >420:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+127 loopPrincipal CODE >421:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+128 loopPrincipal CODE >423:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+129 loopPrincipal CODE >424:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+12A loopPrincipal CODE >425:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+12B loopPrincipal CODE >426:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+12C loopPrincipal CODE >427:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+12D loopPrincipal CODE >428:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+12E loopPrincipal CODE >429:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+12F loopPrincipal CODE >430:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+130 loopPrincipal CODE >431:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+131 loopPrincipal CODE >432:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+132 loopPrincipal CODE >435:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+133 loopPrincipal CODE >436:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+134 loopPrincipal CODE >437:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+135 loopPrincipal CODE >438:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+136 loopPrincipal CODE >439:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+137 loopPrincipal CODE >440:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+138 loopPrincipal CODE >441:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+139 loopPrincipal CODE >442:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+13A loopPrincipal CODE >444:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+13B loopPrincipal CODE >445:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+13C loopPrincipal CODE >446:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+13D loopPrincipal CODE >447:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+13E loopPrincipal CODE >448:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+13F loopPrincipal CODE >449:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+140 loopPrincipal CODE >450:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+141 loopPrincipal CODE >451:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+4 intVect CODE >92:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+5 intVect CODE >93:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+7 intVect CODE >94:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+8 intVect CODE >95:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+9 intVect CODE >98:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+A intVect CODE >99:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+B intVect CODE >100:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+C intVect CODE >101:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+D intVect CODE >102:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+E intVect CODE >105:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+10 intVect CODE >106:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+11 intVect CODE >107:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+12 intVect CODE >108:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+13 intVect CODE >109:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+14 intVect CODE >110:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+15 intVect CODE >111:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+16 intVect CODE >112:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+17 intVect CODE >113:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+18 intVect CODE >114:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+19 intVect CODE >117:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+1B intVect CODE >117:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+1C intVect CODE >117:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+1D intVect CODE >117:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+1E intVect CODE >117:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+20 intVect CODE >117:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+21 intVect CODE >117:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+22 intVect CODE >118:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+24 intVect CODE >119:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+25 intVect CODE >120:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+26 intVect CODE >121:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+27 intVect CODE >122:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+28 intVect CODE >123:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+29 intVect CODE >125:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+2B intVect CODE >126:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+2C intVect CODE >127:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+2D intVect CODE >128:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+2E intVect CODE >129:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+2F intVect CODE >130:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
+0 resVect CODE >86:C:\Progra_de_Micros\Partes_de_proyecto_1\Counter_10_to_20\Counter_10_to_20.X\Counter_10_to_20.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -161,49 +377,57 @@ F intVect CODE >79:C:\Progra_de_Micros\Partes de proyecto 1\Counter_10_to_20\Cou
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-__Hspace_0 63 0 ABS 0 - -
-__Hspace_1 77 0 ABS 0 - -
+__Hspace_0 142 0 ABS 0 - -
+__Hspace_1 34 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
-__Hudata_bank0 38 0 ABS 0 udata_bank0 -
-__Hudata_bank1 38 0 ABS 0 udata_bank1 -
-__Hudata_bank2 38 0 ABS 0 udata_bank2 -
-__Hudata_bank3 38 0 ABS 0 udata_bank3 -
-__HloopPrincipal 38 0 ABS 0 loopPrincipal -
-max 75 0 COMMON 1 udata_shr build/default/production/Counter_10_to_20.o
-min 76 0 COMMON 1 udata_shr build/default/production/Counter_10_to_20.o
-status_temp 71 0 COMMON 1 udata_shr build/default/production/Counter_10_to_20.o
-banderas 72 0 COMMON 1 udata_shr build/default/production/Counter_10_to_20.o
-w_temp 70 0 COMMON 1 udata_shr build/default/production/Counter_10_to_20.o
+__Hudata_bank0 60 0 ABS 0 udata_bank0 -
+__Hudata_bank1 60 0 ABS 0 udata_bank1 -
+__Hudata_bank2 60 0 ABS 0 udata_bank2 -
+__Hudata_bank3 60 0 ABS 0 udata_bank3 -
+__HloopPrincipal 60 0 ABS 0 loopPrincipal -
+max 2B 0 BANK0 1 udata_bank0 build/default/production/Counter_10_to_20.o
+min 2C 0 BANK0 1 udata_bank0 build/default/production/Counter_10_to_20.o
+status_temp 21 0 BANK0 1 udata_bank0 build/default/production/Counter_10_to_20.o
+counter_control 2A 0 BANK0 1 udata_bank0 build/default/production/Counter_10_to_20.o
+w_temp 20 0 BANK0 1 udata_bank0 build/default/production/Counter_10_to_20.o
 __LresVect 0 0 CODE 0 resVect -
-__Hedata 38 0 ABS 0 edata -
-__Hudata 38 0 ABS 0 udata -
+counter0 24 0 BANK0 1 udata_bank0 build/default/production/Counter_10_to_20.o
+counter1 26 0 BANK0 1 udata_bank0 build/default/production/Counter_10_to_20.o
+counter2 28 0 BANK0 1 udata_bank0 build/default/production/Counter_10_to_20.o
+__Hedata 60 0 ABS 0 edata -
+__Hudata 60 0 ABS 0 udata -
 __Hconfig 4012 0 CONFIG 4 config -
-__Ledata 38 0 ABS 0 edata -
-__Ludata 38 0 ABS 0 udata -
-__Hcode 38 0 ABS 0 code -
-__Hdata 38 0 ABS 0 data -
-__Lcode 38 0 ABS 0 code -
-__Ldata 38 0 ABS 0 data -
-__S0 63 0 ABS 0 - -
-__S1 77 0 ABS 0 - -
+__Ledata 60 0 ABS 0 edata -
+__Ludata 60 0 ABS 0 udata -
+__Hcode 60 0 ABS 0 code -
+__Hdata 60 0 ABS 0 data -
+__Lcode 60 0 ABS 0 code -
+__Ldata 60 0 ABS 0 data -
+__S0 142 0 ABS 0 - -
+__S1 34 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
+mode 2D 0 BANK0 1 udata_bank0 build/default/production/Counter_10_to_20.o
+banderas_antirrebote 23 0 BANK0 1 udata_bank0 build/default/production/Counter_10_to_20.o
 __HresVect 2 0 CODE 0 resVect -
 __Lconfig 0 0 CONFIG 4 config -
+banderas_7seg 22 0 BANK0 1 udata_bank0 build/default/production/Counter_10_to_20.o
 __LintVect 8 0 CODE 0 intVect -
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-__Ludata_bank0 38 0 ABS 0 udata_bank0 -
-__Ludata_bank1 38 0 ABS 0 udata_bank1 -
-__Ludata_bank2 38 0 ABS 0 udata_bank2 -
-__Ludata_bank3 38 0 ABS 0 udata_bank3 -
-counter 74 0 COMMON 1 udata_shr build/default/production/Counter_10_to_20.o
-__Hudata_shr 38 0 ABS 0 udata_shr -
-__LloopPrincipal 38 0 ABS 0 loopPrincipal -
-__Ludata_shr 38 0 ABS 0 udata_shr -
-__HintVect 38 0 CODE 0 intVect -
+counter0_temp 25 0 BANK0 1 udata_bank0 build/default/production/Counter_10_to_20.o
+counter1_temp 27 0 BANK0 1 udata_bank0 build/default/production/Counter_10_to_20.o
+counter2_temp 29 0 BANK0 1 udata_bank0 build/default/production/Counter_10_to_20.o
+__Ludata_bank0 60 0 ABS 0 udata_bank0 -
+__Ludata_bank1 60 0 ABS 0 udata_bank1 -
+__Ludata_bank2 60 0 ABS 0 udata_bank2 -
+__Ludata_bank3 60 0 ABS 0 udata_bank3 -
+__Hudata_shr 60 0 ABS 0 udata_shr -
+__LloopPrincipal 60 0 ABS 0 loopPrincipal -
+__Ludata_shr 60 0 ABS 0 udata_shr -
+__HintVect 60 0 CODE 0 intVect -
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -229,8 +453,8 @@ __HintVect 38 0 CODE 0 intVect -
 # All other numeric quantities are in decimal.
 %SEGMENTS
 resVect 0 0 0 1 2
-intVect 0 4 8 5F 2
-udata_shr 1 70 70 7 1
+intVect 0 4 8 13E 2
+udata_bank0 1 20 20 14 1
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal

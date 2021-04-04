@@ -151,7 +151,7 @@ reset_timer0	macro
     movlw   8		    //valor inicial calculado para 250 us
     movwf   TMR0
     banksel OPTION_REG
-    movlw   0b11010011	    //Multiplicar por 16 para 4ms
+    movlw   0b11010100	    //Multiplicar por 32 para 8ms
     andwf   OPTION_REG
     endm
 
@@ -243,8 +243,8 @@ debounce:
     bsf	    banderas_antirrebote, 4	;push en RB4
     btfss   PORTB, 5
     bsf	    banderas_antirrebote, 5	;push en RB5
-    bsf	    banderas_antirrebote, 7	;any push pressed
     bcf	    INTCON, 0
+    bsf	    banderas_antirrebote, 7	;any push pressed
     goto    interrupt_select
 pop:
     banksel STATUS
@@ -287,13 +287,14 @@ main:
     
 loop:
     banksel PORTA
+;CHOOSE THE ACTIVE MODE
+    call    active_mode
+
 ;DIVIDE IN TENS AND UNITS
     call    divide_tiempo0
     call    divide_tiempo1
     call    divide_tiempo2
-    
-    call    active_mode
-    
+;TURN UN RESPECTIVE TRAFFIC LIGHT COLOR
     btfsc   banderas_semaforo, green0_flag
     call    green0
     movf    disp_time0, 0
@@ -309,7 +310,7 @@ loop:
     movf    disp_time2, 0
     btfsc   STATUS, 2
     call    yellow2
-    
+;BLINK
     call    test_blink
     btfsc   banderas_misc, blink0_on
     call    blink0
@@ -317,13 +318,10 @@ loop:
     call    blink1
     btfsc   banderas_misc, blink2_on
     call    blink2
-    
-
 ;COUNTDOWN
    movf    seconds_delay, 0
    btfsc   STATUS, 2
    call    decrease_second
-
 ;DISPLAY
     banksel PORTD
     btfsc   banderas_misc,  s0_flag
@@ -348,14 +346,13 @@ loop:
     call    disp_d2
     btfsc   banderas_7seg,  u2_flag
     call    disp_u2
-
-
+    
     goto    loop
 
 ;|----------------------------------------------------------------------------|
 ;|------------------------------SUB-RUTINAS-----------------------------------|
 ;|----------------------------------------------------------------------------|
-    
+;CONFIGURATION    
 port_config:
     banksel ANSEL	;Todo es digital
     clrf    ANSEL
@@ -383,8 +380,7 @@ port_config:
     clrf    PORTC
     clrf    PORTD
     clrf    PORTE
-    return
-    
+    return  
 inicializar_variables:
     banksel PR2
     movlw   250		;Compare value of TMR2
@@ -415,47 +411,115 @@ inicializar_variables:
     bsf	    banderas_semaforo, 0
     bsf	    banderas_misc, on_off
     return
-    
 interrupt_config:
     banksel PIE1
+    bsf	    IOCB,   3
     bsf	    INTCON, 7	;General Int Enable
+    bsf	    IOCB,   4
     bsf	    INTCON, 6	;Peripheral (timer 2) interrupt enable
     bsf	    INTCON, 5	;Tmr0 Int Enable
     bsf	    INTCON, 3	;IOCB enable
-    movlw   0b00111000
-    movwf   IOCB
+    bsf	    IOCB,   5
     bsf	    PIE1,   1	;TMR2 int Enable
     return
 
-active_mode:
+
+    
+;MODES
+active_mode:			;MODE SELECTION
     movlw   0
     subwf   mode, 0
     btfsc   STATUS, 2
-    call    default_mode
+    goto    default_mode
     movlw   1
     subwf   mode, 0
     btfsc   STATUS, 2
-    call    change_tiempo0
+    goto    change_tiempo0
     movlw   2
     subwf   mode, 0
     btfsc   STATUS, 2
-    call    change_tiempo1
+    goto    change_tiempo1
     movlw   3
     subwf   mode, 0
     btfsc   STATUS, 2
-    call    change_tiempo2
+    goto    change_tiempo2
     movlw   4
     subwf   mode, 0
     btfsc   STATUS, 2
-    call    confirm_changes
+    goto    confirm_changes
     return
-config_apagado:
+;MODE 0
+default_mode:
+    bcf	    PORTB, 0
+    bcf	    PORTB, 1
+    bcf	    PORTB, 2
+    movlw   16
+    movwf   dc
+    movwf   uc
+    btfsc   banderas_antirrebote, 7
+    call    config_apagado
+    return
+config_apagado:			    ;MODE 0 PUSH PRESSED
     bcf	    banderas_antirrebote, 3
     bcf	    banderas_antirrebote, 4
     btfsc   banderas_antirrebote, 5
     call    change_mode
     bcf	    banderas_antirrebote, 7
     return
+change_mode:			    ;CHANGE ACTIVE MODE
+    incf    mode
+    movlw   5
+    subwf   mode, 0
+    btfsc   STATUS, 2		    ;Check if it reaches 5 loop back to 0
+    goto    return_mode0
+    bcf	    banderas_antirrebote, 5
+    return
+    return_mode0:
+    movlw   0
+    movwf   mode
+    bcf	    banderas_antirrebote, 5
+    return
+
+;MODE1
+change_tiempo0:
+    bsf	    PORTB, 0
+    bcf	    PORTB, 1
+    bcf	    PORTB, 2
+    movf    tiempo0_temp, 0
+    movwf   tiempo_control
+    call    divide_tiempo_control
+    btfsc   banderas_antirrebote, 7
+    call    tiempo_config
+    movf    tiempo_control, 0
+    movwf   tiempo0_temp
+    return
+;MODE2
+change_tiempo1:
+    bcf	    PORTB, 0
+    bsf	    PORTB, 1
+    bcf	    PORTB, 2
+    movf    tiempo1_temp, 0
+    movwf   tiempo_control
+    call    divide_tiempo_control
+    btfsc   banderas_antirrebote, 7
+    call    tiempo_config
+    movf    tiempo_control, 0
+    movwf   tiempo1_temp
+    return
+;MODE3
+change_tiempo2:
+    bcf	    PORTB, 0
+    bcf	    PORTB, 1
+    bsf	    PORTB, 2
+    movf    tiempo2_temp, 0
+    movwf   tiempo_control
+    call    divide_tiempo_control
+    btfsc   banderas_antirrebote, 7
+    call    tiempo_config
+    movf    tiempo_control, 0
+    movwf   tiempo2_temp
+    return
+;MODE 1, 2 AND 3 WHEN A PUSH IS PRESSED
 tiempo_config:
     btfsc   banderas_antirrebote, 3
     call    inc_tiempo
@@ -465,9 +529,7 @@ tiempo_config:
     call    change_mode
     bcf	    banderas_antirrebote, 7
     return
-
-
-inc_tiempo:
+inc_tiempo:			    ;Change the value of tiempo_control
     incf    tiempo_control
     movf    tiempo_control, 0
     subwf   tiempo_max, 0
@@ -475,11 +537,10 @@ inc_tiempo:
     call    loop_over
     bcf	    banderas_antirrebote, 3
     return
-loop_over:
+loop_over:			    ;loop if >20
     movlw   10
     movwf   tiempo_control
     return
-    
 dec_tiempo:
     decf    tiempo_control
     movf    tiempo_control, 0
@@ -488,47 +549,56 @@ dec_tiempo:
     call    loop_under
     bcf	    banderas_antirrebote, 4
     return
-loop_under:
+loop_under:			    ;loop if <20
     movlw   20
     movwf   tiempo_control
     return
-change_mode:
-    incf    mode
-    bcf	    banderas_antirrebote, 5
+;MODE 5
+confirm_changes:
+    bsf	    PORTB, 0
+    bsf	    PORTB, 1
+    bsf	    PORTB, 2
+    btfsc   banderas_antirrebote, 7
+    call    confirmation
     return
-reset_mode:
-    movlw   0
-    movwf   mode
-    bcf	    banderas_antirrebote, 3
-    bcf	    banderas_antirrebote, 4
-    bcf	    banderas_antirrebote, 5
-    return
-
-confirmation:
+confirmation:			    ;MODE 5 WHEN PUSH IS PRESSED
     btfsc   banderas_antirrebote, 3
     call    accept
     btfsc   banderas_antirrebote, 4
-    call    reset_mode
+    call    reject
     btfsc   banderas_antirrebote, 5
-    call    reset_mode
+    call    change_mode
     bcf	    banderas_antirrebote, 7
     return
+
 accept:
     movf    tiempo0_temp, 0
     movwf   tiempo0
     movf    tiempo1_temp, 0
     movwf   tiempo1
     movf    tiempo2_temp, 0
+    movwf   tiempo2
+    movlw   0
+    movwf   mode
+    bcf	    banderas_antirrebote, 3
+    return
+reject:
+    movf    tiempo0, 0
+    movwf   tiempo0_temp
+    movf    tiempo1, 0
+    movwf   tiempo1_temp
+    movf    tiempo2, 0
     movwf   tiempo2_temp
+    movlw   0
+    movwf   mode
+    bcf	    banderas_antirrebote, 4
     return
-default_mode:
-    movlw   16
-    movwf   dc
-    movwf   uc
-    btfsc   banderas_antirrebote, 7
-    call    config_apagado
-    return
+
+
     
+    
+
+;LOOPING TRAFFIC LIGHTS
 green0:
     movlw   green
     movwf   s0
@@ -624,7 +694,7 @@ yellow2:
     bsf	    banderas_semaforo, green0_flag
     bcf	    banderas_semaforo, yellow2_flag
     return
-    
+;BLINKING 
 test_blink:
     btfsc   s0, 0
     goto    test_blink0
@@ -718,37 +788,6 @@ blink2_active:
     movwf   u2
     bsf	    banderas_misc, on_off
     return
-change_tiempo0:
-    movf    tiempo0_temp, 0
-    movwf   tiempo_control
-    call    divide_tiempo_control
-    btfsc   banderas_antirrebote, 7
-    call    tiempo_config
-    movf    tiempo_control, 0
-    movwf   tiempo0_temp
-    return
-change_tiempo1:
-    movf    tiempo1_temp, 0
-    movwf   tiempo_control
-    call    divide_tiempo_control
-    btfsc   banderas_antirrebote, 7
-    call    tiempo_config
-    movf    tiempo_control, 0
-    movwf   tiempo1_temp
-    return
-change_tiempo2:
-    movf    tiempo2_temp, 0
-    movwf   tiempo_control
-    call    divide_tiempo_control
-    btfsc   banderas_antirrebote, 7
-    call    tiempo_config
-    movf    tiempo_control, 0
-    movwf   tiempo2_temp
-    return
-confirm_changes:
-    btfsc   banderas_antirrebote, 7
-    call    confirmation
-    return
 ;COUNTDOWN DE LOS SEMÁFOROS
 decrease_second:
     decf    disp_time0
@@ -757,6 +796,7 @@ decrease_second:
     movlw   50
     movwf   seconds_delay
     return
+
 ;DIVISION A DECENAS Y UNIDADES DE CADA TIEMPO
 divide:
     movwf   d_left
@@ -781,8 +821,9 @@ divide:
     movlw   1
     addwf   u_left, f
     return
+
 divide_tiempo0:
-    movf    s0, 1
+    movf    s0, 0
     btfss   STATUS, 2		;Esta sección antes de divide_tiempo0 es para que
     goto    divide_tiempo0_on	;no cambie el valor cuando esté apagado por
     return			;el blinking
@@ -829,7 +870,7 @@ divide_tiempo2:
     movf    unidad, 0
     movwf   u2
     return
-    
+
 divide_tiempo_control:
     movlw   0
     movwf   decena
@@ -911,20 +952,20 @@ disp_s0:
     bcf	    PORTE, s2_flag
     bsf	    PORTE, s0_flag
     movf    s0, 0
-    movwf   PORTB
+    movwf   PORTA
     bcf	    banderas_misc, s0_flag
     return
 disp_s1:
     bcf	    PORTE, s0_flag
     bsf	    PORTE, s1_flag
     movf    s1, 0
-    movwf   PORTB
+    movwf   PORTA
     bcf	    banderas_misc,  s1_flag
     return    
 disp_s2:
     bcf	    PORTE,  s1_flag
     bsf	    PORTE,  s2_flag
     movf    s2, 0
-    movwf   PORTB
+    movwf   PORTA
     bcf	    banderas_misc,  s2_flag
     return

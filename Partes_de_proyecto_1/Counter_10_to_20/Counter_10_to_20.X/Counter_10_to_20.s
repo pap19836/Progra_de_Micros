@@ -20,37 +20,63 @@ PROCESSOR 16F887
 ;|----------------------------------------------------------------------------|
 ;|-------------------------------VARIABLES------------------------------------|
 ;|----------------------------------------------------------------------------| 
-GLOBAL w_temp, status_temp, banderas, counter, max, min
-PSECT udata_shr
+GLOBAL w_temp, status_temp, banderas_7seg, counter_control, counter0, counter0_temp, counter1, counter1_temp, counter2, counter2_temp, max, min, banderas_antirrebote, mode
+PSECT udata_bank0
 ;variables de Interrupciones
 w_temp:
     DS 1
 status_temp:
     DS 1
-banderas:
+banderas_7seg:
     DS 1
+dc_flag	    EQU	0
+uc_flag	    EQU	1
 banderas_antirrebote:
     DS 1
 ;variables de programa
-counter:
+counter0:
+    DS 1
+counter0_temp:
+    DS 1
+counter1:
+    DS 1
+counter1_temp:
+    DS 1
+counter2:
+    DS 1
+counter2_temp:
+    DS 1
+counter_control:
     DS 1
 max:
     DS 1
 min:
     DS 1
+mode:
+    DS 1
+u_left:
+    DS 1
+unidad:
+    DS 1
+d_left:
+    DS 1
+decena:
+    DS 1
+dc:
+    DS 1
+uc:
+    DS 1
 ;|----------------------------------------------------------------------------|
 ;|---------------------------------MACROS-------------------------------------|
 ;|----------------------------------------------------------------------------|
-reset_timer0 macro
+    reset_timer0	macro
     banksel TMR0
-    movlw   0x08
     bcf	    INTCON, 2
+    movlw   8		    //valor inicial calculado para 250 us
     movwf   TMR0
     banksel OPTION_REG
-    movlw   0b11010000
-    andwf   OPTION_REG, w
-    iorlw   0b00000011	    //Prescaler 1:16
-    movwf   OPTION_REG
+    movlw   0b11010011	    //Multiplicar por 16 para 4ms
+    andwf   OPTION_REG
     endm
 ;|----------------------------------------------------------------------------|
 ;|----------------------------------CODE--------------------------------------|
@@ -70,19 +96,31 @@ push:
     
 interrupt_select:
     btfsc   INTCON, 0
-    goto    debounce    
+    goto    debounce 
+    btfsc   INTCON, 2	    ;Flag for TMR0
+    goto    mux
     goto    pop
     
 debounce:
     banksel PORTB
-    btfss   PORTB, 0
-    bsf	    banderas_antirrebote, 0
-    btfss   PORTB, 1
-    bsf	    banderas_antirrebote, 1
+    btfss   PORTB, 3
+    bsf	    banderas_antirrebote, 3
+    btfss   PORTB, 4
+    bsf	    banderas_antirrebote, 4
+    btfss   PORTB, 5
+    bsf	    banderas_antirrebote, 5
     bcf	    INTCON, 0
     bsf	    banderas_antirrebote, 7
     goto    interrupt_select
-    
+
+mux:
+    reset_timer0
+    banksel PORTD
+    btfsc   PORTD,  0
+    bsf	    banderas_7seg, uc_flag
+    btfsc   PORTD,  1
+    bsf	    banderas_7seg, dc_flag
+    goto    interrupt_select
 pop:
     banksel STATUS
     swapf   status_temp, w
@@ -92,21 +130,41 @@ pop:
     retfie
 
 PSECT loopPrincipal, class=CODE, delta=2
+
+table:
+    addwf   PCL, F
+    retlw   0b00111111	;show 0
+    retlw   0b00000110	;show 1
+    retlw   0b01011011	;show 2
+    retlw   0b01001111	;show 3
+    retlw   0b01100110	;show 4
+    retlw   0b01101101	;show 5
+    retlw   0b01111101	;show 6
+    retlw   0b00000111	;show 7
+    retlw   0b01111111	;show 8
+    retlw   0b01100111	;show 9
+    retlw   0b01110111	;show A
+    retlw   0b01111100	;show B
+    retlw   0b00111001	;show C
+    retlw   0b01011110	;show D
+    retlw   0b01111001	;show E
+    retlw   0b01110001	;show F
+    retlw   0b00000000	;show off
     
 main:
     call port_config
     call interrupt_config
-    movlw   19
-    movwf   counter
-    movlw   21
-    movwf   max
-    movlw   9
-    movwf   min
+    call inicializar_variables
+
 
 
 loop:
-    btfsc   banderas_antirrebote, 7
-    call    push_button
+    call    active_mode
+    
+    btfsc   banderas_7seg,  dc_flag
+    call    disp_dc
+    btfsc   banderas_7seg,  uc_flag
+    call    disp_uc
     goto loop
     
 ;|----------------------------------------------------------------------------|
@@ -120,12 +178,14 @@ port_config:
     
     banksel TRISA	;Configurar outputs
     movlw   0b00000000
+    movwf   TRISA
     movwf   TRISC
+    movwf   TRISD
     
-    movlw   0b00000011	;Volver pines de PORTB inputs con sus pull-ups
+    movlw   0b00111000	;Volver pines de PORTB inputs con sus pull-ups
     movwf   TRISB
     bcf	    OPTION_REG, 7
-    movlw   0b00000011
+    movlw   0b00111000
     movwf   WPUB
     
     banksel PORTA	;Inicializar todos los puertos en 0
@@ -139,50 +199,253 @@ port_config:
     
 interrupt_config:
     bsf	INTCON, 7	;General interrupt enable
+    bsf	INTCON, 5
     bsf	INTCON, 3	;General IOC port B enable
     
     banksel IOCB
-    bsf	IOCB,	0	;Specific IOCBs
-    bsf	IOCB,	1
+    bsf	IOCB,	3	;Specific IOCBs
+    bsf	IOCB,	4
+    bsf	IOCB,	5
     
     bcf	INTCON, 0
     
     return
 
-push_button:
-    btfsc   banderas_antirrebote, 0
-    call    counter_inc
-    btfsc   banderas_antirrebote, 1
-    call    counter_dec
-    movf    counter, 0
-    andlw   0x1F
-    banksel PORTC
+inicializar_variables:
+    reset_timer0
+    banksel PORTA
+    movlw   12
+    movwf   counter0
+    movwf   counter0_temp
+    movlw   15
+    movwf   counter1
+    movwf   counter1_temp
+    movlw   18
+    movwf   counter2
+    movwf   counter2_temp
+    movlw   21
+    movwf   max
+    movlw   9
+    movwf   min
+    movlw   0
+    movwf   mode
+    movwf   uc
+    movwf   dc
+    bsf	    PORTD, 0
+    return
+    
+active_mode:
+    movlw   0
+    subwf   mode, 0
+    btfsc   STATUS, 2
+    goto    default_mode
+    movlw   1
+    subwf   mode, 0
+    btfsc   STATUS, 2
+    goto    change_counter0
+    movlw   2
+    subwf   mode, 0
+    btfsc   STATUS, 2
+    goto    change_counter1
+    movlw   3
+    subwf   mode, 0
+    btfsc   STATUS, 2
+    goto    change_counter2
+    movlw   4
+    subwf   mode, 0
+    btfsc   STATUS, 2
+    goto    confirm_changes
+    return
+    
+default_mode:
+    movlw   0
+    movwf   PORTA
     movwf   PORTC
+    btfsc   banderas_antirrebote, 7
+    call    config_apagado
+    return
+config_apagado:
+    bcf	    banderas_antirrebote, 3
+    bcf	    banderas_antirrebote, 4
+    btfsc   banderas_antirrebote, 5
+    call    change_mode
+    bcf	    banderas_antirrebote, 7
+    return
+change_mode:
+    incf    mode
+    movlw   5
+    subwf   mode, 0
+    btfsc   STATUS, 2
+    goto    return_mode0
+    bcf	    banderas_antirrebote, 5
+    return
+    return_mode0:
+    movlw   0
+    movwf   mode
+    bcf	    banderas_antirrebote, 5
+    return
+change_counter0:
+    movlw   0
+    movwf   PORTA
+    bsf	    PORTA, 0
+    movf    counter0_temp,0
+    movwf   counter_control
+    call    divide_counter_control
+    btfsc   banderas_antirrebote, 7
+    call    counter_config
+    movf    counter_control, 0
+    movwf   counter0_temp
+    return
+change_counter1:
+    movlw   0
+    movwf   PORTA
+    bsf	    PORTA, 1
+    movf    counter1_temp,0
+    movwf   counter_control
+    call    divide_counter_control
+    btfsc   banderas_antirrebote, 7
+    call    counter_config
+    movf    counter_control, 0
+    movwf   counter1_temp
+    return
+change_counter2:
+    movlw   0
+    movwf   PORTA
+    bsf	    PORTA, 2
+    movf    counter2_temp,0
+    movwf   counter_control
+    call    divide_counter_control
+    btfsc   banderas_antirrebote, 7
+    call    counter_config
+    movf    counter_control, 0
+    movwf   counter2_temp
+    return
+counter_config:
+    btfsc   banderas_antirrebote, 3
+    call    inc_counter
+    btfsc   banderas_antirrebote, 4
+    call    dec_counter
+    btfsc   banderas_antirrebote, 5
+    call    change_mode
     bcf	    banderas_antirrebote, 7
     return
     
-counter_inc:
-    incf    counter
-    movf    counter, 0
+inc_counter:
+    incf    counter_control
+    movf    counter_control, 0
     subwf   max, 0
     btfsc   STATUS, 2
     call    loop_over
-    bcf	    banderas_antirrebote, 0
+    bcf	    banderas_antirrebote, 3
     return
 loop_over:
     movlw   10
-    movwf   counter
+    movwf   counter_control
     return
     
-counter_dec:
-    decf    counter
-    movf    counter, 0
+dec_counter:
+    decf    counter_control
+    movf    counter_control, 0
     subwf   min, 0
     btfsc   STATUS, 2
     call    loop_under
-    bcf	    banderas_antirrebote, 1
+    bcf	    banderas_antirrebote, 4
     return
 loop_under:
     movlw   20
-    movwf   counter
+    movwf   counter_control
+    return
+
+confirm_changes:
+    movlw   0b00000111
+    movwf   PORTA
+    btfsc   banderas_antirrebote, 7
+    call    confirmation
+    return
+confirmation:
+    btfsc   banderas_antirrebote, 3
+    call    accept
+    btfsc   banderas_antirrebote, 4
+    call    reject
+    btfsc   banderas_antirrebote, 5
+    call    change_mode
+    bcf	    banderas_antirrebote, 7
+    return
+
+accept:
+    movf    counter0_temp, 0
+    movwf   counter0
+    movf    counter1_temp, 0
+    movwf   counter1
+    movf    counter2_temp, 0
+    movwf   counter2
+    movlw   0
+    movwf   mode
+    bcf	    banderas_antirrebote, 3
+    return
+reject:
+    movf    counter0, 0
+    movwf   counter0_temp
+    movf    counter1, 0
+    movwf   counter1_temp
+    movf    counter2, 0
+    movwf   counter2_temp
+    movlw   0
+    movwf   mode
+    bcf	    banderas_antirrebote, 4
+    return
+    
+    
+divide:
+    movwf   d_left
+    ten:
+    movlw   10
+    subwf   d_left, f
+    btfsc   STATUS, 0
+    incf    decena
+    btfsc   STATUS, 0
+    goto    ten
+    movlw   10
+    addwf   d_left, f
+    movf    d_left, 0
+    movwf   u_left
+    one:
+    movlw   1
+    subwf   u_left, f
+    btfsc   STATUS, 0
+    incf    unidad
+    btfsc   STATUS, 0
+    goto    one
+    movlw   1
+    addwf   u_left, f
+    return
+divide_counter_control:
+    movlw   0
+    movwf   decena
+    movwf   unidad
+    movf    counter_control, 0
+    call    divide
+    movf    decena, 0
+    movwf   dc
+    movf    unidad, 0
+    movwf   uc
+    return
+    
+disp_dc:
+    bcf	    PORTD, uc_flag
+    bsf	    PORTD, dc_flag
+    movf    dc,	0
+    call    table
+    movwf   PORTC
+    bsf	    PORTB, 0
+    bcf	    banderas_7seg, dc_flag
+    return
+disp_uc:
+    bcf	    PORTD, dc_flag
+    bsf	    PORTD, uc_flag
+    movf    uc,	0
+    call    table
+    movwf   PORTC
+    bcf	    PORTB, 0
+    bcf	    banderas_7seg, uc_flag
     return
