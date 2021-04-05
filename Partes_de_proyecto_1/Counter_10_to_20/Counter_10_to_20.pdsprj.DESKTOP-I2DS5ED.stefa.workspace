@@ -15,7 +15,7 @@
      <ITEM name="Version">100</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="629" x="68" flags="00008033" y="180" h="200" pid="1" iid="-1">
+   <POPUP w="629" x="342" flags="00000032" y="120" h="217" pid="1" iid="-1">
     <PROPERTIES>
      <ITEM name="Address Column Width">82</ITEM>
      <ITEM name="AutoResize">No</ITEM>
@@ -40,7 +40,7 @@
      <ITEM name="nItems">8</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="52" x="88" flags="00000008" y="200" h="13" pid="3" iid="19">
+   <POPUP w="434" x="88" flags="00000008" y="200" h="216" pid="3" iid="19">
     <PROPERTIES/>
    </POPUP>
    <POPUP w="8" x="108" flags="0000000a" y="220" h="32" pid="4" iid="19">
@@ -73,7 +73,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="14" x="168" flags="00000008" y="280" h="8" pid="7" iid="19">
+   <POPUP w="130" x="168" flags="00000008" y="280" h="151" pid="7" iid="19">
     <PROPERTIES/>
    </POPUP>
    <POPUP w="8" x="188" flags="00000002" y="300" h="8" pid="8" iid="19">

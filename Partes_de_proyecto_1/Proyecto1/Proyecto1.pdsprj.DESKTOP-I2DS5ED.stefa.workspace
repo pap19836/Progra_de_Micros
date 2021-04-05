@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <WORKSPACE>
  <FRAME activewindow="0">
-  <PLACEMENT>2c00000002000000030000000083ffff0083ffffffffffffffffffff640100000b00000080070000f9030000</PLACEMENT>
+  <PLACEMENT>2c0000000200000003000000ffffffffffffffffffffffffffffffff640100000b00000080070000f9030000</PLACEMENT>
   <WINDOW type="default" module="ISIS"/>
   <WINDOW type="default" module="DXP"/>
  </FRAME>
  <MODULE name="VSMDEBUG">
   <PWI>
-   <POPUP w="800" x="1120" flags="00000003" y="40" h="200" pid="0" iid="-1">
+   <POPUP w="800" x="1120" flags="00000003" y="16" h="200" pid="0" iid="-1">
     <PROPERTIES>
-     <ITEM name="Message Column Width">661</ITEM>
+     <ITEM name="Message Column Width">540</ITEM>
      <ITEM name="ShowGrid">No</ITEM>
      <ITEM name="Source Column Width">100</ITEM>
      <ITEM name="Time Column Width">120</ITEM>
@@ -23,8 +23,9 @@
      <ITEM name="Gridlines">Yes</ITEM>
      <ITEM name="Item 0">"TRISA","0x0085",00000001,00000004,133,1,0,00000002,0,00000000,00000000</ITEM>
      <ITEM name="Item 1">"TRISC","0x0087",00000001,00000004,135,1,0,00000002,0,00000000,00000000</ITEM>
-     <ITEM name="Item 10">"IOCB","0x0096",00000001,00000004,150,1,0,00000002,0,00000000,00000000</ITEM>
+     <ITEM name="Item 10">"IOCB","0x0096",00000001,00000004,150,1,0,00000002,1,00000000,00000000</ITEM>
      <ITEM name="Item 11">"WPUB","0x0095",00000001,00000004,149,1,0,00000002,0,00000000,00000000</ITEM>
+     <ITEM name="Item 12">"INTCON","0x000B",00000001,00000004,11,1,0,156F0000,0,00000000,00000000</ITEM>
      <ITEM name="Item 2">"TRISD","0x0088",00000001,00000004,136,1,0,00000002,0,00000000,00000000</ITEM>
      <ITEM name="Item 3">"TRISE","0x0089",00000001,00000004,137,1,0,00000002,0,00000000,00000000</ITEM>
      <ITEM name="Item 4">"PORTA","0x0005",00000001,00000004,5,1,0,00000002,0,00000000,00000000</ITEM>
@@ -38,11 +39,12 @@
      <ITEM name="ShowPreviousValues">No</ITEM>
      <ITEM name="ShowTypes">No</ITEM>
      <ITEM name="ShowWatchPoint">Yes</ITEM>
-     <ITEM name="TriggerMode">0</ITEM>
+     <ITEM name="TriggerMode">1</ITEM>
      <ITEM name="Value Column Width">149</ITEM>
      <ITEM name="Version">100</ITEM>
      <ITEM name="Watch Expression Column Width">82</ITEM>
-     <ITEM name="nItems">12</ITEM>
+     <ITEM name="WatchPoint 10">1,0,00000000,</ITEM>
+     <ITEM name="nItems">13</ITEM>
     </PROPERTIES>
    </POPUP>
    <POPUP w="434" x="88" flags="00000008" y="200" h="216" pid="3" iid="1">
