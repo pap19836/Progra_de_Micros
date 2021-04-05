@@ -1,0 +1,917 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$build/default/production/Main.o
+resVect CODE 0 0 0 1 2
+intVect CODE 0 4 4 49 2
+udata_bank0 BANK0 1 20 20 24 1
+loopPrincipal CODE 0 4D 4D 2AD 2
+config CONFIG 4 2007 2007 2 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 44-6F 1
+RAM A0-EF 1
+RAM 110-16F 1
+RAM 190-1EF 1
+BANK0 44-6F 1
+BANK1 A0-EF 1
+BANK2 110-16F 1
+BANK3 190-1EF 1
+CONST 1-3 2
+CONST 2FA-1FFF 2
+ENTRY 1-3 2
+ENTRY 2FA-1FFF 2
+IDLOC 2000-2003 2
+CODE 1-3 2
+CODE 2FA-1FFF 2
+SFR0 2-7 1
+COMMON 70-7F 1
+EEDATA 2100-21FF 2
+STRCODE 1-3 2
+STRCODE 2FA-1FFF 2
+STRING 1-3 2
+STRING 2FA-1FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$build/default/production/Main.o
+4D loopPrincipal CODE >267:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+4E loopPrincipal CODE >268:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+4F loopPrincipal CODE >269:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+50 loopPrincipal CODE >270:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+51 loopPrincipal CODE >271:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+52 loopPrincipal CODE >272:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+53 loopPrincipal CODE >273:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+54 loopPrincipal CODE >274:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+55 loopPrincipal CODE >275:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+56 loopPrincipal CODE >276:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+57 loopPrincipal CODE >277:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+58 loopPrincipal CODE >278:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+59 loopPrincipal CODE >279:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+5A loopPrincipal CODE >280:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+5B loopPrincipal CODE >281:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+5C loopPrincipal CODE >282:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+5D loopPrincipal CODE >283:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+5E loopPrincipal CODE >284:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+5F loopPrincipal CODE >288:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+60 loopPrincipal CODE >289:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+61 loopPrincipal CODE >290:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+63 loopPrincipal CODE >290:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+64 loopPrincipal CODE >290:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+65 loopPrincipal CODE >290:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+66 loopPrincipal CODE >290:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+68 loopPrincipal CODE >290:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+69 loopPrincipal CODE >290:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+6A loopPrincipal CODE >291:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+6C loopPrincipal CODE >291:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+6D loopPrincipal CODE >291:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+6E loopPrincipal CODE >291:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+6F loopPrincipal CODE >291:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+70 loopPrincipal CODE >291:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+71 loopPrincipal CODE >291:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+72 loopPrincipal CODE >291:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+73 loopPrincipal CODE >292:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+75 loopPrincipal CODE >292:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+76 loopPrincipal CODE >292:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+77 loopPrincipal CODE >292:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+78 loopPrincipal CODE >292:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+79 loopPrincipal CODE >292:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+7A loopPrincipal CODE >293:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+7B loopPrincipal CODE >296:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+7D loopPrincipal CODE >298:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+7E loopPrincipal CODE >301:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+7F loopPrincipal CODE >302:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+80 loopPrincipal CODE >303:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+81 loopPrincipal CODE >305:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+82 loopPrincipal CODE >306:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+83 loopPrincipal CODE >307:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+84 loopPrincipal CODE >308:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+85 loopPrincipal CODE >309:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+86 loopPrincipal CODE >310:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+87 loopPrincipal CODE >311:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+88 loopPrincipal CODE >312:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+89 loopPrincipal CODE >313:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+8A loopPrincipal CODE >314:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+8B loopPrincipal CODE >315:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+8C loopPrincipal CODE >316:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+8D loopPrincipal CODE >317:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+8E loopPrincipal CODE >318:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+8F loopPrincipal CODE >319:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+90 loopPrincipal CODE >321:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+91 loopPrincipal CODE >322:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+92 loopPrincipal CODE >323:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+93 loopPrincipal CODE >324:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+94 loopPrincipal CODE >325:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+95 loopPrincipal CODE >326:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+96 loopPrincipal CODE >327:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+97 loopPrincipal CODE >329:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+98 loopPrincipal CODE >330:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+99 loopPrincipal CODE >331:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+9A loopPrincipal CODE >334:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+9B loopPrincipal CODE >335:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+9C loopPrincipal CODE >337:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+9E loopPrincipal CODE >338:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+9F loopPrincipal CODE >339:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+A0 loopPrincipal CODE >340:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+A1 loopPrincipal CODE >341:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+A2 loopPrincipal CODE >342:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+A3 loopPrincipal CODE >343:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+A4 loopPrincipal CODE >344:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+A5 loopPrincipal CODE >345:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+A6 loopPrincipal CODE >346:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+A7 loopPrincipal CODE >347:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+A8 loopPrincipal CODE >348:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+A9 loopPrincipal CODE >349:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+AA loopPrincipal CODE >350:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+AB loopPrincipal CODE >351:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+AC loopPrincipal CODE >352:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+AD loopPrincipal CODE >353:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+AE loopPrincipal CODE >354:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+AF loopPrincipal CODE >355:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+B0 loopPrincipal CODE >356:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+B1 loopPrincipal CODE >357:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+B2 loopPrincipal CODE >358:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+B3 loopPrincipal CODE >359:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+B4 loopPrincipal CODE >361:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+B5 loopPrincipal CODE >368:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+B7 loopPrincipal CODE >369:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+B8 loopPrincipal CODE >370:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+B9 loopPrincipal CODE >372:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+BB loopPrincipal CODE >373:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+BC loopPrincipal CODE >374:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+BD loopPrincipal CODE >375:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+BE loopPrincipal CODE >376:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+BF loopPrincipal CODE >377:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+C0 loopPrincipal CODE >378:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+C1 loopPrincipal CODE >379:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+C2 loopPrincipal CODE >380:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+C3 loopPrincipal CODE >382:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+C4 loopPrincipal CODE >383:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+C5 loopPrincipal CODE >384:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+C6 loopPrincipal CODE >385:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+C7 loopPrincipal CODE >386:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+C8 loopPrincipal CODE >388:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+CA loopPrincipal CODE >389:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+CB loopPrincipal CODE >390:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+CC loopPrincipal CODE >391:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+CD loopPrincipal CODE >392:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+CE loopPrincipal CODE >393:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+CF loopPrincipal CODE >394:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+D0 loopPrincipal CODE >396:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+D2 loopPrincipal CODE >397:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+D3 loopPrincipal CODE >398:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+D4 loopPrincipal CODE >399:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+D6 loopPrincipal CODE >400:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+D7 loopPrincipal CODE >401:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+D8 loopPrincipal CODE >402:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+D9 loopPrincipal CODE >403:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+DA loopPrincipal CODE >404:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+DB loopPrincipal CODE >405:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+DC loopPrincipal CODE >406:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+DD loopPrincipal CODE >407:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+DE loopPrincipal CODE >408:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+DF loopPrincipal CODE >409:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+E0 loopPrincipal CODE >410:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+E1 loopPrincipal CODE >411:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+E2 loopPrincipal CODE >412:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+E3 loopPrincipal CODE >413:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+E4 loopPrincipal CODE >414:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+E5 loopPrincipal CODE >415:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+E6 loopPrincipal CODE >416:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+E7 loopPrincipal CODE >417:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+E8 loopPrincipal CODE >418:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+E9 loopPrincipal CODE >419:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+EA loopPrincipal CODE >420:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+EB loopPrincipal CODE >421:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+EC loopPrincipal CODE >422:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+ED loopPrincipal CODE >423:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+EE loopPrincipal CODE >424:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+EF loopPrincipal CODE >425:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+F0 loopPrincipal CODE >426:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+F1 loopPrincipal CODE >427:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+F2 loopPrincipal CODE >428:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+F3 loopPrincipal CODE >429:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+F4 loopPrincipal CODE >431:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+F6 loopPrincipal CODE >432:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+F7 loopPrincipal CODE >433:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+F8 loopPrincipal CODE >434:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+F9 loopPrincipal CODE >435:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+FA loopPrincipal CODE >436:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+FB loopPrincipal CODE >437:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+FC loopPrincipal CODE >438:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+FD loopPrincipal CODE >439:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+FE loopPrincipal CODE >440:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+FF loopPrincipal CODE >446:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+100 loopPrincipal CODE >447:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+101 loopPrincipal CODE >448:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+102 loopPrincipal CODE >449:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+103 loopPrincipal CODE >450:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+104 loopPrincipal CODE >451:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+105 loopPrincipal CODE >452:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+106 loopPrincipal CODE >453:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+107 loopPrincipal CODE >454:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+108 loopPrincipal CODE >455:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+109 loopPrincipal CODE >456:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+10A loopPrincipal CODE >457:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+10B loopPrincipal CODE >458:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+10C loopPrincipal CODE >459:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+10D loopPrincipal CODE >460:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+10E loopPrincipal CODE >461:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+10F loopPrincipal CODE >462:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+110 loopPrincipal CODE >463:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+111 loopPrincipal CODE >464:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+112 loopPrincipal CODE >465:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+113 loopPrincipal CODE >466:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+114 loopPrincipal CODE >469:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+115 loopPrincipal CODE >470:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+116 loopPrincipal CODE >471:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+117 loopPrincipal CODE >472:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+118 loopPrincipal CODE >473:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+119 loopPrincipal CODE >474:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+11A loopPrincipal CODE >475:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+11B loopPrincipal CODE >476:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+11C loopPrincipal CODE >477:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+11D loopPrincipal CODE >479:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+11E loopPrincipal CODE >480:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+11F loopPrincipal CODE >481:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+120 loopPrincipal CODE >482:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+121 loopPrincipal CODE >483:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+122 loopPrincipal CODE >484:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+123 loopPrincipal CODE >486:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+124 loopPrincipal CODE >487:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+125 loopPrincipal CODE >488:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+126 loopPrincipal CODE >489:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+127 loopPrincipal CODE >490:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+128 loopPrincipal CODE >491:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+129 loopPrincipal CODE >492:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+12A loopPrincipal CODE >494:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+12B loopPrincipal CODE >495:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+12C loopPrincipal CODE >496:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+12D loopPrincipal CODE >497:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+12E loopPrincipal CODE >501:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+12F loopPrincipal CODE >502:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+130 loopPrincipal CODE >503:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+131 loopPrincipal CODE >504:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+132 loopPrincipal CODE >505:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+133 loopPrincipal CODE >506:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+134 loopPrincipal CODE >507:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+135 loopPrincipal CODE >508:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+136 loopPrincipal CODE >509:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+137 loopPrincipal CODE >510:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+138 loopPrincipal CODE >511:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+139 loopPrincipal CODE >514:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+13A loopPrincipal CODE >515:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+13B loopPrincipal CODE >516:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+13C loopPrincipal CODE >517:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+13D loopPrincipal CODE >518:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+13E loopPrincipal CODE >519:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+13F loopPrincipal CODE >520:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+140 loopPrincipal CODE >521:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+141 loopPrincipal CODE >522:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+142 loopPrincipal CODE >523:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+143 loopPrincipal CODE >524:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+144 loopPrincipal CODE >527:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+145 loopPrincipal CODE >528:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+146 loopPrincipal CODE >529:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+147 loopPrincipal CODE >530:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+148 loopPrincipal CODE >531:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+149 loopPrincipal CODE >532:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+14A loopPrincipal CODE >533:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+14B loopPrincipal CODE >534:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+14C loopPrincipal CODE >535:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+14D loopPrincipal CODE >536:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+14E loopPrincipal CODE >537:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+14F loopPrincipal CODE >540:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+150 loopPrincipal CODE >541:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+151 loopPrincipal CODE >542:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+152 loopPrincipal CODE >543:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+153 loopPrincipal CODE >544:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+154 loopPrincipal CODE >545:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+155 loopPrincipal CODE >546:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+156 loopPrincipal CODE >547:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+157 loopPrincipal CODE >549:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+158 loopPrincipal CODE >550:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+159 loopPrincipal CODE >551:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+15A loopPrincipal CODE >552:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+15B loopPrincipal CODE >553:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+15C loopPrincipal CODE >554:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+15D loopPrincipal CODE >555:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+15E loopPrincipal CODE >557:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+15F loopPrincipal CODE >558:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+160 loopPrincipal CODE >559:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+161 loopPrincipal CODE >561:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+162 loopPrincipal CODE >562:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+163 loopPrincipal CODE >563:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+164 loopPrincipal CODE >564:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+165 loopPrincipal CODE >565:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+166 loopPrincipal CODE >566:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+167 loopPrincipal CODE >567:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+168 loopPrincipal CODE >569:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+169 loopPrincipal CODE >570:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+16A loopPrincipal CODE >571:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+16B loopPrincipal CODE >574:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+16C loopPrincipal CODE >575:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+16D loopPrincipal CODE >576:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+16E loopPrincipal CODE >577:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+16F loopPrincipal CODE >578:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+170 loopPrincipal CODE >579:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+171 loopPrincipal CODE >580:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+172 loopPrincipal CODE >581:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+173 loopPrincipal CODE >582:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+174 loopPrincipal CODE >584:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+175 loopPrincipal CODE >585:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+176 loopPrincipal CODE >586:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+177 loopPrincipal CODE >587:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+178 loopPrincipal CODE >588:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+179 loopPrincipal CODE >589:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+17A loopPrincipal CODE >590:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+17B loopPrincipal CODE >591:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+17C loopPrincipal CODE >594:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+17D loopPrincipal CODE >595:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+17E loopPrincipal CODE >596:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+17F loopPrincipal CODE >597:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+180 loopPrincipal CODE >598:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+181 loopPrincipal CODE >599:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+182 loopPrincipal CODE >600:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+183 loopPrincipal CODE >601:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+184 loopPrincipal CODE >602:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+185 loopPrincipal CODE >603:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+186 loopPrincipal CODE >604:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+187 loopPrincipal CODE >606:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+189 loopPrincipal CODE >607:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+18A loopPrincipal CODE >608:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+18B loopPrincipal CODE >609:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+18C loopPrincipal CODE >610:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+18D loopPrincipal CODE >611:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+18E loopPrincipal CODE >612:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+18F loopPrincipal CODE >613:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+190 loopPrincipal CODE >614:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+191 loopPrincipal CODE >615:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+192 loopPrincipal CODE >616:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+193 loopPrincipal CODE >617:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+194 loopPrincipal CODE >618:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+195 loopPrincipal CODE >619:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+196 loopPrincipal CODE >620:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+197 loopPrincipal CODE >621:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+198 loopPrincipal CODE >623:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+199 loopPrincipal CODE >624:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+19A loopPrincipal CODE >625:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+19B loopPrincipal CODE >626:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+19C loopPrincipal CODE >627:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+19D loopPrincipal CODE >628:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+19E loopPrincipal CODE >629:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+19F loopPrincipal CODE >630:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1A0 loopPrincipal CODE >631:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1A1 loopPrincipal CODE >633:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1A2 loopPrincipal CODE >634:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1A3 loopPrincipal CODE >635:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1A4 loopPrincipal CODE >636:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1A5 loopPrincipal CODE >637:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1A6 loopPrincipal CODE >638:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1A7 loopPrincipal CODE >639:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1A8 loopPrincipal CODE >640:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1A9 loopPrincipal CODE >641:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1AA loopPrincipal CODE >642:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1AB loopPrincipal CODE >650:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1AC loopPrincipal CODE >651:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1AD loopPrincipal CODE >652:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1AE loopPrincipal CODE >653:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1AF loopPrincipal CODE >654:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1B0 loopPrincipal CODE >655:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1B1 loopPrincipal CODE >656:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1B2 loopPrincipal CODE >657:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1B3 loopPrincipal CODE >658:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1B4 loopPrincipal CODE >659:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1B5 loopPrincipal CODE >660:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1B6 loopPrincipal CODE >661:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1B7 loopPrincipal CODE >662:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1B8 loopPrincipal CODE >663:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1B9 loopPrincipal CODE >664:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1BA loopPrincipal CODE >666:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1BB loopPrincipal CODE >667:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1BC loopPrincipal CODE >668:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1BD loopPrincipal CODE >669:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1BE loopPrincipal CODE >670:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1BF loopPrincipal CODE >671:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1C0 loopPrincipal CODE >672:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1C1 loopPrincipal CODE >673:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1C2 loopPrincipal CODE >674:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1C3 loopPrincipal CODE >675:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1C4 loopPrincipal CODE >676:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1C5 loopPrincipal CODE >678:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1C6 loopPrincipal CODE >679:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1C7 loopPrincipal CODE >681:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1C8 loopPrincipal CODE >684:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1C9 loopPrincipal CODE >685:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1CA loopPrincipal CODE >686:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1CB loopPrincipal CODE >687:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1CC loopPrincipal CODE >688:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1CD loopPrincipal CODE >689:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1CE loopPrincipal CODE >690:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1CF loopPrincipal CODE >691:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1D0 loopPrincipal CODE >692:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1D1 loopPrincipal CODE >693:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1D2 loopPrincipal CODE >694:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1D3 loopPrincipal CODE >695:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1D4 loopPrincipal CODE >696:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1D5 loopPrincipal CODE >697:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1D6 loopPrincipal CODE >698:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1D7 loopPrincipal CODE >700:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1D8 loopPrincipal CODE >701:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1D9 loopPrincipal CODE >702:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1DA loopPrincipal CODE >703:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1DB loopPrincipal CODE >704:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1DC loopPrincipal CODE >705:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1DD loopPrincipal CODE >706:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1DE loopPrincipal CODE >707:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1DF loopPrincipal CODE >708:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1E0 loopPrincipal CODE >710:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1E1 loopPrincipal CODE >711:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1E2 loopPrincipal CODE >712:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1E3 loopPrincipal CODE >715:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1E4 loopPrincipal CODE >716:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1E5 loopPrincipal CODE >717:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1E6 loopPrincipal CODE >718:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1E7 loopPrincipal CODE >719:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1E8 loopPrincipal CODE >720:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1E9 loopPrincipal CODE >721:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1EA loopPrincipal CODE >722:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1EB loopPrincipal CODE >723:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1EC loopPrincipal CODE >724:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1ED loopPrincipal CODE >725:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1EE loopPrincipal CODE >726:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1EF loopPrincipal CODE >727:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1F0 loopPrincipal CODE >728:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1F1 loopPrincipal CODE >729:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1F2 loopPrincipal CODE >731:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1F3 loopPrincipal CODE >732:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1F4 loopPrincipal CODE >733:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1F5 loopPrincipal CODE >734:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1F6 loopPrincipal CODE >735:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1F7 loopPrincipal CODE >736:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1F8 loopPrincipal CODE >737:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1F9 loopPrincipal CODE >738:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1FA loopPrincipal CODE >739:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1FB loopPrincipal CODE >741:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1FC loopPrincipal CODE >742:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1FD loopPrincipal CODE >743:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1FE loopPrincipal CODE >746:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1FF loopPrincipal CODE >747:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+200 loopPrincipal CODE >748:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+201 loopPrincipal CODE >749:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+202 loopPrincipal CODE >750:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+203 loopPrincipal CODE >751:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+204 loopPrincipal CODE >752:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+205 loopPrincipal CODE >754:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+206 loopPrincipal CODE >755:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+207 loopPrincipal CODE >756:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+208 loopPrincipal CODE >757:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+209 loopPrincipal CODE >758:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+20A loopPrincipal CODE >760:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+20B loopPrincipal CODE >761:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+20C loopPrincipal CODE >762:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+20D loopPrincipal CODE >763:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+20E loopPrincipal CODE >764:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+20F loopPrincipal CODE >766:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+210 loopPrincipal CODE >767:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+211 loopPrincipal CODE >768:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+212 loopPrincipal CODE >769:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+213 loopPrincipal CODE >770:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+214 loopPrincipal CODE >773:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+215 loopPrincipal CODE >774:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+216 loopPrincipal CODE >775:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+217 loopPrincipal CODE >777:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+219 loopPrincipal CODE >777:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+21A loopPrincipal CODE >777:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+21B loopPrincipal CODE >777:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+21C loopPrincipal CODE >777:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+21D loopPrincipal CODE >777:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+21E loopPrincipal CODE >777:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+21F loopPrincipal CODE >777:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+220 loopPrincipal CODE >778:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+221 loopPrincipal CODE >779:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+222 loopPrincipal CODE >780:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+223 loopPrincipal CODE >781:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+224 loopPrincipal CODE >783:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+225 loopPrincipal CODE >784:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+226 loopPrincipal CODE >785:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+227 loopPrincipal CODE >786:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+228 loopPrincipal CODE >788:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+229 loopPrincipal CODE >789:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+22A loopPrincipal CODE >790:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+22B loopPrincipal CODE >791:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+22C loopPrincipal CODE >792:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+22D loopPrincipal CODE >793:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+22E loopPrincipal CODE >795:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+22F loopPrincipal CODE >796:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+230 loopPrincipal CODE >797:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+231 loopPrincipal CODE >799:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+233 loopPrincipal CODE >799:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+234 loopPrincipal CODE >799:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+235 loopPrincipal CODE >799:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+236 loopPrincipal CODE >799:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+237 loopPrincipal CODE >799:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+238 loopPrincipal CODE >799:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+239 loopPrincipal CODE >799:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+23A loopPrincipal CODE >800:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+23B loopPrincipal CODE >801:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+23C loopPrincipal CODE >802:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+23D loopPrincipal CODE >803:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+23E loopPrincipal CODE >805:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+23F loopPrincipal CODE >806:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+240 loopPrincipal CODE >807:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+241 loopPrincipal CODE >808:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+242 loopPrincipal CODE >810:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+243 loopPrincipal CODE >811:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+244 loopPrincipal CODE >812:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+245 loopPrincipal CODE >813:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+246 loopPrincipal CODE >814:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+247 loopPrincipal CODE >815:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+248 loopPrincipal CODE >817:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+249 loopPrincipal CODE >818:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+24A loopPrincipal CODE >819:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+24B loopPrincipal CODE >821:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+24D loopPrincipal CODE >821:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+24E loopPrincipal CODE >821:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+24F loopPrincipal CODE >821:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+250 loopPrincipal CODE >821:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+251 loopPrincipal CODE >821:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+252 loopPrincipal CODE >821:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+253 loopPrincipal CODE >821:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+254 loopPrincipal CODE >822:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+255 loopPrincipal CODE >823:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+256 loopPrincipal CODE >824:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+257 loopPrincipal CODE >825:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+258 loopPrincipal CODE >827:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+259 loopPrincipal CODE >828:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+25A loopPrincipal CODE >829:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+25B loopPrincipal CODE >830:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+25C loopPrincipal CODE >832:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+25D loopPrincipal CODE >833:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+25E loopPrincipal CODE >834:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+25F loopPrincipal CODE >835:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+260 loopPrincipal CODE >836:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+261 loopPrincipal CODE >837:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+262 loopPrincipal CODE >840:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+263 loopPrincipal CODE >841:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+264 loopPrincipal CODE >842:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+265 loopPrincipal CODE >843:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+266 loopPrincipal CODE >844:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+267 loopPrincipal CODE >845:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+268 loopPrincipal CODE >849:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+269 loopPrincipal CODE >851:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+26A loopPrincipal CODE >852:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+26B loopPrincipal CODE >853:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+26C loopPrincipal CODE >854:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+26D loopPrincipal CODE >855:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+26E loopPrincipal CODE >856:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+26F loopPrincipal CODE >857:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+270 loopPrincipal CODE >858:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+271 loopPrincipal CODE >859:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+272 loopPrincipal CODE >860:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+273 loopPrincipal CODE >862:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+274 loopPrincipal CODE >863:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+275 loopPrincipal CODE >864:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+276 loopPrincipal CODE >865:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+277 loopPrincipal CODE >866:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+278 loopPrincipal CODE >867:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+279 loopPrincipal CODE >868:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+27A loopPrincipal CODE >869:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+27B loopPrincipal CODE >870:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+27C loopPrincipal CODE >873:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+27D loopPrincipal CODE >874:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+27E loopPrincipal CODE >875:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+27F loopPrincipal CODE >876:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+280 loopPrincipal CODE >878:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+281 loopPrincipal CODE >879:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+282 loopPrincipal CODE >880:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+283 loopPrincipal CODE >881:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+284 loopPrincipal CODE >882:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+285 loopPrincipal CODE >883:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+286 loopPrincipal CODE >884:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+287 loopPrincipal CODE >885:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+288 loopPrincipal CODE >886:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+289 loopPrincipal CODE >887:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+28A loopPrincipal CODE >889:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+28B loopPrincipal CODE >890:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+28C loopPrincipal CODE >891:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+28D loopPrincipal CODE >892:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+28E loopPrincipal CODE >894:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+28F loopPrincipal CODE >895:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+290 loopPrincipal CODE >896:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+291 loopPrincipal CODE >897:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+292 loopPrincipal CODE >898:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+293 loopPrincipal CODE >899:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+294 loopPrincipal CODE >900:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+295 loopPrincipal CODE >901:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+296 loopPrincipal CODE >902:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+297 loopPrincipal CODE >903:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+298 loopPrincipal CODE >905:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+299 loopPrincipal CODE >906:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+29A loopPrincipal CODE >907:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+29B loopPrincipal CODE >908:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+29C loopPrincipal CODE >910:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+29D loopPrincipal CODE >911:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+29E loopPrincipal CODE >912:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+29F loopPrincipal CODE >913:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2A0 loopPrincipal CODE >914:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2A1 loopPrincipal CODE >915:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2A2 loopPrincipal CODE >916:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2A3 loopPrincipal CODE >917:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2A4 loopPrincipal CODE >918:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2A5 loopPrincipal CODE >919:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2A6 loopPrincipal CODE >922:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2A7 loopPrincipal CODE >923:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2A8 loopPrincipal CODE >924:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2A9 loopPrincipal CODE >925:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2AA loopPrincipal CODE >926:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2AB loopPrincipal CODE >927:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2AC loopPrincipal CODE >928:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2AD loopPrincipal CODE >929:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2AE loopPrincipal CODE >930:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2AF loopPrincipal CODE >931:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2B0 loopPrincipal CODE >935:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2B1 loopPrincipal CODE >936:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2B2 loopPrincipal CODE >937:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2B3 loopPrincipal CODE >938:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2B4 loopPrincipal CODE >939:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2B5 loopPrincipal CODE >940:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2B6 loopPrincipal CODE >941:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2B7 loopPrincipal CODE >943:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2B8 loopPrincipal CODE >944:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2B9 loopPrincipal CODE >945:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2BA loopPrincipal CODE >946:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2BB loopPrincipal CODE >947:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2BC loopPrincipal CODE >948:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2BD loopPrincipal CODE >949:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2BE loopPrincipal CODE >951:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2BF loopPrincipal CODE >952:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2C0 loopPrincipal CODE >953:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2C1 loopPrincipal CODE >954:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2C2 loopPrincipal CODE >955:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2C3 loopPrincipal CODE >956:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2C4 loopPrincipal CODE >957:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2C5 loopPrincipal CODE >959:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2C6 loopPrincipal CODE >960:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2C7 loopPrincipal CODE >961:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2C8 loopPrincipal CODE >962:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2C9 loopPrincipal CODE >963:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2CA loopPrincipal CODE >964:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2CB loopPrincipal CODE >965:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2CC loopPrincipal CODE >967:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2CD loopPrincipal CODE >968:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2CE loopPrincipal CODE >969:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2CF loopPrincipal CODE >970:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2D0 loopPrincipal CODE >971:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2D1 loopPrincipal CODE >972:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2D2 loopPrincipal CODE >973:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2D3 loopPrincipal CODE >975:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2D4 loopPrincipal CODE >976:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2D5 loopPrincipal CODE >977:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2D6 loopPrincipal CODE >978:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2D7 loopPrincipal CODE >979:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2D8 loopPrincipal CODE >980:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2D9 loopPrincipal CODE >981:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2DA loopPrincipal CODE >983:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2DB loopPrincipal CODE >984:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2DC loopPrincipal CODE >985:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2DD loopPrincipal CODE >986:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2DE loopPrincipal CODE >987:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2DF loopPrincipal CODE >988:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2E0 loopPrincipal CODE >989:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2E1 loopPrincipal CODE >991:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2E2 loopPrincipal CODE >992:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2E3 loopPrincipal CODE >993:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2E4 loopPrincipal CODE >994:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2E5 loopPrincipal CODE >995:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2E6 loopPrincipal CODE >996:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2E7 loopPrincipal CODE >997:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2E8 loopPrincipal CODE >999:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2E9 loopPrincipal CODE >1000:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2EA loopPrincipal CODE >1001:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2EB loopPrincipal CODE >1002:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2EC loopPrincipal CODE >1003:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2ED loopPrincipal CODE >1004:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2EE loopPrincipal CODE >1006:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2EF loopPrincipal CODE >1007:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2F0 loopPrincipal CODE >1008:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2F1 loopPrincipal CODE >1009:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2F2 loopPrincipal CODE >1010:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2F3 loopPrincipal CODE >1011:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2F4 loopPrincipal CODE >1013:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2F5 loopPrincipal CODE >1014:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2F6 loopPrincipal CODE >1015:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2F7 loopPrincipal CODE >1016:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2F8 loopPrincipal CODE >1017:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2F9 loopPrincipal CODE >1018:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+4 intVect CODE >192:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+5 intVect CODE >193:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+7 intVect CODE >194:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+8 intVect CODE >195:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+9 intVect CODE >198:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+B intVect CODE >199:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+C intVect CODE >200:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+D intVect CODE >201:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+E intVect CODE >202:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+F intVect CODE >203:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+10 intVect CODE >204:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+11 intVect CODE >206:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+12 intVect CODE >210:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+14 intVect CODE >210:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+15 intVect CODE >210:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+16 intVect CODE >210:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+17 intVect CODE >210:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+19 intVect CODE >210:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1A intVect CODE >210:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1B intVect CODE >211:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1D intVect CODE >212:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1E intVect CODE >213:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+1F intVect CODE >214:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+20 intVect CODE >215:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+21 intVect CODE >216:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+22 intVect CODE >217:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+23 intVect CODE >218:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+24 intVect CODE >219:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+25 intVect CODE >220:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+26 intVect CODE >221:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+27 intVect CODE >222:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+28 intVect CODE >223:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+29 intVect CODE >224:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2A intVect CODE >225:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2B intVect CODE >226:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2C intVect CODE >227:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2D intVect CODE >228:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2E intVect CODE >229:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+2F intVect CODE >230:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+30 intVect CODE >231:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+31 intVect CODE >232:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+32 intVect CODE >233:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+33 intVect CODE >234:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+34 intVect CODE >237:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+35 intVect CODE >238:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+36 intVect CODE >239:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+37 intVect CODE >240:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+38 intVect CODE >241:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+39 intVect CODE >243:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+3A intVect CODE >244:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+3B intVect CODE >246:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+3D intVect CODE >247:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+3E intVect CODE >248:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+3F intVect CODE >249:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+40 intVect CODE >250:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+41 intVect CODE >251:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+42 intVect CODE >252:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+43 intVect CODE >253:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+44 intVect CODE >254:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+45 intVect CODE >255:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+46 intVect CODE >257:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+48 intVect CODE >258:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+49 intVect CODE >259:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+4A intVect CODE >260:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+4B intVect CODE >261:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+4C intVect CODE >262:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+0 resVect CODE >186:C:\Progra_de_Micros\Proyecto1_Final\Proyecto1.X\Main.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+d0 2A 0 BANK0 1 udata_bank0 build/default/production/Main.o
+d1 2D 0 BANK0 1 udata_bank0 build/default/production/Main.o
+d2 30 0 BANK0 1 udata_bank0 build/default/production/Main.o
+dc 28 0 BANK0 1 udata_bank0 build/default/production/Main.o
+s0 3A 0 BANK0 1 udata_bank0 build/default/production/Main.o
+s1 3B 0 BANK0 1 udata_bank0 build/default/production/Main.o
+s2 3C 0 BANK0 1 udata_bank0 build/default/production/Main.o
+u0 2B 0 BANK0 1 udata_bank0 build/default/production/Main.o
+u1 2E 0 BANK0 1 udata_bank0 build/default/production/Main.o
+u2 31 0 BANK0 1 udata_bank0 build/default/production/Main.o
+uc 27 0 BANK0 1 udata_bank0 build/default/production/Main.o
+__Hspace_0 2FA 0 ABS 0 - -
+__Hspace_1 44 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__Hspace_4 4010 0 ABS 0 - -
+__Hudata_bank0 9A 0 ABS 0 udata_bank0 -
+__Hudata_bank1 9A 0 ABS 0 udata_bank1 -
+__Hudata_bank2 9A 0 ABS 0 udata_bank2 -
+__Hudata_bank3 9A 0 ABS 0 udata_bank3 -
+__HloopPrincipal 9A 0 ABS 0 loopPrincipal -
+status_temp 21 0 BANK0 1 udata_bank0 build/default/production/Main.o
+u_left 37 0 BANK0 1 udata_bank0 build/default/production/Main.o
+unidad 34 0 BANK0 1 udata_bank0 build/default/production/Main.o
+w_temp 20 0 BANK0 1 udata_bank0 build/default/production/Main.o
+reset_delay 39 0 BANK0 1 udata_bank0 build/default/production/Main.o
+__LresVect 0 0 CODE 0 resVect -
+tiempo_control 26 0 BANK0 1 udata_bank0 build/default/production/Main.o
+__Hedata 9A 0 ABS 0 edata -
+__Hudata 9A 0 ABS 0 udata -
+__Hconfig 4012 0 CONFIG 4 config -
+__Ledata 9A 0 ABS 0 edata -
+__Ludata 9A 0 ABS 0 udata -
+__Hcode 9A 0 ABS 0 code -
+__Hdata 9A 0 ABS 0 data -
+__Lcode 9A 0 ABS 0 code -
+__Ldata 9A 0 ABS 0 data -
+disp_tiempo0 3D 0 BANK0 1 udata_bank0 build/default/production/Main.o
+disp_tiempo1 3E 0 BANK0 1 udata_bank0 build/default/production/Main.o
+disp_tiempo2 3F 0 BANK0 1 udata_bank0 build/default/production/Main.o
+__S0 2FA 0 ABS 0 - -
+__S1 44 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+mode 40 0 BANK0 1 udata_bank0 build/default/production/Main.o
+seconds_delay 38 0 BANK0 1 udata_bank0 build/default/production/Main.o
+banderas_antirrebote 23 0 BANK0 1 udata_bank0 build/default/production/Main.o
+__HresVect 2 0 CODE 0 resVect -
+tiempo0_temp 41 0 BANK0 1 udata_bank0 build/default/production/Main.o
+tiempo1_temp 42 0 BANK0 1 udata_bank0 build/default/production/Main.o
+__Lconfig 0 0 CONFIG 4 config -
+tiempo2_temp 43 0 BANK0 1 udata_bank0 build/default/production/Main.o
+banderas_7seg 22 0 BANK0 1 udata_bank0 build/default/production/Main.o
+banderas_misc 24 0 BANK0 1 udata_bank0 build/default/production/Main.o
+__LintVect 8 0 CODE 0 intVect -
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__Lspace_4 0 0 ABS 0 - -
+__Ludata_bank0 9A 0 ABS 0 udata_bank0 -
+__Ludata_bank1 9A 0 ABS 0 udata_bank1 -
+__Ludata_bank2 9A 0 ABS 0 udata_bank2 -
+__Ludata_bank3 9A 0 ABS 0 udata_bank3 -
+banderas_semaforo 25 0 BANK0 1 udata_bank0 build/default/production/Main.o
+tiempo_max 32 0 BANK0 1 udata_bank0 build/default/production/Main.o
+tiempo_min 33 0 BANK0 1 udata_bank0 build/default/production/Main.o
+tiempo0 29 0 BANK0 1 udata_bank0 build/default/production/Main.o
+tiempo1 2C 0 BANK0 1 udata_bank0 build/default/production/Main.o
+tiempo2 2F 0 BANK0 1 udata_bank0 build/default/production/Main.o
+__Hudata_shr 9A 0 ABS 0 udata_shr -
+d_left 36 0 BANK0 1 udata_bank0 build/default/production/Main.o
+__LloopPrincipal 9A 0 ABS 0 loopPrincipal -
+decena 35 0 BANK0 1 udata_bank0 build/default/production/Main.o
+__Ludata_shr 9A 0 ABS 0 udata_shr -
+__HintVect 9A 0 CODE 0 intVect -
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+resVect 0 0 0 1 2
+intVect 0 4 8 2F6 2
+udata_bank0 1 20 20 24 1
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES

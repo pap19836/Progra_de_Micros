@@ -10,7 +10,7 @@
 ; Hardware: 12 Leds, 8 displays de 7 segmentos y 3 push-buttons
 ;
 ; Creado 9 mar, 2021
-; Última Actualización:
+; Última Actualización: 04 apr, 2021
 
 PROCESSOR 16F887
 
@@ -3023,6 +3023,9 @@ confirm_changes:
     bsf PORTB, 0
     bsf PORTB, 1
     bsf PORTB, 2
+    movlw 0
+    movwf dc
+    movwf uc
     btfsc banderas_antirrebote, 7
     call confirmation
     return
