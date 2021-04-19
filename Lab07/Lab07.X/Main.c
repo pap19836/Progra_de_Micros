@@ -7,7 +7,7 @@
 // Hardware: 12 Leds, 8 displays de 7 segmentos y 3 push-buttons
 //
 // Creado 13 apr, 2021
-// Última Actualización: 13 apr, 2021
+// Última Actualización: 18 apr, 2021
 
 // CONFIG1
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
@@ -28,12 +28,9 @@
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 
-#define _XTAL_FREQ 4000000
 #include<xc.h>
 #include<pic.h>
-#include<stdint.h>
-#include<stdio.h>
-#include<stdlib.h>
+
 //|----------------------------------------------------------------------------|
 //|-------------------------------VARIABLES------------------------------------|
 //|----------------------------------------------------------------------------|
@@ -41,7 +38,6 @@ unsigned char centena;
 unsigned char decena;
 unsigned char unidad;
 unsigned char display[10];
-unsigned char banderas_7seg;
 
 
 //|----------------------------------------------------------------------------|
@@ -59,17 +55,6 @@ void    main(void){
     setup();
     while (1){
         divide(&centena, &decena, &unidad);
-        /*if(PORTA==1){
-            
-            PORTD=display[centena];
-        }
-        else if(PORTA==2){
-            PORTD=display[decena];
-        }
-        else if(PORTA==4){
-            PORTD=display[unidad];
-        }
-    */
     }
 }
 //|----------------------------------------------------------------------------|
@@ -114,7 +99,7 @@ void setup(){
     PORTB   =   0;
     RB0     =   1;
     RB1     =   1;
-    PORTC   =   15;
+    PORTC   =   99;
     PORTD   =   0;
     PORTE   =   0;
     //7seg display options
@@ -140,7 +125,7 @@ void reset_timer0(void){
 }
 void divide(unsigned char *a, unsigned char *b, unsigned char *c){
     *a=PORTC/100;
-    *b=(PORTC-centena)/10;
+    *b=(PORTC-100*centena)/10;
     *c=PORTC-100*centena-10*decena;
     
 }
