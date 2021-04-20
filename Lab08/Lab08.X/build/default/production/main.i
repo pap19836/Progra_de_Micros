@@ -1,4 +1,4 @@
-# 1 "Main.c"
+# 1 "main.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Main.c" 2
-# 13 "Main.c"
+# 1 "main.c" 2
+# 13 "main.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -22,6 +22,7 @@
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
+
 
 
 
@@ -2507,7 +2508,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 31 "Main.c" 2
+# 32 "main.c" 2
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 1 3
@@ -2643,15 +2644,18 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 33 "Main.c" 2
+# 34 "main.c" 2
 
 
 
 
 
-uint8_t centena;
-uint8_t decena;
-uint8_t unidad;
+
+uint8_t centena = 0;
+uint8_t decena = 0;
+uint8_t unidad = 0;
+uint8_t pot2 = 0;
+uint8_t flag_7seg= 0;
 uint8_t display[10];
 
 
@@ -2668,7 +2672,33 @@ void divide(uint8_t *a, uint8_t *b, uint8_t *c);
 void main(void){
     setup();
     while (1){
+        GO = 1;
         divide(&centena, &decena, &unidad);
+        _delay((unsigned long)((10)*(4000000/4000000.0)));
+
+    switch(flag_7seg){
+            case 0:
+                RE0=0;
+                PORTD=display[decena];
+                RE1=1;
+                RE2=0;
+                break;
+
+            case 1:
+                RE1=0;
+                PORTD=display[unidad];
+                RE2=1;
+                RE0=0;
+                break;
+
+            case 2:
+                RE2=0;
+                PORTD=display[centena];
+                RE0=1;
+                RE1=0;
+                break;
+
+        }
     }
 }
 
@@ -2677,27 +2707,25 @@ void main(void){
 
 void setup(){
 
-    ANSEL = 0;
+    ANSEL = 3;
     ANSELH = 0;
-    TRISA = 0;
+    TRISA = 3;
     TRISB = 0;
     TRISC = 0;
     TRISD = 0;
     TRISE = 0;
-    TRISBbits.TRISB0 = 1;
-    TRISBbits.TRISB1 = 1;
-    OPTION_REGbits.nRBPU = 0;
-    WPUBbits.WPUB0 = 1;
-    WPUBbits.WPUB1 = 1;
+
+
+    ADCON1bits.ADFM = 0;
+    ADCON0 = 0b01000001;
 
 
     INTCONbits.GIE = 1;
     INTCONbits.T0IF = 0;
-    INTCONbits.RBIF = 0;
-    INTCONbits.RBIE = 1;
     INTCONbits.T0IE = 1;
-    IOCBbits.IOCB0 = 1;
-    IOCBbits.IOCB1 = 1;
+    INTCONbits.PEIE = 1;
+
+
 
 
     INTCONbits.T0IF = 0;
@@ -2709,13 +2737,12 @@ void setup(){
     OPTION_REGbits.PS2 = 1;
 
 
-    PORTA = 1;
+    PORTA = 0;
     PORTB = 0;
-    RB0 = 1;
-    RB1 = 1;
-    PORTC = 99;
+    PORTC = 0;
     PORTD = 0;
-    PORTE = 0;
+    PORTE = 1;
+
 
     display[0]=0b00111111;
     display[1]=0b00000110;
@@ -2738,9 +2765,9 @@ void reset_timer0(void){
     OPTION_REGbits.PS2 = 1;
 }
 void divide(uint8_t *a, uint8_t *b, uint8_t *c){
-    *a=PORTC/100;
-    *b=(PORTC-100*centena)/10;
-    *c=PORTC-100*centena-10*decena;
+    *a=pot2/100;
+    *b=(pot2-100*centena)/10;
+    *c=pot2-100*centena-10*decena;
 
 }
 
@@ -2751,42 +2778,21 @@ void divide(uint8_t *a, uint8_t *b, uint8_t *c){
 void __attribute__((picinterrupt(("")))) isr(void){
     if (T0IF==1){
         reset_timer0();
-        switch(PORTA){
-            case 1:
-                RA0=0;
-                PORTD=display[decena];
-                RA1=1;
-                RA2=0;
-                break;
-
-            case 2:
-                RA1=0;
-                PORTD=display[unidad];
-                RA2=1;
-                RA0=0;
-                break;
-
-            case 4:
-                RA2=0;
-                PORTD=display[centena];
-                RA0=1;
-                RA1=0;
-                break;
-
+        flag_7seg ++;
+        if (flag_7seg==3){
+            flag_7seg=0;
         }
         T0IF = 0;
     }
-    if (RBIF==1){
-        if (RB0==0){
-            PORTC++;
-            RBIF = 0;
+    if (ADIF==1){
+        if(CHS0==0) {
+            PORTC = ADRESH;
+            CHS0 = 1;
         }
-        else if(RB1==0){
-            PORTC--;
-            RBIF = 0;
+        else if(CHS0==1) {
+            pot2 = ADRESH;
+            CHS0 = 0;
         }
-        else{
-            RBIF = 0;
-        }
+        ADIF = 0;
     }
 }

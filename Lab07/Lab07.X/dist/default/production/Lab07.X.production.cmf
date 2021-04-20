@@ -26,7 +26,7 @@ cstackBANK0 BANK0 1 20 20 14 1
 intentry CODE 0 4 4 A 2
 bssBANK0 BANK0 1 34 34 D 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\stefa\AppData\Local\Temp\xcAsaks.o
+$C:\Users\stefa\AppData\Local\Temp\xcAse0k.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 E E 3 2
 config CONFIG 4 2007 2007 2 2
@@ -76,26 +76,26 @@ STRING 213-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab07.X.production.o
-11 cinit CODE >487:C:\Users\stefa\AppData\Local\Temp\xcAsaks.s
-11 cinit CODE >490:C:\Users\stefa\AppData\Local\Temp\xcAsaks.s
-11 cinit CODE >510:C:\Users\stefa\AppData\Local\Temp\xcAsaks.s
-12 cinit CODE >511:C:\Users\stefa\AppData\Local\Temp\xcAsaks.s
-13 cinit CODE >512:C:\Users\stefa\AppData\Local\Temp\xcAsaks.s
-14 cinit CODE >513:C:\Users\stefa\AppData\Local\Temp\xcAsaks.s
-15 cinit CODE >514:C:\Users\stefa\AppData\Local\Temp\xcAsaks.s
-16 cinit CODE >515:C:\Users\stefa\AppData\Local\Temp\xcAsaks.s
-17 cinit CODE >516:C:\Users\stefa\AppData\Local\Temp\xcAsaks.s
-18 cinit CODE >517:C:\Users\stefa\AppData\Local\Temp\xcAsaks.s
-19 cinit CODE >518:C:\Users\stefa\AppData\Local\Temp\xcAsaks.s
-1A cinit CODE >519:C:\Users\stefa\AppData\Local\Temp\xcAsaks.s
-1B cinit CODE >520:C:\Users\stefa\AppData\Local\Temp\xcAsaks.s
-1C cinit CODE >521:C:\Users\stefa\AppData\Local\Temp\xcAsaks.s
-1D cinit CODE >522:C:\Users\stefa\AppData\Local\Temp\xcAsaks.s
-1E cinit CODE >523:C:\Users\stefa\AppData\Local\Temp\xcAsaks.s
-1F cinit CODE >524:C:\Users\stefa\AppData\Local\Temp\xcAsaks.s
-20 cinit CODE >530:C:\Users\stefa\AppData\Local\Temp\xcAsaks.s
-20 cinit CODE >532:C:\Users\stefa\AppData\Local\Temp\xcAsaks.s
-21 cinit CODE >533:C:\Users\stefa\AppData\Local\Temp\xcAsaks.s
+11 cinit CODE >487:C:\Users\stefa\AppData\Local\Temp\xcAse0k.s
+11 cinit CODE >490:C:\Users\stefa\AppData\Local\Temp\xcAse0k.s
+11 cinit CODE >510:C:\Users\stefa\AppData\Local\Temp\xcAse0k.s
+12 cinit CODE >511:C:\Users\stefa\AppData\Local\Temp\xcAse0k.s
+13 cinit CODE >512:C:\Users\stefa\AppData\Local\Temp\xcAse0k.s
+14 cinit CODE >513:C:\Users\stefa\AppData\Local\Temp\xcAse0k.s
+15 cinit CODE >514:C:\Users\stefa\AppData\Local\Temp\xcAse0k.s
+16 cinit CODE >515:C:\Users\stefa\AppData\Local\Temp\xcAse0k.s
+17 cinit CODE >516:C:\Users\stefa\AppData\Local\Temp\xcAse0k.s
+18 cinit CODE >517:C:\Users\stefa\AppData\Local\Temp\xcAse0k.s
+19 cinit CODE >518:C:\Users\stefa\AppData\Local\Temp\xcAse0k.s
+1A cinit CODE >519:C:\Users\stefa\AppData\Local\Temp\xcAse0k.s
+1B cinit CODE >520:C:\Users\stefa\AppData\Local\Temp\xcAse0k.s
+1C cinit CODE >521:C:\Users\stefa\AppData\Local\Temp\xcAse0k.s
+1D cinit CODE >522:C:\Users\stefa\AppData\Local\Temp\xcAse0k.s
+1E cinit CODE >523:C:\Users\stefa\AppData\Local\Temp\xcAse0k.s
+1F cinit CODE >524:C:\Users\stefa\AppData\Local\Temp\xcAse0k.s
+20 cinit CODE >530:C:\Users\stefa\AppData\Local\Temp\xcAse0k.s
+20 cinit CODE >532:C:\Users\stefa\AppData\Local\Temp\xcAse0k.s
+21 cinit CODE >533:C:\Users\stefa\AppData\Local\Temp\xcAse0k.s
 4 intentry CODE >137:C:\Progra_de_Micros\Lab07\Lab07.X\Main.c
 205 text7 CODE >117:C:\Progra_de_Micros\Lab07\Lab07.X\Main.c
 205 text7 CODE >118:C:\Progra_de_Micros\Lab07\Lab07.X\Main.c
@@ -281,21 +281,21 @@ __Hstrings 0 0 ABS 0 strings -
 _RBIF 58 0 ABS 0 - dist/default/production\Lab07.X.production.o
 _T0IF 5A 0 ABS 0 - dist/default/production\Lab07.X.production.o
 _TMR0 1 0 ABS 0 - dist/default/production\Lab07.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\stefa\AppData\Local\Temp\xcAsaks.o
+___sp 0 0 STACK 2 stack C:\Users\stefa\AppData\Local\Temp\xcAse0k.o
 _main 3AE 0 CODE 0 maintext dist/default/production\Lab07.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab07.X.production.o
-start 1C 0 CODE 0 init C:\Users\stefa\AppData\Local\Temp\xcAsaks.o
+start 1C 0 CODE 0 init C:\Users\stefa\AppData\Local\Temp\xcAse0k.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\Lab07.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Lab07.X.production.o
 ?___wmul 75 0 COMMON 1 cstackCOMMON dist/default/production\Lab07.X.production.o
 _OPTION_REGbits 81 0 ABS 0 - dist/default/production\Lab07.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAsaks.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAsaks.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAsaks.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAsaks.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAsaks.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAsaks.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAse0k.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAse0k.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAse0k.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAse0k.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAse0k.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAse0k.o
 ___bmul@multiplicand 75 0 COMMON 1 cstackCOMMON dist/default/production\Lab07.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Lab07.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -312,14 +312,14 @@ ___bmul@multiplier 78 0 COMMON 1 cstackCOMMON dist/default/production\Lab07.X.pr
 ___awdiv@divisor 22 0 BANK0 1 cstackBANK0 dist/default/production\Lab07.X.production.o
 __end_of___awdiv 1EC 0 CODE 0 text5 dist/default/production\Lab07.X.production.o
 __end_of_divide 11A 0 CODE 0 text2 dist/default/production\Lab07.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\stefa\AppData\Local\Temp\xcAsaks.o
-___stacklo 0 0 ABS 0 - C:\Users\stefa\AppData\Local\Temp\xcAsaks.o
+___stackhi 0 0 ABS 0 - C:\Users\stefa\AppData\Local\Temp\xcAse0k.o
+___stacklo 0 0 ABS 0 - C:\Users\stefa\AppData\Local\Temp\xcAse0k.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\Lab07.X.production.o
 _WPUBbits 95 0 ABS 0 - dist/default/production\Lab07.X.production.o
 start_initialization 22 0 CODE 0 cinit dist/default/production\Lab07.X.production.o
 _TRISBbits 86 0 ABS 0 - dist/default/production\Lab07.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Lab07.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\stefa\AppData\Local\Temp\xcAsaks.o
+___int_sp 0 0 STACK 2 stack C:\Users\stefa\AppData\Local\Temp\xcAse0k.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -374,7 +374,7 @@ _decena 3F 0 BANK0 1 bssBANK0 dist/default/production\Lab07.X.production.o
 _divide 48 0 CODE 0 text2 dist/default/production\Lab07.X.production.o
 __end_of_isr 2A8 0 CODE 0 text6 dist/default/production\Lab07.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\stefa\AppData\Local\Temp\xcAsaks.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\stefa\AppData\Local\Temp\xcAse0k.o
 __size_of___bmul 0 0 ABS 0 - dist/default/production\Lab07.X.production.o
 __size_of___wmul 0 0 ABS 0 - dist/default/production\Lab07.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -

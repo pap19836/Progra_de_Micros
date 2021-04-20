@@ -3,11 +3,11 @@
 // Autor: Stefano Papadopolo
 // Compilador: XC-8 (v2.32)
 //
-// Programa: Introducción a C
-// Hardware: 12 Leds, 8 displays de 7 segmentos y 3 push-buttons
+// Programa: ADC
+// Hardware: 8 Leds, 2 Potenciometros, 3 7segmentos
 //
-// Creado 13 apr, 2021
-// Última Actualización: 18 apr, 2021
+// Creado 20 apr, 2021
+// Última Actualización: 20 apr, 2021
 
 // CONFIG1
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
@@ -28,16 +28,20 @@
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 
+#define _XTAL_FREQ  4000000
 #include<xc.h>
 #include<pic.h>
 #include<stdint.h>
 
+
 //|----------------------------------------------------------------------------|
 //|-------------------------------VARIABLES------------------------------------|
 //|----------------------------------------------------------------------------|
-uint8_t centena;
-uint8_t decena;
-uint8_t unidad;
+uint8_t centena =   0;
+uint8_t decena  =   0;
+uint8_t unidad  =   0;
+uint8_t pot2    =   0;
+uint8_t flag_7seg=  0;
 uint8_t display[10];
 
 //|----------------------------------------------------------------------------|
@@ -54,7 +58,33 @@ void divide(uint8_t *a, uint8_t *b, uint8_t *c);
 void    main(void){
     setup();
     while (1){
+        GO  =   1;
         divide(&centena, &decena, &unidad);
+        __delay_us(10);
+        
+    switch(flag_7seg){
+            case 0:
+                RE0=0;
+                PORTD=display[decena];
+                RE1=1;
+                RE2=0;
+                break;
+
+            case 1:
+                RE1=0;
+                PORTD=display[unidad];
+                RE2=1;
+                RE0=0;
+                break;
+                
+            case 2:
+                RE2=0;
+                PORTD=display[centena];
+                RE0=1;
+                RE1=0;
+                break;
+            
+        }
     }
 }
 //|----------------------------------------------------------------------------|
@@ -63,27 +93,25 @@ void    main(void){
 
 void setup(){
     //I/O Setup
-    ANSEL   =   0;
+    ANSEL   =   3;          //RA0 y RA1 son analogicos
     ANSELH  =   0;
-    TRISA   =   0;
+    TRISA   =   3;          //RA0 y RA1 inputs
     TRISB   =   0;
     TRISC   =   0;
     TRISD   =   0;
     TRISE   =   0;
-    TRISBbits.TRISB0    =   1;
-    TRISBbits.TRISB1    =   1;
-    OPTION_REGbits.nRBPU    =   0;
-    WPUBbits.WPUB0  =   1;
-    WPUBbits.WPUB1  =   1;
+
+    //ADC config
+    ADCON1bits.ADFM    =   0;   //Left Justified
+    ADCON0  =   0b01000001;     //Fosc/8, CH0, enable
     
     //Interrupt Setup
     INTCONbits.GIE  =   1;
     INTCONbits.T0IF =   0;
-    INTCONbits.RBIF =   0;
-    INTCONbits.RBIE =   1;
     INTCONbits.T0IE =   1;
-    IOCBbits.IOCB0  =   1;
-    IOCBbits.IOCB1  =   1;
+    INTCONbits.PEIE =   1;
+    
+    
     
     //Set Timer0
     INTCONbits.T0IF     =   0;
@@ -95,13 +123,12 @@ void setup(){
     OPTION_REGbits.PS2  =   1;
     
     //Port Inicialization
-    PORTA   =   1;
+    PORTA   =   0;
     PORTB   =   0;
-    RB0     =   1;
-    RB1     =   1;
-    PORTC   =   99;
+    PORTC   =   0;
     PORTD   =   0;
-    PORTE   =   0;
+    PORTE   =   1;          //Multiplexing Starting point
+    
     //7seg display options
     display[0]=0b00111111;
     display[1]=0b00000110;
@@ -124,9 +151,9 @@ void reset_timer0(void){
     OPTION_REGbits.PS2  =   1;
 }
 void divide(uint8_t *a, uint8_t *b, uint8_t *c){
-    *a=PORTC/100;
-    *b=(PORTC-100*centena)/10;
-    *c=PORTC-100*centena-10*decena;
+    *a=pot2/100;
+    *b=(pot2-100*centena)/10;
+    *c=pot2-100*centena-10*decena;
     
 }
 
@@ -135,44 +162,23 @@ void divide(uint8_t *a, uint8_t *b, uint8_t *c){
 //|----------------------------------------------------------------------------|
 
 void __interrupt() isr(void){
-    if  (T0IF==1){
+    if  (T0IF==1){              // Multiplexer rotate from 0 to 2
         reset_timer0();
-        switch(PORTA){
-            case 1:
-                RA0=0;
-                PORTD=display[decena];
-                RA1=1;
-                RA2=0;
-                break;
-            
-            case 2:
-                RA1=0;
-                PORTD=display[unidad];
-                RA2=1;
-                RA0=0;
-                break;
-                
-            case 4:
-                RA2=0;
-                PORTD=display[centena];
-                RA0=1;
-                RA1=0;
-                break;
-            
+        flag_7seg ++;
+        if  (flag_7seg==3){
+            flag_7seg=0;
         }
         T0IF    =   0;
     }
-    if  (RBIF==1){
-        if  (RB0==0){
-            PORTC++;
-            RBIF = 0;
+    if  (ADIF==1){
+        if(CHS0==0)  {
+            PORTC   =   ADRESH;
+            CHS0    =   1;      //change to channel 1
         }
-        else if(RB1==0){
-            PORTC--;
-            RBIF = 0;
+        else if(CHS0==1)  {
+            pot2    =   ADRESH;
+            CHS0    =   0;      //change to channel 0
         }
-        else{
-            RBIF = 0;
-        }
+        ADIF    =   0;
     }
 }
