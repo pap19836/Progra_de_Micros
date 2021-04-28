@@ -1,0 +1,156 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"51 C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+[v _main main `(v  1 e 1 0 ]
+"69
+[v _setup setup `(v  1 e 1 0 ]
+"122
+[v _isr isr `II(v  1 e 1 0 ]
+"166 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"228
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"290
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"352
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"414
+[v _PORTE PORTE `VEuc  1 e 1 @9 ]
+[s S98 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"482
+[s S107 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S112 . 1 `S98 1 . 1 0 `S107 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES112  1 e 1 @11 ]
+"772
+[v _T2CON T2CON `VEuc  1 e 1 @18 ]
+[s S70 . 1 `uc 1 T2CKPS 1 0 :2:0 
+`uc 1 TMR2ON 1 0 :1:2 
+`uc 1 TOUTPS 1 0 :4:3 
+]
+"793
+[s S74 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+`uc 1 T2CKPS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 TOUTPS0 1 0 :1:3 
+`uc 1 TOUTPS1 1 0 :1:4 
+`uc 1 TOUTPS2 1 0 :1:5 
+`uc 1 TOUTPS3 1 0 :1:6 
+]
+[u S82 . 1 `S70 1 . 1 0 `S74 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES82  1 e 1 @18 ]
+"927
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @21 ]
+"1154
+[v _CCPR2L CCPR2L `VEuc  1 e 1 @27 ]
+"1238
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+"1245
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
+"1416
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1478
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1540
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1602
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"1664
+[v _TRISE TRISE `VEuc  1 e 1 @137 ]
+[s S130 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+]
+"1718
+[u S138 . 1 `S130 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES138  1 e 1 @140 ]
+"1862
+[v _OSCCON OSCCON `VEuc  1 e 1 @143 ]
+"2041
+[v _PR2 PR2 `VEuc  1 e 1 @146 ]
+[s S47 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 VCFG0 1 0 :1:4 
+`uc 1 VCFG1 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"2991
+[u S53 . 1 `S47 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES53  1 e 1 @159 ]
+"3387
+[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+"3449
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"3587
+[v _ADIF ADIF `VEb  1 e 0 @102 ]
+"3782
+[v _CCP1M2 CCP1M2 `VEb  1 e 0 @186 ]
+"3785
+[v _CCP1M3 CCP1M3 `VEb  1 e 0 @187 ]
+"3806
+[v _CCP2M2 CCP2M2 `VEb  1 e 0 @234 ]
+"3809
+[v _CCP2M3 CCP2M3 `VEb  1 e 0 @235 ]
+"3818
+[v _CHS0 CHS0 `VEb  1 e 0 @250 ]
+"3848
+[v _DC1B0 DC1B0 `VEb  1 e 0 @188 ]
+"3851
+[v _DC1B1 DC1B1 `VEb  1 e 0 @189 ]
+"3854
+[v _DC2B0 DC2B0 `VEb  1 e 0 @236 ]
+"3857
+[v _DC2B1 DC2B1 `VEb  1 e 0 @237 ]
+"3899
+[v _GO GO `VEb  1 e 0 @249 ]
+"4382
+[v _TMR2IF TMR2IF `VEb  1 e 0 @97 ]
+"39 C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+[v _pot1 pot1 `uc  1 e 1 0 ]
+"40
+[v _pulse_width1 pulse_width1 `uc  1 e 1 0 ]
+"41
+[v _pot2 pot2 `uc  1 e 1 0 ]
+"42
+[v _pulse_width2 pulse_width2 `uc  1 e 1 0 ]
+"51
+[v _main main `(v  1 e 1 0 ]
+{
+"65
+} 0
+"69
+[v _setup setup `(v  1 e 1 0 ]
+{
+"116
+} 0
+"122
+[v _isr isr `II(v  1 e 1 0 ]
+{
+"134
+} 0
