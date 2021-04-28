@@ -13,14 +13,14 @@
 %PSECTS
 $dist/default/production\Lab09.X.production.o
 cinit CODE 0 F F 8 2
-text1 CODE 0 6A 6A 3A 2
-text2 CODE 0 A4 A4 21 2
-maintext CODE 0 17 17 53 2
+text1 CODE 0 62 62 3A 2
+text2 CODE 0 9C 9C 21 2
+maintext CODE 0 17 17 4B 2
 cstackCOMMON COMMON 1 70 70 5 1
 intentry CODE 0 4 4 8 2
 bssCOMMON COMMON 1 75 75 4 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\stefa\AppData\Local\Temp\xcAs5fo.o
+$C:\Users\stefa\AppData\Local\Temp\xcAsgrg.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -39,13 +39,13 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST C5-1FFF 2
+CONST BD-1FFF 2
 ENTRY 3-3 2
-ENTRY C5-1FFF 2
+ENTRY BD-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE C5-1FFF 2
+CODE BD-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -53,9 +53,9 @@ SFR3 180-18F 1
 COMMON 79-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE C5-1FFF 2
+STRCODE BD-1FFF 2
 STRING 3-3 2
-STRING C5-1FFF 2
+STRING BD-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -70,81 +70,79 @@ STRING C5-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab09.X.production.o
-F cinit CODE >502:C:\Users\stefa\AppData\Local\Temp\xcAs5fo.s
-F cinit CODE >505:C:\Users\stefa\AppData\Local\Temp\xcAs5fo.s
-F cinit CODE >525:C:\Users\stefa\AppData\Local\Temp\xcAs5fo.s
-10 cinit CODE >526:C:\Users\stefa\AppData\Local\Temp\xcAs5fo.s
-11 cinit CODE >527:C:\Users\stefa\AppData\Local\Temp\xcAs5fo.s
-12 cinit CODE >528:C:\Users\stefa\AppData\Local\Temp\xcAs5fo.s
-13 cinit CODE >534:C:\Users\stefa\AppData\Local\Temp\xcAs5fo.s
-13 cinit CODE >536:C:\Users\stefa\AppData\Local\Temp\xcAs5fo.s
-14 cinit CODE >537:C:\Users\stefa\AppData\Local\Temp\xcAs5fo.s
+F cinit CODE >502:C:\Users\stefa\AppData\Local\Temp\xcAsgrg.s
+F cinit CODE >505:C:\Users\stefa\AppData\Local\Temp\xcAsgrg.s
+F cinit CODE >525:C:\Users\stefa\AppData\Local\Temp\xcAsgrg.s
+10 cinit CODE >526:C:\Users\stefa\AppData\Local\Temp\xcAsgrg.s
+11 cinit CODE >527:C:\Users\stefa\AppData\Local\Temp\xcAsgrg.s
+12 cinit CODE >528:C:\Users\stefa\AppData\Local\Temp\xcAsgrg.s
+13 cinit CODE >534:C:\Users\stefa\AppData\Local\Temp\xcAsgrg.s
+13 cinit CODE >536:C:\Users\stefa\AppData\Local\Temp\xcAsgrg.s
+14 cinit CODE >537:C:\Users\stefa\AppData\Local\Temp\xcAsgrg.s
 4 intentry CODE >122:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-A4 text2 CODE >122:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-A4 text2 CODE >123:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-AA text2 CODE >124:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-AE text2 CODE >125:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-B2 text2 CODE >126:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-B3 text2 CODE >127:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-B4 text2 CODE >128:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-B8 text2 CODE >129:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-BC text2 CODE >130:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-BD text2 CODE >132:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-BE text2 CODE >134:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-6A text1 CODE >69:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-6A text1 CODE >71:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-6E text1 CODE >72:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-6F text1 CODE >73:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-73 text1 CODE >74:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-74 text1 CODE >75:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-75 text1 CODE >76:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-76 text1 CODE >77:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-77 text1 CODE >79:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-79 text1 CODE >81:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-7A text1 CODE >82:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-7E text1 CODE >85:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-82 text1 CODE >86:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-84 text1 CODE >87:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-87 text1 CODE >88:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-88 text1 CODE >89:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-8A text1 CODE >92:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-8B text1 CODE >93:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-8C text1 CODE >94:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-8E text1 CODE >96:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-8F text1 CODE >97:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-91 text1 CODE >98:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-92 text1 CODE >99:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-92 text1 CODE >100:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-96 text1 CODE >101:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-99 text1 CODE >104:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-9A text1 CODE >105:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-9B text1 CODE >106:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-9C text1 CODE >110:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-9F text1 CODE >111:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-A0 text1 CODE >112:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-A1 text1 CODE >113:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-A2 text1 CODE >114:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-A3 text1 CODE >116:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+9C text2 CODE >122:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+9C text2 CODE >123:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+A2 text2 CODE >124:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+A6 text2 CODE >125:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+AA text2 CODE >126:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+AB text2 CODE >127:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+AC text2 CODE >128:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+B0 text2 CODE >129:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+B4 text2 CODE >130:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+B5 text2 CODE >132:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+B6 text2 CODE >134:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+62 text1 CODE >69:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+62 text1 CODE >71:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+66 text1 CODE >72:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+67 text1 CODE >73:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+6B text1 CODE >74:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+6C text1 CODE >75:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+6D text1 CODE >76:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+6E text1 CODE >77:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+6F text1 CODE >79:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+71 text1 CODE >81:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+72 text1 CODE >82:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+76 text1 CODE >85:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+7A text1 CODE >86:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+7C text1 CODE >87:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+7F text1 CODE >88:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+80 text1 CODE >89:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+82 text1 CODE >92:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+83 text1 CODE >93:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+84 text1 CODE >94:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+86 text1 CODE >96:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+87 text1 CODE >97:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+89 text1 CODE >98:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+8A text1 CODE >99:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+8A text1 CODE >100:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+8E text1 CODE >101:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+91 text1 CODE >104:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+92 text1 CODE >105:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+93 text1 CODE >106:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+94 text1 CODE >110:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+97 text1 CODE >111:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+98 text1 CODE >112:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+99 text1 CODE >113:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+9A text1 CODE >114:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+9B text1 CODE >116:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
 17 maintext CODE >51:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
 17 maintext CODE >52:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
 1C maintext CODE >54:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
 1F maintext CODE >55:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-20 maintext CODE >56:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-23 maintext CODE >56:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-26 maintext CODE >56:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-2D maintext CODE >57:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-30 maintext CODE >57:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-33 maintext CODE >57:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-3A maintext CODE >58:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-3D maintext CODE >59:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-47 maintext CODE >60:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-4A maintext CODE >60:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-4D maintext CODE >60:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-51 maintext CODE >61:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-52 maintext CODE >62:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-5C maintext CODE >63:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-5F maintext CODE >63:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
-62 maintext CODE >63:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+22 maintext CODE >56:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+24 maintext CODE >56:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+2A maintext CODE >57:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+2C maintext CODE >57:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+32 maintext CODE >58:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+35 maintext CODE >59:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+3F maintext CODE >60:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+42 maintext CODE >60:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+45 maintext CODE >60:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+49 maintext CODE >61:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+4A maintext CODE >62:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+54 maintext CODE >63:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+57 maintext CODE >63:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
+5A maintext CODE >63:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -158,7 +156,7 @@ A3 text1 CODE >116:C:\Progra_de_Micros\Lab09\Lab09.X\Main.c
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\Lab09.X.production.o
-__Hspace_0 C5 0 ABS 0 - -
+__Hspace_0 BD 0 ABS 0 - -
 __Hspace_1 79 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
@@ -168,21 +166,21 @@ _GO F9 0 ABS 0 - dist/default/production\Lab09.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _ADIF 66 0 ABS 0 - dist/default/production\Lab09.X.production.o
 _CHS0 FA 0 ABS 0 - dist/default/production\Lab09.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\stefa\AppData\Local\Temp\xcAs5fo.o
+___sp 0 0 STACK 2 stack C:\Users\stefa\AppData\Local\Temp\xcAsgrg.o
 _main 2E 0 CODE 0 maintext dist/default/production\Lab09.X.production.o
 _pot1 78 0 COMMON 1 bssCOMMON dist/default/production\Lab09.X.production.o
 _pot2 76 0 COMMON 1 bssCOMMON dist/default/production\Lab09.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab09.X.production.o
-start 18 0 CODE 0 init C:\Users\stefa\AppData\Local\Temp\xcAs5fo.o
+start 18 0 CODE 0 init C:\Users\stefa\AppData\Local\Temp\xcAsgrg.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Lab09.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAs5fo.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAs5fo.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAs5fo.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAs5fo.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAs5fo.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAs5fo.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAsgrg.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAsgrg.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAsgrg.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAsgrg.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAsgrg.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\stefa\AppData\Local\Temp\xcAsgrg.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\Lab09.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -199,13 +197,13 @@ _CCP2M3 EB 0 ABS 0 - dist/default/production\Lab09.X.production.o
 _CCPR1L 15 0 ABS 0 - dist/default/production\Lab09.X.production.o
 _CCPR2L 1B 0 ABS 0 - dist/default/production\Lab09.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\stefa\AppData\Local\Temp\xcAs5fo.o
-___stacklo 0 0 ABS 0 - C:\Users\stefa\AppData\Local\Temp\xcAs5fo.o
+___stackhi 0 0 ABS 0 - C:\Users\stefa\AppData\Local\Temp\xcAsgrg.o
+___stacklo 0 0 ABS 0 - C:\Users\stefa\AppData\Local\Temp\xcAsgrg.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\Lab09.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\Lab09.X.production.o
 _OSCCON 8F 0 ABS 0 - dist/default/production\Lab09.X.production.o
 _TMR2IF 61 0 ABS 0 - dist/default/production\Lab09.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\stefa\AppData\Local\Temp\xcAs5fo.o
+___int_sp 0 0 STACK 2 stack C:\Users\stefa\AppData\Local\Temp\xcAsgrg.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -240,15 +238,15 @@ __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _PR2 92 0 ABS 0 - dist/default/production\Lab09.X.production.o
-__S0 C5 0 ABS 0 - -
+__S0 BD 0 ABS 0 - -
 __S1 79 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_isr 148 0 CODE 0 text2 dist/default/production\Lab09.X.production.o
+_isr 138 0 CODE 0 text2 dist/default/production\Lab09.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\Lab09.X.production.o
-__end_of_isr 18A 0 CODE 0 text2 dist/default/production\Lab09.X.production.o
+__end_of_isr 17A 0 CODE 0 text2 dist/default/production\Lab09.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\stefa\AppData\Local\Temp\xcAs5fo.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\stefa\AppData\Local\Temp\xcAsgrg.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\Lab09.X.production.o
 __pmaintext 2E 0 CODE 0 maintext dist/default/production\Lab09.X.production.o
 __Lcommon 0 0 ABS 0 common -
@@ -266,8 +264,8 @@ end_of_initialization 26 0 CODE 0 cinit dist/default/production\Lab09.X.producti
 __Hintentry 18 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 6 0 CODE 0 reset_vec -
-__ptext1 D4 0 CODE 0 text1 dist/default/production\Lab09.X.production.o
-__ptext2 148 0 CODE 0 text2 dist/default/production\Lab09.X.production.o
+__ptext1 C4 0 CODE 0 text1 dist/default/production\Lab09.X.production.o
+__ptext2 138 0 CODE 0 text2 dist/default/production\Lab09.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
@@ -276,7 +274,7 @@ __Lfunctab 0 0 ENTRY 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab09.X.production.o
 __Hend_init 1E 0 CODE 0 end_init -
-__end_of_main D4 0 CODE 0 maintext dist/default/production\Lab09.X.production.o
+__end_of_main C4 0 CODE 0 maintext dist/default/production\Lab09.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\Lab09.X.production.o
 _DC1B0 BC 0 ABS 0 - dist/default/production\Lab09.X.production.o
 _DC1B1 BD 0 ABS 0 - dist/default/production\Lab09.X.production.o
@@ -293,11 +291,11 @@ _TRISB 86 0 ABS 0 - dist/default/production\Lab09.X.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\Lab09.X.production.o
 _TRISD 88 0 ABS 0 - dist/default/production\Lab09.X.production.o
 _TRISE 89 0 ABS 0 - dist/default/production\Lab09.X.production.o
-__end_of_setup 148 0 CODE 0 text1 dist/default/production\Lab09.X.production.o
+__end_of_setup 138 0 CODE 0 text1 dist/default/production\Lab09.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry dist/default/production\Lab09.X.production.o
-_setup D4 0 CODE 0 text1 dist/default/production\Lab09.X.production.o
+_setup C4 0 CODE 0 text1 dist/default/production\Lab09.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\Lab09.X.production.o
 __size_of_isr 0 0 ABS 0 - dist/default/production\Lab09.X.production.o
 __initialization 1E 0 CODE 0 cinit dist/default/production\Lab09.X.production.o
@@ -328,7 +326,7 @@ _T2CONbits 12 0 ABS 0 - dist/default/production\Lab09.X.production.o
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cstackCOMMON 1 70 70 9 1
-intentry 0 4 8 C1 2
+intentry 0 4 8 B9 2
 reset_vec 0 0 0 3 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

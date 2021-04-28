@@ -454,14 +454,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Main.c: 54:         GO = 1;
 [e = _GO -> -> 1 `i `b ]
 "55
-[; ;Main.c: 55:         _delay((unsigned long)((10)*(500000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
+[; ;Main.c: 55:         _delay((unsigned long)((10)*(2000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 2000000 `l `d .4000000.0 `ul ]
 "56
-[; ;Main.c: 56:         pulse_width1 = (pot1 >> 3) + 32;
-[e = _pulse_width1 -> + >> -> _pot1 `i -> 3 `i -> 32 `i `uc ]
+[; ;Main.c: 56:         pulse_width1 = (pot1 >> 1) + 125;
+[e = _pulse_width1 -> + >> -> _pot1 `i -> 1 `i -> 125 `i `uc ]
 "57
-[; ;Main.c: 57:         pulse_width2 = (pot2 >> 3) + 32;
-[e = _pulse_width2 -> + >> -> _pot2 `i -> 3 `i -> 32 `i `uc ]
+[; ;Main.c: 57:         pulse_width2 = (pot2 >> 1) + 125;
+[e = _pulse_width2 -> + >> -> _pot2 `i -> 1 `i -> 125 `i `uc ]
 "58
 [; ;Main.c: 58:         DC1B1 = pulse_width1 & 2;
 [e = _DC1B1 -> & -> _pulse_width1 `i -> 2 `i `b ]
@@ -518,8 +518,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Main.c: 77:     TRISE = 0;
 [e = _TRISE -> -> 0 `i `uc ]
 "79
-[; ;Main.c: 79:     OSCCON = 0b00110000;
-[e = _OSCCON -> -> 48 `i `uc ]
+[; ;Main.c: 79:     OSCCON = 0b01010000;
+[e = _OSCCON -> -> 80 `i `uc ]
 "81
 [; ;Main.c: 81:     ADCON1bits.ADFM = 0;
 [e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]
@@ -530,8 +530,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Main.c: 85:     TRISC = 6;
 [e = _TRISC -> -> 6 `i `uc ]
 "86
-[; ;Main.c: 86:     PR2 = 164;
-[e = _PR2 -> -> 164 `i `uc ]
+[; ;Main.c: 86:     PR2 = 249;
+[e = _PR2 -> -> 249 `i `uc ]
 "87
 [; ;Main.c: 87:     CCP1M3 = 1;
 [e = _CCP1M3 -> -> 1 `i `b ]

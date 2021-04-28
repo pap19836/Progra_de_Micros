@@ -28,7 +28,7 @@
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 
-#define _XTAL_FREQ  500000
+#define _XTAL_FREQ  2000000
 #include<xc.h>
 #include<pic.h>
 #include<stdint.h>
@@ -53,8 +53,8 @@ void    main(void){
     while (1){
         GO  =   1;
         __delay_us(10);
-        pulse_width1    =   (pot1 >> 3) + 32;
-        pulse_width2    =   (pot2 >> 3) + 32;
+        pulse_width1    =   (pot1 >> 1) + 125;
+        pulse_width2    =   (pot2 >> 1) + 125;
         DC1B1   =   pulse_width1 &  2;
         DC1B0   =   pulse_width1 &  1;
         CCPR1L  =   pulse_width1 >> 2;
@@ -76,14 +76,14 @@ void setup(){
     TRISD   =   0;
     TRISE   =   0;
 
-    OSCCON  =   0b00110000;  //Pic oscilates at 500kHz
+    OSCCON  =   0b01010000;  //Pic oscilates at 2MHz
     //ADC config
     ADCON1bits.ADFM    =   0;   //Left Justified
     ADCON0  =   0b01000001;     //Fosc/8, CH0, enable
     
     //Configure PMW CCP1
     TRISC   =   6;      //CCP1,CCP2 are as inputs so they don't change in config
-    PR2     =   164;    //PR2 for period of PMW
+    PR2     =   249;    //PR2 for period of PMW
     CCP1M3  =   1;      //Activate PMW mode of CCP
     CCP1M2  =   1;
     CCPR1L  =   32;     //Start at duty cicle of 1/21ms

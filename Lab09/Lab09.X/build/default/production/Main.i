@@ -2666,9 +2666,9 @@ void main(void){
     setup();
     while (1){
         GO = 1;
-        _delay((unsigned long)((10)*(500000/4000000.0)));
-        pulse_width1 = (pot1 >> 3) + 32;
-        pulse_width2 = (pot2 >> 3) + 32;
+        _delay((unsigned long)((10)*(2000000/4000000.0)));
+        pulse_width1 = (pot1 >> 1) + 125;
+        pulse_width2 = (pot2 >> 1) + 125;
         DC1B1 = pulse_width1 & 2;
         DC1B0 = pulse_width1 & 1;
         CCPR1L = pulse_width1 >> 2;
@@ -2690,14 +2690,14 @@ void setup(){
     TRISD = 0;
     TRISE = 0;
 
-    OSCCON = 0b00110000;
+    OSCCON = 0b01010000;
 
     ADCON1bits.ADFM = 0;
     ADCON0 = 0b01000001;
 
 
     TRISC = 6;
-    PR2 = 164;
+    PR2 = 249;
     CCP1M3 = 1;
     CCP1M2 = 1;
     CCPR1L = 32;
