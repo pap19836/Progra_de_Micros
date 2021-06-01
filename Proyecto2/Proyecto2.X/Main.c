@@ -50,6 +50,7 @@ void UART_write(unsigned char* word);
 void __interrupt() isr(void);
 void menu(void);
 uint16_t concat_bits(uint16_t x, uint16_t y);
+void delay_us(uint16_t);
 //|----------------------------------------------------------------------------|
 //|---------------------------------CODE---------------------------------------|
 //|----------------------------------------------------------------------------|
@@ -61,19 +62,8 @@ void    main(void){
     while (1){
  
         GO  =   1;
-        __delay_us(10);
-        
-        //BIT BANGING CONTROL SERVOS
-
-        if(TMR1>=34200+pot0){
-            RD0 =   0;
-        }
-        if(TMR1>=2000-(pot1>>3)){
-            RD1 =   0;
-        }
-        if(TMR1>=255-(pot2>>3)){
-            RD2 =   0;
-        }
+        __delay_us(50);
+       
         if(RCIF){
             if(RCREG==115){
             UART_write("\rEstado Guardado!\r");
@@ -123,11 +113,7 @@ void setup(){
     ADCON1bits.ADFM    =   0;   //Left Justified
     ADCON0  =   0b01000001;     //Fosc/8, CH0, enable
 
-    //TMR0 config
-    /*OPTION_REG  = 0b11010010;   //Prescaler 1:8
-    TMR0        =   6;
-    TMR0IF      =   0;*/
-            
+
     //TMR1 Config
     TMR1ON  =   1;
     TMR1L   =   0b11011111;
@@ -136,7 +122,6 @@ void setup(){
     
     //Interrupt config
     GIE     =   1;
-    TMR0IE  =   1;              //TMR0 Interrupt
     PEIE    =   1;
     TMR1IE  =   1;              //TMR1 Interrupt
     ADIE    =   1;              //ADC Interrupt
@@ -170,25 +155,38 @@ uint16_t concat_bits(uint16_t x, uint16_t y){
     z   =   (x<<2)|(y>>6);      //LS ADRESSH and RS ADRESSL then OR results
     return z;
 }
+
+void delay_us(uint16_t time){
+    while(time>0){
+        time--;
+        __delay_us(1);
+    }
+}
+
 //|----------------------------------------------------------------------------|
 //|------------------------------INTERRUPTS------------------------------------|
 //|----------------------------------------------------------------------------|
 void __interrupt() isr(void){
-    if  (TMR0IF){
-        TMR0    =   6;
-        OPTION_REG  =   0b11010010;
-        TMR0IF  =   0;
-    }
+
     if  (TMR1IF){
         TMR1IF   =   0;
-        PORTD   =   15;         //Turn on 4 bits of PORTD
-        TMR1L   =   0b11111111;
-        TMR1H   =   0b10000010;
+        TMR1L   =   0b11011111;
+        TMR1H   =   0b10110001;
+        RD0 =   1;
+        delay_us(40+(pot0>>3));
+        RD0 =   0;
+        RD1 =   1;
+        delay_us(40+(pot1>>3));
+        RD1 =   0;
+        RD2 =   1;
+        delay_us(40+(pot2>>3));
+        RD2 =   0;
     }
-    if  (ADIF==1){
+    else if  (ADIF==1){
         if(CHS0==0 && CHS1==0)  {
             pot0   =   concat_bits(ADRESH, ADRESL);
             CHS0    =   1;      //change to channel 1
+            
         }
         else if(CHS0==1 && CHS1==0)  {
             pot1    =   concat_bits(ADRESH, ADRESL);
@@ -204,6 +202,7 @@ void __interrupt() isr(void){
             CHS0    =   0;      //change to channel 0
             CHS1    =   0;
         }
+        
         ADIF    =   0;
     }
 }

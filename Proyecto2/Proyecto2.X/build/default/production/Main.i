@@ -2664,6 +2664,7 @@ void UART_write(unsigned char* word);
 void __attribute__((picinterrupt(("")))) isr(void);
 void menu(void);
 uint16_t concat_bits(uint16_t x, uint16_t y);
+void delay_us(uint16_t);
 
 
 
@@ -2675,19 +2676,8 @@ void main(void){
     while (1){
 
         GO = 1;
-        _delay((unsigned long)((10)*(4000000/4000000.0)));
+        _delay((unsigned long)((50)*(4000000/4000000.0)));
 
-
-
-        if(TMR1>=34200+pot0){
-            RD0 = 0;
-        }
-        if(TMR1>=2000-(pot1>>3)){
-            RD1 = 0;
-        }
-        if(TMR1>=255-(pot2>>3)){
-            RD2 = 0;
-        }
         if(RCIF){
             if(RCREG==115){
             UART_write("\rEstado Guardado!\r");
@@ -2739,10 +2729,6 @@ void setup(){
 
 
 
-
-
-
-
     TMR1ON = 1;
     TMR1L = 0b11011111;
     TMR1H = 0b10110001;
@@ -2750,7 +2736,6 @@ void setup(){
 
 
     GIE = 1;
-    TMR0IE = 1;
     PEIE = 1;
     TMR1IE = 1;
     ADIE = 1;
@@ -2785,24 +2770,37 @@ uint16_t concat_bits(uint16_t x, uint16_t y){
     return z;
 }
 
+void delay_us(uint16_t time){
+    while(time>0){
+        time--;
+        _delay((unsigned long)((1)*(4000000/4000000.0)));
+    }
+}
+
+
 
 
 void __attribute__((picinterrupt(("")))) isr(void){
-    if (TMR0IF){
-        TMR0 = 6;
-        OPTION_REG = 0b11010010;
-        TMR0IF = 0;
-    }
+
     if (TMR1IF){
         TMR1IF = 0;
-        PORTD = 15;
-        TMR1L = 0b11111111;
-        TMR1H = 0b10000010;
+        TMR1L = 0b11011111;
+        TMR1H = 0b10110001;
+        RD0 = 1;
+        delay_us(40+(pot0>>3));
+        RD0 = 0;
+        RD1 = 1;
+        delay_us(40+(pot1>>3));
+        RD1 = 0;
+        RD2 = 1;
+        delay_us(40+(pot2>>3));
+        RD2 = 0;
     }
-    if (ADIF==1){
+    else if (ADIF==1){
         if(CHS0==0 && CHS1==0) {
             pot0 = concat_bits(ADRESH, ADRESL);
             CHS0 = 1;
+
         }
         else if(CHS0==1 && CHS1==0) {
             pot1 = concat_bits(ADRESH, ADRESL);
@@ -2818,6 +2816,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
             CHS0 = 0;
             CHS1 = 0;
         }
+
         ADIF = 0;
     }
 }
