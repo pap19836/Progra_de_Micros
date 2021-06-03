@@ -41,7 +41,9 @@ uint16_t pot0    =   0;
 uint16_t pot1    =   0;
 uint16_t pot2    =   0;
 uint16_t pot3    =   0;
-
+uint8_t  servo  =   0;
+uint16_t  pulse_width2   =   0;
+uint16_t  pulse_width3   =   0;
 //|----------------------------------------------------------------------------|
 //|------------------------------PROTOTYPES------------------------------------|
 //|----------------------------------------------------------------------------|
@@ -50,7 +52,9 @@ void UART_write(unsigned char* word);
 void __interrupt() isr(void);
 void menu(void);
 uint16_t concat_bits(uint16_t x, uint16_t y);
-void delay_us(uint16_t);
+void delay_pulse(uint16_t);
+void EEPROM_W(uint8_t address, uint8_t data);
+uint8_t EEPROM_R(uint8_t address);
 //|----------------------------------------------------------------------------|
 //|---------------------------------CODE---------------------------------------|
 //|----------------------------------------------------------------------------|
@@ -63,20 +67,30 @@ void    main(void){
  
         GO  =   1;
         __delay_us(50);
-       
+        
         if(RCIF){
             if(RCREG==115){
-            UART_write("\rEstado Guardado!\r");
-            __delay_ms(1000);//Mostrar por un segundo antes de mostrar menu
-            menu();
+                RA4 =   1;  //Encender led
+                EEPROM_W(0, 40+(uint8_t)(pot0>>3));
+                EEPROM_W(1, 40+(uint8_t)(pot1>>3));
+                EEPROM_W(2, 40+(uint8_t)(pot2>>3));
+                UART_write("\rNUEVO Estado Guardado!\r");
+                __delay_ms(1000);//Mostrar por un segundo antes de mostrar menu
+                menu();
             }
             if(RCREG==32){
+                RA5 =   1;   //Encender led
+                pot0    =(uint16_t)(EEPROM_R(0)-40)<<3;
+                pot1    =(uint16_t)(EEPROM_R(1)-40)<<3;
+                pot2    =(uint16_t)(EEPROM_R(2)-40)<<3;
                 UART_write("\rRegresando a estado\r");
                 __delay_ms(1000);//Mostrar por un segundo antes de mostrar menu
                 menu();
             }
-            if(RCREG==127){
-                UART_write("\rEstado Eliminado\rNo hay ningun estado guardado");
+            if(RCREG==100){
+                RA4 =   0;
+                RA5 =   0;
+                UART_write("\r\rEstado Eliminado\rNo hay ningun estado guardado\r");
                 __delay_ms(1000);//Mostrar por un segundo antes de mostrar menu
                 menu();
             }
@@ -113,17 +127,37 @@ void setup(){
     ADCON1bits.ADFM    =   0;   //Left Justified
     ADCON0  =   0b01000001;     //Fosc/8, CH0, enable
 
-
-    //TMR1 Config
-    TMR1ON  =   1;
-    TMR1L   =   0b11011111;
-    TMR1H   =   0b10110001;
-    TMR1IF  =   0;
+    //TMR0 config
+    TMR0    =   8;
+    OPTION_REGbits.PS   =   0b101;
+    PSA =   0;
+    T0CS    =   0;
+    TMR0IF  =   0;
+    
+//Configure PMW CCP1
+    TRISCbits.TRISC1   =   1;//CCP1 are as inputs so they don't change in config
+    TRISCbits.TRISC2   =   1;   //CCP2 are as inputs so they don't change in config
+    PR2     =   249;    //PR2 for period of PMW
+    CCP1M3  =   1;      //Activate PMW mode of CCP
+    CCP1M2  =   1;
+    CCPR1L  =   32;     //Start at duty cicle of 1/21ms
+    
+    //configure PMW CCP2
+    CCP2M3  =   1;
+    CCP2M2  =   1;
+    CCPR2L  =   32;
+    
+    TMR2IF  =   0;
+    T2CON   =   3;          //turn on T2 Prescaler to 1:16
+    T2CONbits.TMR2ON =  1;  //Turn on timer 2
+    while(TMR2IF==0){   
+    }
+    TRISC   =   128;
     
     //Interrupt config
     GIE     =   1;
     PEIE    =   1;
-    TMR1IE  =   1;              //TMR1 Interrupt
+    TMR0IE  =   1;
     ADIE    =   1;              //ADC Interrupt
 
     //Port Inicialization
@@ -147,7 +181,7 @@ void menu(void){
     __delay_ms(50); //Asegurar que se envíe todo
     UART_write("S - Guardar Estado\rSPACE - Regresar a estado\r");
     __delay_ms(50);
-    UART_write("DEL - Elminar estado guardado");
+    UART_write("DEL - Elminar estado guardado\r");
 }
 
 uint16_t concat_bits(uint16_t x, uint16_t y){
@@ -156,53 +190,87 @@ uint16_t concat_bits(uint16_t x, uint16_t y){
     return z;
 }
 
-void delay_us(uint16_t time){
+void delay_pulse(uint16_t time){
     while(time>0){
         time--;
         __delay_us(1);
     }
 }
-
+void EEPROM_W(uint8_t address, uint8_t data){
+    EEADR   =   address;
+    EEDATA  =   data;
+    EEPGD   =   0;      //Data memory
+    WREN    =   1;      //Enable write
+    GIE     =   0;      //Disable Interrupts
+    while(GIE){         //Confirm desabled interrupts
+        GIE =   0;
+    }         
+    EECON2  =   0x55;    //Process
+    EECON2  =   0xAA;    //Process
+    WR      =   1;      //Proceed to writing
+    GIE     =   1;      //Enable interrupts
+    WREN    =   0;      //Desable EEPROM write
+    WR      =   1;      //Prime for next writing
+}
+uint8_t EEPROM_R(uint8_t address){
+    uint8_t data;
+    EEADR   =   address;    //Point to the desired address
+    EEPGD   =   0;      //Data Memory
+    RD      =   1;      //Proceed to reading
+    data    =   EEDATA;
+    return data;
+}
 //|----------------------------------------------------------------------------|
 //|------------------------------INTERRUPTS------------------------------------|
 //|----------------------------------------------------------------------------|
 void __interrupt() isr(void){
-
-    if  (TMR1IF){
-        TMR1IF   =   0;
-        TMR1L   =   0b11011111;
-        TMR1H   =   0b10110001;
-        RD0 =   1;
-        delay_us(40+(pot0>>3));
-        RD0 =   0;
-        RD1 =   1;
-        delay_us(40+(pot1>>3));
-        RD1 =   0;
-        RD2 =   1;
-        delay_us(40+(pot2>>3));
-        RD2 =   0;
+    if  (TMR0IF){
+        TMR0    =   8;
+        OPTION_REGbits.PS   =   0b101;
+        PSA =   0;
+        if (servo == 0){
+            RD0 =   1;
+            delay_pulse(40+(pot0>>3));
+            RD0 =   0;
+            servo++;
+        }
+        if (servo == 1){
+            RD1 =   1;
+            delay_pulse(40+(pot1>>3));
+            RD1 =   0;
+            servo++;
+        }
+        if (servo   ==  2){
+            RD2 =   1;
+            delay_pulse(40+(pot2>>3));
+            RD2 =   0;
+            servo   =   0;
+        }
+        TMR0IF  =   0;
     }
-    else if  (ADIF==1){
-        if(CHS0==0 && CHS1==0)  {
-            pot0   =   concat_bits(ADRESH, ADRESL);
-            CHS0    =   1;      //change to channel 1
-            
-        }
-        else if(CHS0==1 && CHS1==0)  {
-            pot1    =   concat_bits(ADRESH, ADRESL);
-            CHS0    =   0;      //change to channel 0
-            CHS1    =   1;
-        }
-        else if(CHS0==0 && CHS1==1)  {
-            pot2   =   concat_bits(ADRESH, ADRESL);
-            CHS0    =   1;
-        }
-        else if(CHS0==1 && CHS1==1)  {
-            pot3    =   concat_bits(ADRESH, ADRESL);
-            CHS0    =   0;      //change to channel 0
-            CHS1    =   0;
-        }
-        
+
+     if  (ADIF==1){
+         if(!RA5){
+            if(CHS0==0 && CHS1==0)  {
+                pot0   =   concat_bits(ADRESH, ADRESL);
+                CHS0    =   1;      //change to channel 1
+
+            }
+            else if(CHS0==1 && CHS1==0)  {
+                pot1    =   concat_bits(ADRESH, ADRESL);
+                CHS0    =   0;      //change to channel 2
+                CHS1    =   1;
+            }
+            else if(CHS0==0 && CHS1==1)  {
+                pot2   =   concat_bits(ADRESH, ADRESL);
+                CHS0    =   1;
+            }
+            else if(CHS0==1 && CHS1==1)  {
+                pot3    =   concat_bits(ADRESH, ADRESL);
+                CHS0    =   0;      //change to channel 0
+                CHS1    =   0;
+            }
+         }
         ADIF    =   0;
     }
 }

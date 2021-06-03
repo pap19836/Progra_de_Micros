@@ -15,11 +15,13 @@
      <ITEM name="Version">100</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="350" x="68" flags="00000032" y="180" h="200" pid="1" iid="-1">
+   <POPUP w="578" x="68" flags="00000033" y="180" h="200" pid="1" iid="-1">
     <PROPERTIES>
      <ITEM name="Address Column Width">82</ITEM>
      <ITEM name="AutoResize">No</ITEM>
      <ITEM name="Gridlines">Yes</ITEM>
+     <ITEM name="Item 0">"EEADR","0x010D",00000001,00000004,269,1,0,00000002,0,00000000,00000000</ITEM>
+     <ITEM name="Item 1">"EEDATA","0x010C",00000001,00000004,268,1,0,00000002,0,00000000,00000000</ITEM>
      <ITEM name="Name Column Width">82</ITEM>
      <ITEM name="ShowAddresses">Yes</ITEM>
      <ITEM name="ShowPreviousValues">No</ITEM>
@@ -29,10 +31,10 @@
      <ITEM name="Value Column Width">82</ITEM>
      <ITEM name="Version">100</ITEM>
      <ITEM name="Watch Expression Column Width">82</ITEM>
-     <ITEM name="nItems">0</ITEM>
+     <ITEM name="nItems">2</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="52" x="88" flags="00000008" y="200" h="13" pid="3" iid="1">
+   <POPUP w="434" x="88" flags="00000008" y="200" h="216" pid="3" iid="1">
     <PROPERTIES/>
    </POPUP>
    <POPUP w="8" x="108" flags="0000000a" y="220" h="32" pid="4" iid="1">
@@ -65,7 +67,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="14" x="168" flags="00000008" y="280" h="8" pid="7" iid="1">
+   <POPUP w="130" x="168" flags="00000008" y="280" h="151" pid="7" iid="1">
     <PROPERTIES/>
    </POPUP>
    <POPUP w="8" x="188" flags="00000002" y="300" h="8" pid="8" iid="1">
@@ -78,7 +80,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="685" x="1136" flags="00000023" y="645" h="250" pid="0" iid="10">
+   <POPUP w="685" x="985" flags="00008023" y="704" h="250" pid="0" iid="10">
     <PROPERTIES>
      <ITEM name="AutoEcho">0</ITEM>
      <ITEM name="HexMode">0</ITEM>

@@ -3,7 +3,7 @@
 // Autor: Stefano Papadopolo
 // Compilador: XC-8 (v2.32)
 //
-// Programa: ADC
+// Programa: CCPM
 // Hardware: 2 Potenciometros, 2 servomotores
 //
 // Creado 27 apr, 2021
@@ -76,7 +76,7 @@ void setup(){
     TRISD   =   0;
     TRISE   =   0;
 
-    OSCCON  =   0b01010000;  //Pic oscilates at 2MHz
+    //OSCCON  =   0b01010000;  //Pic oscilates at 2MHz
     //ADC config
     ADCON1bits.ADFM    =   0;   //Left Justified
     ADCON0  =   0b01000001;     //Fosc/8, CH0, enable
