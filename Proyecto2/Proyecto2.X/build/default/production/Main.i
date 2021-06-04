@@ -2656,8 +2656,6 @@ uint16_t pot1 = 0;
 uint16_t pot2 = 0;
 uint16_t pot3 = 0;
 uint8_t servo = 0;
-uint16_t pulse_width2 = 0;
-uint16_t pulse_width3 = 0;
 
 
 
@@ -2682,13 +2680,20 @@ void main(void){
         GO = 1;
         _delay((unsigned long)((50)*(4000000/4000000.0)));
 
+        DC1B1 = (uint8_t)pot3 & 2;
+        DC1B0 = (uint8_t)pot3 & 1;
+        CCPR1L = (uint8_t)(pot3>>2);
+
+
         if(RCIF){
             if(RCREG==115){
                 RA4 = 1;
                 EEPROM_W(0, 40+(uint8_t)(pot0>>3));
+                _delay((unsigned long)((10)*(4000000/4000.0)));
                 EEPROM_W(1, 40+(uint8_t)(pot1>>3));
+                _delay((unsigned long)((10)*(4000000/4000.0)));
                 EEPROM_W(2, 40+(uint8_t)(pot2>>3));
-                UART_write("\rNUEVO Estado Guardado!\r");
+                UART_write("\nNUEVO Estado Guardado!\n");
                 _delay((unsigned long)((1000)*(4000000/4000.0)));
                 menu();
             }
@@ -2697,14 +2702,14 @@ void main(void){
                 pot0 =(uint16_t)(EEPROM_R(0)-40)<<3;
                 pot1 =(uint16_t)(EEPROM_R(1)-40)<<3;
                 pot2 =(uint16_t)(EEPROM_R(2)-40)<<3;
-                UART_write("\rRegresando a estado\r");
+                UART_write("\nRegresando a estado\n");
                 _delay((unsigned long)((1000)*(4000000/4000.0)));
                 menu();
             }
-            if(RCREG==100){
+            if(RCREG==102){
                 RA4 = 0;
                 RA5 = 0;
-                UART_write("\r\rEstado Eliminado\rNo hay ningun estado guardado\r");
+                UART_write("\n\nMovimiento Libre Habilitado\n");
                 _delay((unsigned long)((1000)*(4000000/4000.0)));
                 menu();
             }
@@ -2749,17 +2754,12 @@ void setup(){
     TMR0IF = 0;
 
 
-    TRISCbits.TRISC1 = 1;
+
     TRISCbits.TRISC2 = 1;
     PR2 = 249;
     CCP1M3 = 1;
     CCP1M2 = 1;
-    CCPR1L = 32;
-
-
-    CCP2M3 = 1;
-    CCP2M2 = 1;
-    CCPR2L = 32;
+    CCPR1L = 0;
 
     TMR2IF = 0;
     T2CON = 3;
@@ -2791,11 +2791,11 @@ void UART_write(unsigned char* word){
 }
 
 void menu(void){
-    UART_write("\rInstrucciones para control de estado\r");
+    UART_write("\nInstrucciones para control de estado\n");
     _delay((unsigned long)((50)*(4000000/4000.0)));
-    UART_write("S - Guardar Estado\rSPACE - Regresar a estado\r");
+    UART_write("S - Guardar Estado\nSPACE - Regresar a estado\n");
     _delay((unsigned long)((50)*(4000000/4000.0)));
-    UART_write("DEL - Elminar estado guardado\r");
+    UART_write("F - Movimiento libre de la garra\n");
 }
 
 uint16_t concat_bits(uint16_t x, uint16_t y){
@@ -2824,7 +2824,6 @@ void EEPROM_W(uint8_t address, uint8_t data){
     WR = 1;
     GIE = 1;
     WREN = 0;
-    WR = 1;
 }
 uint8_t EEPROM_R(uint8_t address){
     uint8_t data;
